@@ -20,6 +20,10 @@ import {
 import { buildRobot, type Quality, type Robot } from "@/lib/robot/build";
 import { copyPose, poseKeys, REST, type Pose } from "@/lib/robot/pose";
 import { robot } from "@/lib/robot/store";
+import { mark, measure, timed } from "@/lib/timing";
+
+mark("3d-module");
+measure("3d-download", "3d-start", "3d-module");
 
 export type Eyewear = "none" | "spectacles" | "vr";
 
@@ -182,7 +186,7 @@ function Scene({
   const get = useThree((state) => state.get);
   const size = useThree((state) => state.size);
   const invalidate = useThree((state) => state.invalidate);
-  const model = useMemo(() => buildRobot(quality), [quality]);
+  const model = useMemo(() => timed("3d-build", () => buildRobot(quality)), [quality]);
   const current = useRef<Pose>({ ...REST });
   const eyewear = useRef<Eyewear>("none");
 
@@ -223,6 +227,7 @@ function Scene({
 
   useEffect(() => {
     const { gl, scene, camera } = get();
+    mark("3d-environment-start");
     const pmrem = new PMREMGenerator(gl);
     const room = studio();
     const environment = pmrem.fromScene(room.scene, 0.02).texture;
@@ -230,16 +235,22 @@ function Scene({
     scene.environmentIntensity = 1;
     room.dispose();
     pmrem.dispose();
+    measure("3d-environment", "3d-environment-start");
 
     robot.invalidate = invalidate;
     let cancelled = false;
+    mark("3d-compile-start");
     gl.compileAsync(scene, camera)
       .catch(() => undefined)
       .then(() => {
         if (cancelled) return;
         invalidate();
         requestAnimationFrame(() => {
-          if (!cancelled) onReady();
+          if (cancelled) return;
+          measure("3d-compile", "3d-compile-start");
+          mark("3d-ready");
+          measure("3d-total", "3d-start", "3d-ready");
+          onReady();
         });
       });
     return () => {
@@ -292,7 +303,9 @@ export default function RobotCanvas({
         antialias: quality !== "low",
         alpha: true,
         stencil: false,
-        powerPreference: quality === "low" ? "low-power" : "high-performance",
+        // "high-performance" forces a discrete-GPU switch on dual-GPU laptops (measured
+        // as a ~700 ms main-thread stall at context creation); this scene does not need it.
+        powerPreference: "default",
       }}
       camera={{ fov: FOV, near: 0.1, far: 40, position: [0, 1, 10] }}
       onCreated={({ gl }) => {

@@ -12,6 +12,7 @@ import {
 } from "react";
 import type { Quality } from "@/lib/robot/build";
 import { notify, robot, subscribe } from "@/lib/robot/store";
+import { mark } from "@/lib/timing";
 import type { Eyewear } from "./robot-canvas";
 
 const RobotCanvas = lazy(() => import("./robot-canvas"));
@@ -84,6 +85,7 @@ export function RobotStage() {
       cleanup();
       const chosen = chooseQuality();
       if (!chosen) return;
+      mark("3d-start");
       setQuality(chosen);
       setState("loading");
     };
