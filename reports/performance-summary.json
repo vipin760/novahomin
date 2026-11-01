@@ -1,0 +1,2291 @@
+{
+  "buildID": "x_HO28Eu28UW_Hxcm-zLr",
+  "measuredAt": "2026-10-31T22:07:10.144Z",
+  "baseURL": "http://127.0.0.1:3200",
+  "environment": {
+    "platform": "darwin",
+    "release": "24.6.0",
+    "architecture": "x64",
+    "node": "v22.13.0",
+    "cpu": "Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz",
+    "cpuCount": 12
+  },
+  "lighthouse": {
+    "mobile": {
+      "runs": [
+        {
+          "run": 1,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:07:13.596Z",
+          "scores": {
+            "performance": 95,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 956.14195,
+          "lcp": 2403.2839,
+          "cls": 0,
+          "tbt": 197,
+          "inp": null,
+          "transferBytes": 190340,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 1000,
+            "pauseAfterLoadMs": 1000,
+            "networkQuietThresholdMs": 1000,
+            "cpuQuietThresholdMs": 1000,
+            "formFactor": "mobile",
+            "throttling": {
+              "rttMs": 150,
+              "throughputKbps": 1638.4,
+              "requestLatencyMs": 562.5,
+              "downloadThroughputKbps": 1474.5600000000002,
+              "uploadThroughputKbps": 675,
+              "cpuSlowdownMultiplier": 4
+            },
+            "throttlingMethod": "simulate",
+            "screenEmulation": {
+              "mobile": true,
+              "width": 412,
+              "height": 823,
+              "deviceScaleFactor": 1.75,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "max-potential-fid",
+              "title": "Max Potential First Input Delay",
+              "displayValue": "250 ms",
+              "score": 0.5
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 52 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0
+            },
+            {
+              "id": "forced-reflow-insight",
+              "title": "Forced reflow",
+              "score": 0
+            },
+            {
+              "id": "image-delivery-insight",
+              "title": "Improve image delivery",
+              "displayValue": "Est savings of 19 KiB",
+              "score": 0.5
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:07:24.511Z",
+          "scores": {
+            "performance": 96,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 955.6607,
+          "lcp": 2388.3214000000003,
+          "cls": 0,
+          "tbt": 167,
+          "inp": null,
+          "transferBytes": 190340,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 1000,
+            "pauseAfterLoadMs": 1000,
+            "networkQuietThresholdMs": 1000,
+            "cpuQuietThresholdMs": 1000,
+            "formFactor": "mobile",
+            "throttling": {
+              "rttMs": 150,
+              "throughputKbps": 1638.4,
+              "requestLatencyMs": 562.5,
+              "downloadThroughputKbps": 1474.5600000000002,
+              "uploadThroughputKbps": 675,
+              "cpuSlowdownMultiplier": 4
+            },
+            "throttlingMethod": "simulate",
+            "screenEmulation": {
+              "mobile": true,
+              "width": 412,
+              "height": 823,
+              "deviceScaleFactor": 1.75,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "max-potential-fid",
+              "title": "Max Potential First Input Delay",
+              "displayValue": "220 ms",
+              "score": 0.6
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 52 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0
+            },
+            {
+              "id": "image-delivery-insight",
+              "title": "Improve image delivery",
+              "displayValue": "Est savings of 19 KiB",
+              "score": 0.5
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:07:34.903Z",
+          "scores": {
+            "performance": 95,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 937.05045,
+          "lcp": 2476.1009,
+          "cls": 0,
+          "tbt": 166,
+          "inp": null,
+          "transferBytes": 190340,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 1000,
+            "pauseAfterLoadMs": 1000,
+            "networkQuietThresholdMs": 1000,
+            "cpuQuietThresholdMs": 1000,
+            "formFactor": "mobile",
+            "throttling": {
+              "rttMs": 150,
+              "throughputKbps": 1638.4,
+              "requestLatencyMs": 562.5,
+              "downloadThroughputKbps": 1474.5600000000002,
+              "uploadThroughputKbps": 675,
+              "cpuSlowdownMultiplier": 4
+            },
+            "throttlingMethod": "simulate",
+            "screenEmulation": {
+              "mobile": true,
+              "width": 412,
+              "height": 823,
+              "deviceScaleFactor": 1.75,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "max-potential-fid",
+              "title": "Max Potential First Input Delay",
+              "displayValue": "220 ms",
+              "score": 0.61
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 52 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0
+            },
+            {
+              "id": "forced-reflow-insight",
+              "title": "Forced reflow",
+              "score": 0
+            },
+            {
+              "id": "image-delivery-insight",
+              "title": "Improve image delivery",
+              "displayValue": "Est savings of 19 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "medianByLCP": 1
+    },
+    "desktop": {
+      "runs": [
+        {
+          "run": 1,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:07:44.916Z",
+          "scores": {
+            "performance": 100,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 251.0639,
+          "lcp": 541.1278,
+          "cls": 0,
+          "tbt": 0,
+          "inp": null,
+          "transferBytes": 185779,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 1000,
+            "pauseAfterLoadMs": 1000,
+            "networkQuietThresholdMs": 1000,
+            "cpuQuietThresholdMs": 1000,
+            "formFactor": "desktop",
+            "throttling": {
+              "rttMs": 40,
+              "throughputKbps": 10240,
+              "requestLatencyMs": 0,
+              "downloadThroughputKbps": 0,
+              "uploadThroughputKbps": 0,
+              "cpuSlowdownMultiplier": 1
+            },
+            "throttlingMethod": "simulate",
+            "screenEmulation": {
+              "mobile": false,
+              "width": 1350,
+              "height": 940,
+              "deviceScaleFactor": 1,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 51 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0
+            },
+            {
+              "id": "forced-reflow-insight",
+              "title": "Forced reflow",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:07:55.807Z",
+          "scores": {
+            "performance": 100,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 289.8209,
+          "lcp": 589.6418,
+          "cls": 0,
+          "tbt": 6,
+          "inp": null,
+          "transferBytes": 185779,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 1000,
+            "pauseAfterLoadMs": 1000,
+            "networkQuietThresholdMs": 1000,
+            "cpuQuietThresholdMs": 1000,
+            "formFactor": "desktop",
+            "throttling": {
+              "rttMs": 40,
+              "throughputKbps": 10240,
+              "requestLatencyMs": 0,
+              "downloadThroughputKbps": 0,
+              "uploadThroughputKbps": 0,
+              "cpuSlowdownMultiplier": 1
+            },
+            "throttlingMethod": "simulate",
+            "screenEmulation": {
+              "mobile": false,
+              "width": 1350,
+              "height": 940,
+              "deviceScaleFactor": 1,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 51 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0.5
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0.5
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:08:07.296Z",
+          "scores": {
+            "performance": 100,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 261.5511,
+          "lcp": 526.1021999999999,
+          "cls": 0,
+          "tbt": 8,
+          "inp": null,
+          "transferBytes": 185779,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 1000,
+            "pauseAfterLoadMs": 1000,
+            "networkQuietThresholdMs": 1000,
+            "cpuQuietThresholdMs": 1000,
+            "formFactor": "desktop",
+            "throttling": {
+              "rttMs": 40,
+              "throughputKbps": 10240,
+              "requestLatencyMs": 0,
+              "downloadThroughputKbps": 0,
+              "uploadThroughputKbps": 0,
+              "cpuSlowdownMultiplier": 1
+            },
+            "throttlingMethod": "simulate",
+            "screenEmulation": {
+              "mobile": false,
+              "width": 1350,
+              "height": 940,
+              "deviceScaleFactor": 1,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 51 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0
+            },
+            {
+              "id": "forced-reflow-insight",
+              "title": "Forced reflow",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "medianByLCP": 1
+    },
+    "mobile-applied": {
+      "runs": [
+        {
+          "run": 1,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:08:18.631Z",
+          "scores": {
+            "performance": 90,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 824.005,
+          "lcp": 1795.898,
+          "cls": 0,
+          "tbt": 390.8009999999998,
+          "inp": null,
+          "transferBytes": 190340,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 5250,
+            "pauseAfterLoadMs": 5250,
+            "networkQuietThresholdMs": 5250,
+            "cpuQuietThresholdMs": 5250,
+            "formFactor": "mobile",
+            "throttling": {
+              "rttMs": 150,
+              "throughputKbps": 1638.4,
+              "requestLatencyMs": 562.5,
+              "downloadThroughputKbps": 1474.5600000000002,
+              "uploadThroughputKbps": 675,
+              "cpuSlowdownMultiplier": 4
+            },
+            "throttlingMethod": "devtools",
+            "screenEmulation": {
+              "mobile": true,
+              "width": 412,
+              "height": 823,
+              "deviceScaleFactor": 1.75,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "total-blocking-time",
+              "title": "Total Blocking Time",
+              "displayValue": "390 ms",
+              "score": 0.69
+            },
+            {
+              "id": "max-potential-fid",
+              "title": "Max Potential First Input Delay",
+              "displayValue": "280 ms",
+              "score": 0.4
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 52 KiB",
+              "score": 0.5
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0.5
+            },
+            {
+              "id": "image-delivery-insight",
+              "title": "Improve image delivery",
+              "displayValue": "Est savings of 19 KiB",
+              "score": 0.5
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0.5
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:08:41.884Z",
+          "scores": {
+            "performance": 94,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 751.603,
+          "lcp": 2368.426,
+          "cls": 0.0002027379788847074,
+          "tbt": 230.21500000000026,
+          "inp": null,
+          "transferBytes": 190340,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 5250,
+            "pauseAfterLoadMs": 5250,
+            "networkQuietThresholdMs": 5250,
+            "cpuQuietThresholdMs": 5250,
+            "formFactor": "mobile",
+            "throttling": {
+              "rttMs": 150,
+              "throughputKbps": 1638.4,
+              "requestLatencyMs": 562.5,
+              "downloadThroughputKbps": 1474.5600000000002,
+              "uploadThroughputKbps": 675,
+              "cpuSlowdownMultiplier": 4
+            },
+            "throttlingMethod": "devtools",
+            "screenEmulation": {
+              "mobile": true,
+              "width": 412,
+              "height": 823,
+              "deviceScaleFactor": 1.75,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "total-blocking-time",
+              "title": "Total Blocking Time",
+              "displayValue": "230 ms",
+              "score": 0.86
+            },
+            {
+              "id": "max-potential-fid",
+              "title": "Max Potential First Input Delay",
+              "displayValue": "210 ms",
+              "score": 0.62
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 52 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0
+            },
+            {
+              "id": "image-delivery-insight",
+              "title": "Improve image delivery",
+              "displayValue": "Est savings of 19 KiB",
+              "score": 0.5
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-10-31T22:09:04.537Z",
+          "scores": {
+            "performance": 88,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 715.092,
+          "lcp": 2391.508,
+          "cls": 0,
+          "tbt": 395.76699999999994,
+          "inp": null,
+          "transferBytes": 190340,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 5250,
+            "pauseAfterLoadMs": 5250,
+            "networkQuietThresholdMs": 5250,
+            "cpuQuietThresholdMs": 5250,
+            "formFactor": "mobile",
+            "throttling": {
+              "rttMs": 150,
+              "throughputKbps": 1638.4,
+              "requestLatencyMs": 562.5,
+              "downloadThroughputKbps": 1474.5600000000002,
+              "uploadThroughputKbps": 675,
+              "cpuSlowdownMultiplier": 4
+            },
+            "throttlingMethod": "devtools",
+            "screenEmulation": {
+              "mobile": true,
+              "width": 412,
+              "height": 823,
+              "deviceScaleFactor": 1.75,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "total-blocking-time",
+              "title": "Total Blocking Time",
+              "displayValue": "400 ms",
+              "score": 0.68
+            },
+            {
+              "id": "max-potential-fid",
+              "title": "Max Potential First Input Delay",
+              "displayValue": "280 ms",
+              "score": 0.4
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 52 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0
+            },
+            {
+              "id": "image-delivery-insight",
+              "title": "Improve image delivery",
+              "displayValue": "Est savings of 19 KiB",
+              "score": 0.5
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "medianByLCP": 2
+    }
+  },
+  "network": [
+    {
+      "profile": {
+        "name": "Slow 4G / low-powered mobile emulation",
+        "latency": 150,
+        "downloadMbps": 1.6,
+        "uploadMbps": 0.75,
+        "cpu": 4,
+        "width": 390,
+        "height": 844,
+        "mobile": true
+      },
+      "initial": {
+        "transferBytes": 210415,
+        "javascriptTransferBytes": 143551,
+        "largestImage": {
+          "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
+          "type": "Image",
+          "status": 200,
+          "mimeType": "image/avif",
+          "headers": {
+            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+            "ETag": "W/\"b6cf-1a193b07864\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "46799",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
+            "Content-Type": "image/avif",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 47292
+        },
+        "requests": [
+          {
+            "url": "http://127.0.0.1:3200/",
+            "type": "Document",
+            "status": 200,
+            "mimeType": "text/html",
+            "headers": {
+              "Cache-Control": "s-maxage=31536000",
+              "Connection": "keep-alive",
+              "Content-Encoding": "gzip",
+              "Content-Type": "text/html; charset=utf-8",
+              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+              "ETag": "\"jsmqwd7iuy20o8\"",
+              "Keep-Alive": "timeout=5",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Transfer-Encoding": "chunked",
+              "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+              "X-Content-Type-Options": "nosniff",
+              "X-Frame-Options": "SAMEORIGIN",
+              "x-nextjs-cache": "HIT",
+              "x-nextjs-prerender": "1\n1",
+              "x-nextjs-stale-time": "300"
+            },
+            "encodedDataLength": 18833
+          },
+          {
+            "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
+            "type": "Image",
+            "status": 200,
+            "mimeType": "image/avif",
+            "headers": {
+              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+              "ETag": "W/\"b6cf-1a193b07864\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Content-Length": "46799",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
+              "Content-Type": "image/avif",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 47292
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"272e-1a193fd4ef4\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 4510
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"370a-1a193fd4efd\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 4172
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/3cfn99dbrcvvp.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"4202-1a193fd4f07\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 6513
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/3wevy0l6z882e.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"2eb3-1a193fd4ef5\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:26 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 5162
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"2d907-1a193fd4efa\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 50582
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/2ki52vdnbo2ft.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"381da-1a193fd4f04\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 72612
+          },
+          {
+            "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
+            "type": "Other",
+            "status": 200,
+            "mimeType": "image/svg+xml",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "cache-control": "public, max-age=0, must-revalidate",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Keep-Alive": "timeout=5",
+              "x-nextjs-cache": "HIT",
+              "Date": "Sat, 31 Oct 2026 22:09:27 GMT",
+              "content-type": "image/svg+xml",
+              "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 739
+          }
+        ]
+      },
+      "scriptedSessionVitals": {
+        "FCP": {
+          "value": 392,
+          "rating": "good"
+        },
+        "LCP": {
+          "value": 1268,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0,
+          "rating": "good"
+        },
+        "INP": {
+          "value": 160,
+          "rating": "good"
+        }
+      },
+      "sceneDiagnostics": {
+        "state": "ready",
+        "view": "poster",
+        "eyewear": "none",
+        "quality": "low"
+      },
+      "extra3DTransferBytes": 301220,
+      "extra3DRequests": [
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/3-7ydblec4fh2.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"18a6-1a193fd4f03\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 2823
+        },
+        {
+          "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
+          "type": "Other",
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Keep-Alive": "timeout=5",
+            "x-nextjs-cache": "HIT",
+            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
+            "content-type": "image/svg+xml",
+            "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 739
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2p2jd75im6m_h.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"a96d-1a193fd4f0a\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 18066
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2khblt934m9wm.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"113a2-1a193fd4f09\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 27893
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/3zgby_62dsu85.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"e71c0-1a193fd4f09\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 251699
+        }
+      ]
+    },
+    {
+      "profile": {
+        "name": "Fast 4G / mobile emulation",
+        "latency": 85,
+        "downloadMbps": 9,
+        "uploadMbps": 1.5,
+        "cpu": 4,
+        "width": 390,
+        "height": 844,
+        "mobile": true
+      },
+      "initial": {
+        "transferBytes": 210415,
+        "javascriptTransferBytes": 143551,
+        "largestImage": {
+          "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
+          "type": "Image",
+          "status": 200,
+          "mimeType": "image/avif",
+          "headers": {
+            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+            "ETag": "W/\"b6cf-1a193b07864\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "46799",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
+            "Content-Type": "image/avif",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 47292
+        },
+        "requests": [
+          {
+            "url": "http://127.0.0.1:3200/",
+            "type": "Document",
+            "status": 200,
+            "mimeType": "text/html",
+            "headers": {
+              "Cache-Control": "s-maxage=31536000",
+              "Connection": "keep-alive",
+              "Content-Encoding": "gzip",
+              "Content-Type": "text/html; charset=utf-8",
+              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "ETag": "\"jsmqwd7iuy20o8\"",
+              "Keep-Alive": "timeout=5",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Transfer-Encoding": "chunked",
+              "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+              "X-Content-Type-Options": "nosniff",
+              "X-Frame-Options": "SAMEORIGIN",
+              "x-nextjs-cache": "HIT",
+              "x-nextjs-prerender": "1\n1",
+              "x-nextjs-stale-time": "300"
+            },
+            "encodedDataLength": 18833
+          },
+          {
+            "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
+            "type": "Image",
+            "status": 200,
+            "mimeType": "image/avif",
+            "headers": {
+              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+              "ETag": "W/\"b6cf-1a193b07864\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Content-Length": "46799",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
+              "Content-Type": "image/avif",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 47292
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/3cfn99dbrcvvp.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"4202-1a193fd4f07\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 6513
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"272e-1a193fd4ef4\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 4510
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"370a-1a193fd4efd\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 4172
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/3wevy0l6z882e.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"2eb3-1a193fd4ef5\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 5162
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"2d907-1a193fd4efa\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 50582
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/2ki52vdnbo2ft.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"381da-1a193fd4f04\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 72612
+          },
+          {
+            "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
+            "type": "Other",
+            "status": 200,
+            "mimeType": "image/svg+xml",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "cache-control": "public, max-age=0, must-revalidate",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Keep-Alive": "timeout=5",
+              "x-nextjs-cache": "HIT",
+              "Date": "Sat, 31 Oct 2026 22:09:38 GMT",
+              "content-type": "image/svg+xml",
+              "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 739
+          }
+        ]
+      },
+      "scriptedSessionVitals": {
+        "FCP": {
+          "value": 308,
+          "rating": "good"
+        },
+        "LCP": {
+          "value": 720,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0,
+          "rating": "good"
+        },
+        "INP": {
+          "value": 120,
+          "rating": "good"
+        }
+      },
+      "sceneDiagnostics": {
+        "state": "ready",
+        "view": "poster",
+        "eyewear": "none",
+        "quality": "low"
+      },
+      "extra3DTransferBytes": 301220,
+      "extra3DRequests": [
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/3-7ydblec4fh2.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"18a6-1a193fd4f03\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 2823
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2p2jd75im6m_h.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"a96d-1a193fd4f0a\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 18066
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2khblt934m9wm.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"113a2-1a193fd4f09\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 27893
+        },
+        {
+          "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
+          "type": "Other",
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Keep-Alive": "timeout=5",
+            "x-nextjs-cache": "HIT",
+            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
+            "content-type": "image/svg+xml",
+            "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 739
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/3zgby_62dsu85.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"e71c0-1a193fd4f09\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 251699
+        }
+      ]
+    },
+    {
+      "profile": {
+        "name": "Broadband / desktop",
+        "latency": 20,
+        "downloadMbps": 40,
+        "uploadMbps": 10,
+        "cpu": 1,
+        "width": 1440,
+        "height": 1000,
+        "mobile": false
+      },
+      "initial": {
+        "transferBytes": 190340,
+        "javascriptTransferBytes": 143551,
+        "largestImage": {
+          "url": "http://127.0.0.1:3200/robot/novahomin-robot-420.avif",
+          "type": "Image",
+          "status": 200,
+          "mimeType": "image/avif",
+          "headers": {
+            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+            "ETag": "W/\"6864-1a193f9123f\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "26724",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 21:58:56 GMT",
+            "Content-Type": "image/avif",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 27217
+        },
+        "requests": [
+          {
+            "url": "http://127.0.0.1:3200/",
+            "type": "Document",
+            "status": 200,
+            "mimeType": "text/html",
+            "headers": {
+              "Cache-Control": "s-maxage=31536000",
+              "Connection": "keep-alive",
+              "Content-Encoding": "gzip",
+              "Content-Type": "text/html; charset=utf-8",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "ETag": "\"jsmqwd7iuy20o8\"",
+              "Keep-Alive": "timeout=5",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Transfer-Encoding": "chunked",
+              "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+              "X-Content-Type-Options": "nosniff",
+              "X-Frame-Options": "SAMEORIGIN",
+              "x-nextjs-cache": "HIT",
+              "x-nextjs-prerender": "1\n1",
+              "x-nextjs-stale-time": "300"
+            },
+            "encodedDataLength": 18833
+          },
+          {
+            "url": "http://127.0.0.1:3200/robot/novahomin-robot-420.avif",
+            "type": "Image",
+            "status": 200,
+            "mimeType": "image/avif",
+            "headers": {
+              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+              "ETag": "W/\"6864-1a193f9123f\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Content-Length": "26724",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 21:58:56 GMT",
+              "Content-Type": "image/avif",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 27217
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/3cfn99dbrcvvp.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"4202-1a193fd4f07\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 6513
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"370a-1a193fd4efd\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 4172
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"272e-1a193fd4ef4\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 4510
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"2d907-1a193fd4efa\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 50582
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/3wevy0l6z882e.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"2eb3-1a193fd4ef5\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 5162
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/2ki52vdnbo2ft.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"381da-1a193fd4f04\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 72612
+          },
+          {
+            "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
+            "type": "Other",
+            "status": 200,
+            "mimeType": "image/svg+xml",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "cache-control": "public, max-age=0, must-revalidate",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Keep-Alive": "timeout=5",
+              "x-nextjs-cache": "HIT",
+              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "content-type": "image/svg+xml",
+              "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 739
+          }
+        ]
+      },
+      "scriptedSessionVitals": {
+        "FCP": {
+          "value": 488,
+          "rating": "good"
+        },
+        "LCP": {
+          "value": 488,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0,
+          "rating": "good"
+        },
+        "INP": {
+          "value": 40,
+          "rating": "good"
+        }
+      },
+      "sceneDiagnostics": {
+        "state": "ready",
+        "view": "poster",
+        "eyewear": "none",
+        "quality": "high"
+      },
+      "extra3DTransferBytes": 301220,
+      "extra3DRequests": [
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/3-7ydblec4fh2.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"18a6-1a193fd4f03\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 2823
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2p2jd75im6m_h.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"a96d-1a193fd4f0a\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 18066
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2khblt934m9wm.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"113a2-1a193fd4f09\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 27893
+        },
+        {
+          "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
+          "type": "Other",
+          "status": 200,
+          "mimeType": "image/svg+xml",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Keep-Alive": "timeout=5",
+            "x-nextjs-cache": "HIT",
+            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
+            "content-type": "image/svg+xml",
+            "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 739
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/3zgby_62dsu85.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"e71c0-1a193fd4f09\"",
+            "Connection": "keep-alive",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN"
+          },
+          "encodedDataLength": 251699
+        }
+      ]
+    }
+  ],
+  "bundle": {
+    "chunks": [
+      {
+        "file": ".next/static/chunks/0cz1d0mv5g_q7.js",
+        "rawBytes": 112594,
+        "gzipBytes": 39627,
+        "brotliBytes": 35158
+      },
+      {
+        "file": ".next/static/chunks/1j_b1xq_woyiy.js",
+        "rawBytes": 186631,
+        "gzipBytes": 49972,
+        "brotliBytes": 42000
+      },
+      {
+        "file": ".next/static/chunks/1tq6ppe__m8m-.js",
+        "rawBytes": 14090,
+        "gzipBytes": 3602,
+        "brotliBytes": 3224
+      },
+      {
+        "file": ".next/static/chunks/2khblt934m9wm.js",
+        "rawBytes": 70562,
+        "gzipBytes": 27310,
+        "brotliBytes": 24634
+      },
+      {
+        "file": ".next/static/chunks/2ki52vdnbo2ft.js",
+        "rawBytes": 229850,
+        "gzipBytes": 71991,
+        "brotliBytes": 61419
+      },
+      {
+        "file": ".next/static/chunks/2p2jd75im6m_h.js",
+        "rawBytes": 43373,
+        "gzipBytes": 17488,
+        "brotliBytes": 15920
+      },
+      {
+        "file": ".next/static/chunks/3-7ydblec4fh2.js",
+        "rawBytes": 6310,
+        "gzipBytes": 2253,
+        "brotliBytes": 1993
+      },
+      {
+        "file": ".next/static/chunks/3cfn99dbrcvvp.js",
+        "rawBytes": 16898,
+        "gzipBytes": 5942,
+        "brotliBytes": 5213
+      },
+      {
+        "file": ".next/static/chunks/3wevy0l6z882e.js",
+        "rawBytes": 11955,
+        "gzipBytes": 4591,
+        "brotliBytes": 3957
+      },
+      {
+        "file": ".next/static/chunks/3zgby_62dsu85.js",
+        "rawBytes": 946624,
+        "gzipBytes": 250934,
+        "brotliBytes": 205189
+      },
+      {
+        "file": ".next/static/chunks/turbopack-3-ry682tkyiqk.js",
+        "rawBytes": 10030,
+        "gzipBytes": 3940,
+        "brotliBytes": 3512
+      }
+    ],
+    "totals": {
+      "rawBytes": 1648917,
+      "gzipBytes": 477650,
+      "brotliBytes": 402219
+    },
+    "modelDownloadBytes": 0,
+    "modelExplanation": "Procedural geometry; no GLB/GLTF, textures, KTX2 or Draco/Meshopt decoder requests. Optional Three.js/R3F code is included in extra3DTransferBytes.",
+    "posterFiles": {
+      "novahomin-robot-360.avif": 22163,
+      "novahomin-robot-360.webp": 57780,
+      "novahomin-robot-420.avif": 26724,
+      "novahomin-robot-420.webp": 71346,
+      "novahomin-robot-540.avif": 46799,
+      "novahomin-robot-540.webp": 101098,
+      "novahomin-robot-670.avif": 62885,
+      "novahomin-robot-670.webp": 130710
+    }
+  },
+  "browserVersion": "156.0.8078.74"
+}
