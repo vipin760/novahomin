@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { blockWebGL, hydrated } from "./helpers";
 
 /** Required phone widths, each at a realistic height (including a 568 px-tall phone). */
 const phones: [number, number][] = [
@@ -29,21 +30,11 @@ const sequence = [
 async function startStory(page: Page, width: number, height: number) {
   // These tests cover layout and motion; the robot's box comes from the poster/rig,
   // so WebGL is switched off to keep them fast in every engine (3D: scene.spec.ts).
-  await page.addInitScript(() => {
-    const original = HTMLCanvasElement.prototype.getContext;
-    HTMLCanvasElement.prototype.getContext = function (
-      this: HTMLCanvasElement,
-      type: string,
-      ...args: unknown[]
-    ) {
-      if (type.includes("webgl")) return null;
-      return original.apply(this, [type, ...args] as Parameters<typeof original>);
-    } as typeof original;
-  });
+  await blockWebGL(page);
   await page.setViewportSize({ width, height });
   await page.goto("/");
   await expect(page.locator("html")).toHaveAttribute("data-cinema", "");
-  await expect(page.locator("#contact form")).not.toHaveAttribute("hidden");
+  await hydrated(page);
   await page.mouse.wheel(0, 4);
   await expect(page.locator("html")).toHaveAttribute("data-motion", "ready");
   await expect(page.locator(".story")).toHaveAttribute("data-beat", /\d+/);
@@ -230,7 +221,7 @@ test("the contact sheet slides in, traps focus and closes with Escape", async ({
 test("if the scroll library cannot load, the static layout shows everything", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.locator("#contact form")).not.toHaveAttribute("hidden");
+  await hydrated(page);
   await page.route("**/_next/static/chunks/*.js", (route) => route.abort());
   await page.mouse.wheel(0, 300);
   await expect(page.locator("html")).not.toHaveAttribute("data-cinema");

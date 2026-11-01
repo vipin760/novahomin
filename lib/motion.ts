@@ -96,9 +96,6 @@ export function setupMotion(
     },
   });
 
-  // Fonts and the sticky scenes can change offsets after first layout.
-  document.fonts?.ready.then(() => ScrollTrigger.refresh());
-
   return () => {
     media.revert();
     robotTrigger.kill();
@@ -226,7 +223,6 @@ function storyScene(gsap: typeof GSAP, landscape: boolean) {
   };
   document.addEventListener("click", onClick);
   if (location.hash) requestAnimationFrame(() => goTo(location.hash.slice(1), "instant"));
-  setTimeout(() => timeline.scrollTrigger?.refresh(), 0);
 
   return () => {
     document.removeEventListener("click", onClick);

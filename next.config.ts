@@ -1,11 +1,30 @@
 import type { NextConfig } from "next";
 
+/**
+ * Static-compatible CSP (no nonces: nonces would force dynamic rendering). Inline
+ * scripts are Next's RSC payload and the pre-paint story flag. Production only:
+ * development needs 'unsafe-eval' for fast refresh.
+ */
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+].join("; ");
+
+const production = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   cacheComponents: true,
   partialPrefetching: true,
-  images: { formats: ["image/avif", "image/webp"] },
   // Single page, ~6 KB of CSS: inline it to remove the render-blocking request.
   experimental: { inlineCss: true },
   async headers() {
@@ -20,6 +39,12 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+          // Browsers ignore HSTS over plain HTTP, so this is inert in local runs.
+          { key: "Strict-Transport-Security", value: "max-age=31536000" },
+          ...(production
+            ? [{ key: "Content-Security-Policy", value: contentSecurityPolicy }]
+            : []),
         ],
       },
       {

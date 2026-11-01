@@ -31,8 +31,10 @@ import {
 } from "three";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
+import type { Profile } from "./quality";
 
-export type Quality = "high" | "medium" | "low";
+/** Geometry and shading detail, from the device's quality profile (lib/robot/quality.ts). */
+export type Detail = Pick<Profile, "detail" | "particles" | "wear">;
 
 /**
  * Worn-metal variation without textures: object-space value noise modulates
@@ -81,9 +83,16 @@ type V3 = [number, number, number];
  * robots are rigid segments, so each joint is a Group (no skinning required).
  * Units: metres-ish, feet at y = 0, facing +z, total height ≈ 2.
  */
-export function buildRobot(quality: Quality) {
-  const seg = quality === "low" ? 1 : quality === "medium" ? 2 : 3;
-  const radial = quality === "low" ? 12 : quality === "medium" ? 18 : 24;
+/**
+ * Builds the robot in a few slices. `pause` (for example a setTimeout yield) runs
+ * between them so construction never blocks input for one long task.
+ */
+export async function buildRobot(
+  { detail, particles: particleCount, wear }: Detail,
+  pause: () => Promise<void> = async () => {},
+) {
+  const seg = detail;
+  const radial = [12, 18, 24][detail - 1];
 
   const materials = {
     armor: new MeshStandardMaterial({ color: 0x5c5f65, metalness: 0.8, roughness: 0.42 }),
@@ -95,7 +104,7 @@ export function buildRobot(quality: Quality) {
     face: new MeshStandardMaterial({ color: 0x040507, metalness: 0.5, roughness: 0.1 }),
     glow: new MeshBasicMaterial({ color: 0x8ff3ff, toneMapped: false }),
   };
-  if (quality !== "low") {
+  if (wear) {
     weather(materials.armor, 1);
     weather(materials.armorDark, 0.8);
     weather(materials.navy, 0.7);
@@ -110,6 +119,19 @@ export function buildRobot(quality: Quality) {
   const quaternion = new Quaternion();
   const euler = new Euler();
 
+  // Mirrored left/right parts share parameters: build each shape once, copy it per use.
+  const shared = new Map<string, BufferGeometry>();
+  const sharedSources = new Set<BufferGeometry>();
+  function once(key: string, create: () => BufferGeometry) {
+    let geometry = shared.get(key);
+    if (!geometry) {
+      geometry = create();
+      shared.set(key, geometry);
+      sharedSources.add(geometry);
+    }
+    return geometry;
+  }
+
   function add(
     parent: Object3D,
     key: Key,
@@ -118,8 +140,10 @@ export function buildRobot(quality: Quality) {
     rotation: V3 = [0, 0, 0],
     scale: V3 = [1, 1, 1],
   ) {
-    const geometry = source.index ? source.toNonIndexed() : source.clone();
-    source.dispose();
+    // Only shared shapes need a copy; one-off non-indexed geometry is used as is.
+    const isShared = sharedSources.has(source);
+    const geometry = source.index ? source.toNonIndexed() : isShared ? source.clone() : source;
+    if (!isShared && geometry !== source) source.dispose();
     for (const name of Object.keys(geometry.attributes))
       if (name !== "position" && name !== "normal") geometry.deleteAttribute(name);
     geometry.clearGroups();
@@ -136,7 +160,9 @@ export function buildRobot(quality: Quality) {
   }
 
   const box = (w: number, h: number, d: number, r = 0.012) =>
-    new RoundedBoxGeometry(w, h, d, seg, Math.min(r, w / 2.2, h / 2.2, d / 2.2));
+    once(`box ${w} ${h} ${d} ${r}`, () =>
+      new RoundedBoxGeometry(w, h, d, seg, Math.min(r, w / 2.2, h / 2.2, d / 2.2)),
+    );
 
   /** Extruded plate with individually chamfered corners [tl, tr, br, bl], facing +z. */
   function plate(
@@ -145,6 +171,16 @@ export function buildRobot(quality: Quality) {
     d: number,
     chamfer: number | [number, number, number, number] = 0.25,
     bevel = 0.005,
+  ) {
+    return once(`plate ${w} ${h} ${d} ${chamfer} ${bevel}`, () => plateShape(w, h, d, chamfer, bevel));
+  }
+
+  function plateShape(
+    w: number,
+    h: number,
+    d: number,
+    chamfer: number | [number, number, number, number],
+    bevel: number,
   ) {
     const [tl, tr, br, bl] = Array.isArray(chamfer)
       ? chamfer
@@ -174,7 +210,10 @@ export function buildRobot(quality: Quality) {
   }
 
   /** Rectangular frame (handle) with a through-hole, facing +z. */
-  function frame(w: number, h: number, d: number, t: number) {
+  const frame = (w: number, h: number, d: number, t: number) =>
+    once(`frame ${w} ${h} ${d} ${t}`, () => frameShape(w, h, d, t));
+
+  function frameShape(w: number, h: number, d: number, t: number) {
     const shape = new Shape();
     shape.moveTo(-w / 2, -h / 2);
     shape.lineTo(w / 2, -h / 2);
@@ -197,19 +236,22 @@ export function buildRobot(quality: Quality) {
     return geometry;
   }
 
-  function triangle(size: number) {
-    const shape = new Shape();
-    shape.moveTo(-size / 2, -size * 0.43);
-    shape.lineTo(size / 2, -size * 0.43);
-    shape.lineTo(0, size * 0.43);
-    return new ExtrudeGeometry(shape, { depth: 0.004, bevelEnabled: false });
-  }
+  const triangle = (size: number) =>
+    once(`triangle ${size}`, () => {
+      const shape = new Shape();
+      shape.moveTo(-size / 2, -size * 0.43);
+      shape.lineTo(size / 2, -size * 0.43);
+      shape.lineTo(0, size * 0.43);
+      return new ExtrudeGeometry(shape, { depth: 0.004, bevelEnabled: false });
+    });
 
   const cyl = (top: number, bottom: number, h: number, segments = radial) =>
-    new CylinderGeometry(top, bottom, h, segments);
+    once(`cyl ${top} ${bottom} ${h} ${segments}`, () => new CylinderGeometry(top, bottom, h, segments));
   /** Cylinder lying along the x axis (joint discs, pods). */
   const disc = (r: number, h: number, segments = radial) =>
-    new CylinderGeometry(r, r, h, segments).rotateZ(Math.PI / 2);
+    once(`disc ${r} ${h} ${segments}`, () =>
+      new CylinderGeometry(r, r, h, segments).rotateZ(Math.PI / 2),
+    );
 
   const joint = (parent: Object3D, position: V3, name: string) => {
     const group = new Group();
@@ -292,6 +334,8 @@ export function buildRobot(quality: Quality) {
     add(head, "armor", disc(0.034, 0.016), [s * 0.16, 0.04, 0]);
     add(head, "glow", box(0.01, 0.03, 0.008, 0.003), [s * 0.14, 0.03, 0.047]);
   }
+
+  await pause();
 
   // Arms
   type Arm = {
@@ -387,8 +431,11 @@ export function buildRobot(quality: Quality) {
     add(ankle, "orange", frame(0.07, 0.036, 0.01, 0.011), [s * 0.087, -0.095, 0.07], [0, s * (Math.PI / 2), 0]);
     return { hip, knee, ankle };
   }
+  await pause();
   const lLeg = leg(-1);
   const rLeg = leg(1);
+
+  await pause();
 
   // --- spectacles -------------------------------------------------------------
   const specsFrame = new MeshStandardMaterial({
@@ -550,7 +597,7 @@ export function buildRobot(quality: Quality) {
     toneMapped: false,
   });
   owned.add(globeLine).add(globeFill);
-  const sphereSource = new IcosahedronGeometry(0.1, quality === "low" ? 1 : 2);
+  const sphereSource = new IcosahedronGeometry(0.1, detail === 1 ? 1 : 2);
   const wire = new WireframeGeometry(sphereSource);
   sphereSource.dispose();
   const inner = new SphereGeometry(0.094, 24, 16);
@@ -571,8 +618,8 @@ export function buildRobot(quality: Quality) {
 
   // --- ambient particles (not on constrained devices) ---------------------------
   let particles: Points | null = null;
-  if (quality !== "low") {
-    const count = quality === "high" ? 180 : 70;
+  if (particleCount > 0) {
+    const count = particleCount;
     const positions = new Float32Array(count * 3);
     // Deterministic distribution: identical on every load.
     for (let i = 0; i < count; i++) {
@@ -598,10 +645,14 @@ export function buildRobot(quality: Quality) {
     root.add(particles);
   }
 
+  await pause();
+
   // --- merge collected parts: one draw call per joint × material ------------------
   const specsMaterialFor = (key: Key) =>
     key === "mech" ? specsFrame : key === "glow" ? specsLens : materials[key];
+  let mergedParents = 0;
   for (const [parent, byKey] of pending) {
+    if (++mergedParents % 10 === 0) await pause();
     for (const [key, list] of byKey) {
       const merged = mergeGeometries(list, false);
       for (const geometry of list) geometry.dispose();
@@ -613,6 +664,9 @@ export function buildRobot(quality: Quality) {
     }
   }
   pending.clear();
+  // Shared shapes were only copied from, unless a mesh uses one directly (VR headset).
+  for (const geometry of shared.values()) if (!geometries.has(geometry)) geometry.dispose();
+  shared.clear();
 
   return {
     root,
@@ -647,4 +701,4 @@ export function buildRobot(quality: Quality) {
   };
 }
 
-export type Robot = ReturnType<typeof buildRobot>;
+export type Robot = Awaited<ReturnType<typeof buildRobot>>;

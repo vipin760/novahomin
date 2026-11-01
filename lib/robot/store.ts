@@ -10,6 +10,8 @@ export const robot = {
   listeners: new Set<() => void>(),
   /** Registered by the WebGL scene; requests one frame (frameloop is on demand). */
   invalidate: undefined as (() => void) | undefined,
+  /** Frame-rate cap for the 3D twin (0 until a quality profile is chosen). */
+  fps: 0,
 };
 
 export function notify() {

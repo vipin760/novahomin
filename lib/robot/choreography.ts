@@ -28,23 +28,6 @@ type Key = {
   pose: Partial<Pose>;
 };
 
-const armsRest = {
-  lArmPitch: REST.lArmPitch,
-  lArmRoll: REST.lArmRoll,
-  lArmYaw: 0,
-  lElbow: REST.lElbow,
-  lWrist: 0,
-  lTwist: 0,
-  lGrip: REST.lGrip,
-  rArmPitch: REST.rArmPitch,
-  rArmRoll: REST.rArmRoll,
-  rArmYaw: 0,
-  rElbow: REST.rElbow,
-  rWrist: 0,
-  rTwist: 0,
-  rGrip: REST.rGrip,
-};
-
 const leftArmRest = {
   lArmPitch: REST.lArmPitch,
   lArmRoll: REST.lArmRoll,
@@ -64,6 +47,8 @@ const rightArmRest = {
   rTwist: 0,
   rGrip: REST.rGrip,
 };
+
+const armsRest = { ...leftArmRest, ...rightArmRest };
 
 /** Right hand at the bridge of the spectacles (joint angles solved for the rig). */
 const handAtFace = {

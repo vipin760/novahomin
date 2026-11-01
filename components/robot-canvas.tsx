@@ -1,12 +1,13 @@
 "use client";
 
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import { createRoot, useFrame, useThree } from "@react-three/fiber";
+import { Component, useLayoutEffect, useMemo, useRef, type ReactNode } from "react";
 import {
   BackSide,
   Box3,
   BoxGeometry,
   Color,
+  DirectionalLight,
   DoubleSide,
   MathUtils,
   Mesh,
@@ -15,12 +16,15 @@ import {
   PMREMGenerator,
   Scene as ThreeScene,
   Vector3,
+  WebGLRenderer,
   type PerspectiveCamera,
+  type Texture,
 } from "three";
-import { buildRobot, type Quality, type Robot } from "@/lib/robot/build";
+import { buildRobot, type Robot } from "@/lib/robot/build";
 import { copyPose, poseKeys, REST, type Pose } from "@/lib/robot/pose";
+import type { Profile, Probe } from "@/lib/robot/quality";
 import { robot } from "@/lib/robot/store";
-import { mark, measure, timed } from "@/lib/timing";
+import { mark, measure } from "@/lib/timing";
 
 mark("3d-module");
 measure("3d-download", "3d-start", "3d-module");
@@ -42,6 +46,9 @@ const bump = (value: number) =>
 const easeOut = (value: number) => 1 - Math.pow(1 - clamp01(value), 3);
 
 const scratch = new Vector3();
+
+/** Lets the browser handle input and paint between start-up steps. */
+const yieldToMain = () => new Promise<void>((resolve) => setTimeout(resolve, 0));
 
 /**
  * A dark photo studio for reflections: an overhead softbox, a soft key strip and
@@ -80,6 +87,56 @@ function studio() {
   };
 }
 
+/** Prefiltered reflection map of the studio, sized by quality tier. */
+function createEnvironment(renderer: WebGLRenderer, size: number) {
+  const pmrem = new PMREMGenerator(renderer);
+  const room = studio();
+  const texture = pmrem.fromScene(room.scene, 0.02, 0.1, 100, { size }).texture;
+  room.dispose();
+  pmrem.dispose();
+  return texture;
+}
+
+function createLights(count: Profile["lights"]) {
+  const lights: [number, number, number, number, number][] = [
+    [1.5, 5, 4, 2.2, 0xffffff],
+    [-3, 2.5, -3, 1.4, 0x49d9f5],
+    [-2.5, 1.5, 4, 0.6, 0xffffff],
+    [3.5, 1.6, -2.5, 0.8, 0x3478ff],
+  ];
+  return lights.slice(0, count).map(([x, y, z, intensity, color]) => {
+    const light = new DirectionalLight(color, intensity);
+    light.position.set(x, y, z);
+    return light;
+  });
+}
+
+function applyArm(
+  arm: Robot["left"],
+  side: -1 | 1,
+  pitch: number,
+  roll: number,
+  yaw: number,
+  elbow: number,
+  wrist: number,
+  twist: number,
+  grip: number,
+  breathe: number,
+  drift: number,
+) {
+  arm.shoulder.rotation.x = pitch + drift * 0.006;
+  arm.shoulder.rotation.z = roll + side * breathe * 0.005;
+  arm.shoulder.rotation.y = yaw;
+  arm.elbow.rotation.x = elbow;
+  arm.wrist.rotation.x = wrist;
+  arm.wrist.rotation.y = twist;
+  const fingers = arm.fingers;
+  for (let index = 0; index < fingers.length; index++) {
+    if (index < 4) fingers[index].rotation.z = -side * grip * (1.15 + index * 0.08);
+    else fingers[index].rotation.x = -grip * 0.5;
+  }
+}
+
 function applyPose(model: Robot, pose: Pose, time: number) {
   // Deterministic, low-amplitude idle: breathing and a slow head drift.
   const breathe = Math.sin(time * 1.4);
@@ -96,22 +153,9 @@ function applyPose(model: Robot, pose: Pose, time: number) {
     "YXZ",
   );
 
-  const arms = [
-    [model.left, -1, pose.lArmPitch, pose.lArmRoll, pose.lArmYaw, pose.lElbow, pose.lWrist, pose.lTwist, pose.lGrip],
-    [model.right, 1, pose.rArmPitch, pose.rArmRoll, pose.rArmYaw, pose.rElbow, pose.rWrist, pose.rTwist, pose.rGrip],
-  ] as const;
-  for (const [arm, side, pitch, roll, yaw, elbow, wrist, twist, grip] of arms) {
-    arm.shoulder.rotation.x = pitch + drift * 0.006;
-    arm.shoulder.rotation.z = roll + side * breathe * 0.005;
-    arm.shoulder.rotation.y = yaw;
-    arm.elbow.rotation.x = elbow;
-    arm.wrist.rotation.x = wrist;
-    arm.wrist.rotation.y = twist;
-    arm.fingers.forEach((finger, index) => {
-      if (index < 4) finger.rotation.z = -side * grip * (1.15 + index * 0.08);
-      else finger.rotation.x = -grip * 0.5;
-    });
-  }
+  // Scalar arguments only: nothing is allocated per frame.
+  applyArm(model.left, -1, pose.lArmPitch, pose.lArmRoll, pose.lArmYaw, pose.lElbow, pose.lWrist, pose.lTwist, pose.lGrip, breathe, drift);
+  applyArm(model.right, 1, pose.rArmPitch, pose.rArmRoll, pose.rArmYaw, pose.rElbow, pose.rWrist, pose.rTwist, pose.rGrip, breathe, drift);
 
   // Spectacles → VR headset
   const specs = pose.specs * (1 - smooth(0.3, 0.7, pose.visor));
@@ -146,13 +190,14 @@ function applyPose(model: Robot, pose: Pose, time: number) {
   model.holo.visible = pose.holo > 0.01;
   if (model.holo.visible) {
     model.holo.position.y = 1.2 + Math.sin(time * 0.8) * 0.006;
-    model.holoPanels.forEach((panel, index) => {
+    for (let index = 0; index < model.holoPanels.length; index++) {
+      const panel = model.holoPanels[index];
       const appear = easeOut(pose.holo * 1.6 - index * 0.2);
       const focus = 1 - Math.min(Math.abs(pose.holoFocus - index), 1);
       panel.group.scale.set(0.6 + 0.4 * appear, Math.max(appear, 0.001), 1);
       panel.fill.opacity = (0.035 + 0.11 * focus) * appear;
       panel.line.opacity = (0.3 + 0.65 * focus) * appear;
-    });
+    }
   }
 
   // Globe above the right palm
@@ -173,27 +218,43 @@ function applyPose(model: Robot, pose: Pose, time: number) {
   return vr > 0.5 ? "vr" : specs > 0.5 ? "spectacles" : "none";
 }
 
-function Scene({
-  quality,
-  onReady,
-  onEyewear,
-}: {
-  quality: Quality;
+class SceneBoundary extends Component<{ onError: () => void; children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  componentDidCatch() {
+    this.props.onError();
+  }
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
+
+type SceneProps = {
+  model: Robot;
+  environment: Texture;
+  profile: Profile;
   onReady: () => void;
   onEyewear: (value: Eyewear) => void;
-}) {
+  /** Reports a runtime pixel-ratio downgrade so later resizes keep it. */
+  onDpr: (dpr: number) => void;
+};
+
+function Scene({ model, environment, profile, onReady, onEyewear, onDpr }: SceneProps) {
   // Three objects are mutable by design; read them through get() inside effects.
   const get = useThree((state) => state.get);
   const size = useThree((state) => state.size);
   const invalidate = useThree((state) => state.invalidate);
-  const model = useMemo(() => timed("3d-build", () => buildRobot(quality)), [quality]);
+  const setDpr = useThree((state) => state.setDpr);
+  const lights = useMemo(() => createLights(profile.lights), [profile.lights]);
   const current = useRef<Pose>({ ...REST });
   const eyewear = useRef<Eyewear>("none");
+  const frames = useRef({ average: 0, slow: 0, dpr: profile.dpr });
 
   // Calibrate the rest pose to exactly match the poster's height and centre line.
   useLayoutEffect(() => {
     const { scene } = get();
-    copyPose(current.current, REST);
     applyPose(model, REST, 0);
     model.root.updateMatrixWorld(true);
     const bounds = new Box3().setFromObject(model.pelvis);
@@ -205,12 +266,17 @@ function Scene({
       0,
     );
     copyPose(current.current, robot.target);
-    scene.add(model.root);
+    scene.add(model.root, ...lights);
+    scene.environment = environment;
+    scene.environmentIntensity = 1;
     return () => {
-      scene.remove(model.root);
+      scene.remove(model.root, ...lights);
+      scene.environment = null;
       model.dispose();
+      environment.dispose();
+      for (const light of lights) light.dispose();
     };
-  }, [model, get]);
+  }, [model, environment, lights, get]);
 
   useLayoutEffect(() => {
     const camera = get().camera as PerspectiveCamera;
@@ -225,21 +291,12 @@ function Scene({
     invalidate();
   }, [get, size, invalidate]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const { gl, scene, camera } = get();
-    mark("3d-environment-start");
-    const pmrem = new PMREMGenerator(gl);
-    const room = studio();
-    const environment = pmrem.fromScene(room.scene, 0.02).texture;
-    scene.environment = environment;
-    scene.environmentIntensity = 1;
-    room.dispose();
-    pmrem.dispose();
-    measure("3d-environment", "3d-environment-start");
-
     robot.invalidate = invalidate;
     let cancelled = false;
     mark("3d-compile-start");
+    // Parallel shader compilation where supported (KHR_parallel_shader_compile).
     gl.compileAsync(scene, camera)
       .catch(() => undefined)
       .then(() => {
@@ -256,17 +313,30 @@ function Scene({
     return () => {
       cancelled = true;
       robot.invalidate = undefined;
-      scene.environment = null;
-      environment.dispose();
     };
   }, [get, invalidate, onReady]);
 
   useFrame((state, delta) => {
+    // Runtime adaptation: if frames stay well over budget for ~2 s, lower the pixel
+    // ratio step by step, then the frame-rate cap. Never raises it again (no flapping).
+    const fps = robot.fps || profile.fps;
+    const watch = frames.current;
+    if (delta < 0.25) {
+      watch.average = watch.average * 0.9 + delta * 0.1;
+      watch.slow = watch.average > (1 / fps) * 1.6 ? watch.slow + 1 : 0;
+      if (watch.slow > fps * 2) {
+        watch.slow = 0;
+        if (watch.dpr > 1) {
+          watch.dpr = Math.max(1, watch.dpr - 0.25);
+          onDpr(watch.dpr);
+          setDpr(watch.dpr);
+        } else if (fps > 30) robot.fps = 30;
+      }
+    }
     const dt = Math.min(delta, 0.1);
     const alpha = 1 - Math.exp(-dt * 5.5);
     const pose = current.current;
-    for (const key of poseKeys)
-      pose[key] += (robot.target[key] - pose[key]) * alpha;
+    for (const key of poseKeys) pose[key] += (robot.target[key] - pose[key]) * alpha;
     const label = applyPose(model, pose, state.clock.elapsedTime);
     if (label !== eyewear.current) {
       eyewear.current = label;
@@ -274,53 +344,106 @@ function Scene({
     }
   });
 
-  return (
-    <>
-      <directionalLight position={[1.5, 5, 4]} intensity={2.2} />
-      <directionalLight position={[-2.5, 1.5, 4]} intensity={0.6} />
-      <directionalLight position={[-3, 2.5, -3]} intensity={1.4} color={0x49d9f5} />
-      <directionalLight position={[3.5, 1.6, -2.5]} intensity={0.8} color={0x3478ff} />
-    </>
-  );
+  return null;
 }
 
-export default function RobotCanvas({
-  quality,
-  onReady,
-  onFail,
-  onEyewear,
-}: {
-  quality: Quality;
+type Callbacks = {
   onReady: () => void;
   onFail: () => void;
   onEyewear: (value: Eyewear) => void;
-}) {
-  return (
-    <Canvas
-      frameloop="demand"
-      dpr={[1, quality === "low" ? 1.25 : 1.5]}
-      gl={{
-        antialias: quality !== "low",
+};
+
+/**
+ * Mounts the scene into `host` using the probe's WebGL context. Start-up runs in
+ * separate tasks (renderer, environment, model, first render) so no single step
+ * blocks input for long. Resolves to a dispose function.
+ */
+export async function mountRobotScene(host: HTMLElement, probe: Probe, callbacks: Callbacks) {
+  const { canvas, context, profile } = probe;
+  let disposed = false;
+  canvas.style.display = "block";
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  host.appendChild(canvas);
+  const onLost = (event: Event) => {
+    event.preventDefault();
+    if (!disposed) callbacks.onFail();
+  };
+  canvas.addEventListener("webglcontextlost", onLost);
+
+  const size = () => ({ width: host.clientWidth, height: host.clientHeight, top: 0, left: 0 });
+  const root = createRoot(canvas);
+  let renderer: WebGLRenderer | undefined;
+  // configure() applies a whole configuration: omitted props fall back to defaults
+  // (frameloop "always"), so every call passes the complete set.
+  const config = {
+    gl: (defaults: ConstructorParameters<typeof WebGLRenderer>[0]) =>
+      (renderer ??= new WebGLRenderer({
+        ...defaults,
+        canvas,
+        context,
         alpha: true,
+        antialias: profile.antialias,
         stencil: false,
-        // "high-performance" forces a discrete-GPU switch on dual-GPU laptops (measured
-        // as a ~700 ms main-thread stall at context creation); this scene does not need it.
         powerPreference: "default",
-      }}
-      camera={{ fov: FOV, near: 0.1, far: 40, position: [0, 1, 10] }}
-      onCreated={({ gl }) => {
-        gl.setClearColor(0x000000, 0);
-        gl.domElement.addEventListener(
-          "webglcontextlost",
-          (event) => {
-            event.preventDefault();
-            onFail();
-          },
-          { once: true },
-        );
-      }}
-    >
-      <Scene quality={quality} onReady={onReady} onEyewear={onEyewear} />
-    </Canvas>
-  );
+      })),
+    dpr: [1, profile.dpr] as [number, number],
+    frameloop: "demand" as const,
+    camera: { fov: FOV, near: 0.1, far: 40, position: [0, 1, 10] as [number, number, number] },
+  };
+  const resize = new ResizeObserver(() => {
+    if (!disposed) root.configure({ ...config, size: size() });
+  });
+  const dispose = () => {
+    if (disposed) return;
+    disposed = true;
+    resize.disconnect();
+    root.unmount();
+    canvas.removeEventListener("webglcontextlost", onLost);
+    canvas.remove();
+  };
+
+  try {
+    await root.configure({ ...config, size: size() });
+    renderer!.setClearColor(0x000000, 0);
+    resize.observe(host);
+    await yieldToMain();
+    if (disposed) return dispose;
+
+    mark("3d-environment-start");
+    const environment = createEnvironment(renderer!, profile.environment);
+    measure("3d-environment", "3d-environment-start");
+    await yieldToMain();
+    if (disposed) {
+      environment.dispose();
+      return dispose;
+    }
+
+    mark("3d-build-start");
+    const model = await buildRobot(profile, yieldToMain);
+    measure("3d-build", "3d-build-start");
+    await yieldToMain();
+    if (disposed) {
+      model.dispose();
+      environment.dispose();
+      return dispose;
+    }
+
+    root.render(
+      <SceneBoundary onError={callbacks.onFail}>
+        <Scene
+          model={model}
+          environment={environment}
+          profile={profile}
+          onReady={callbacks.onReady}
+          onEyewear={callbacks.onEyewear}
+          onDpr={(dpr) => (config.dpr = [1, dpr])}
+        />
+      </SceneBoundary>,
+    );
+  } catch {
+    dispose();
+    callbacks.onFail();
+  }
+  return dispose;
 }

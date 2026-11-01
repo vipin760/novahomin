@@ -13,10 +13,3 @@ export function measure(name: string, from: string, to?: string) {
     // A start mark can be missing (for example after a fallback); never fail the page for metrics.
   }
 }
-
-export function timed<T>(name: string, run: () => T): T {
-  mark(`${name}-start`);
-  const result = run();
-  measure(name, `${name}-start`);
-  return result;
-}

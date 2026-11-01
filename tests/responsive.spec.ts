@@ -1,7 +1,8 @@
 import { expect, test, type Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { blockWebGL, hydrated } from "./helpers";
 
-const widths = [320, 360, 375, 390, 414, 430, 768, 1024, 1280, 1440, 1920];
+const widths = [320, 360, 375, 390, 414, 430, 600, 768, 820, 1024, 1280, 1366, 1440, 1600, 1920];
 const heightFor = (width: number) =>
   width < 700 ? 844 : width < 1024 ? 1024 : width >= 1920 ? 1080 : width === 1024 ? 768 : 900;
 
@@ -158,17 +159,7 @@ test("content, navigation and poster work without JavaScript", async ({ browser 
 });
 
 test("WebGL unavailable keeps the poster and all content usable", async ({ page }) => {
-  await page.addInitScript(() => {
-    const original = HTMLCanvasElement.prototype.getContext;
-    HTMLCanvasElement.prototype.getContext = function (
-      this: HTMLCanvasElement,
-      type: string,
-      ...args: unknown[]
-    ) {
-      if (type.includes("webgl")) return null;
-      return original.apply(this, [type, ...args] as Parameters<typeof original>);
-    } as typeof original;
-  });
+  await blockWebGL(page);
   await page.goto("/");
   await page.mouse.wheel(0, 900);
   await page.waitForTimeout(800);
@@ -184,7 +175,7 @@ test("failed enhancement downloads leave a complete, static page", async ({
   browserName,
 }) => {
   await page.goto("/");
-  await expect(page.locator("#contact form")).not.toHaveAttribute("hidden");
+  await hydrated(page);
   // Block every lazily loaded chunk (3D scene and GSAP) before the first interaction.
   await page.route("**/_next/static/chunks/*.js", (route) => route.abort());
   await page.mouse.move(200, 200);

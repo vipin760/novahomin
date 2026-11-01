@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { hydrated } from "./helpers";
 
 // Rendering tests share a GPU; keep this file sequential to avoid competing scenes.
 test.describe.configure({ mode: "default" });
@@ -40,11 +41,6 @@ async function scrollToBeat(page: Page, units: number) {
     const unit = (story.offsetHeight - viewport.offsetHeight) / 12;
     scrollTo({ top: story.getBoundingClientRect().top + scrollY + units * unit, behavior: "instant" });
   }, units);
-}
-
-/** Interaction listeners attach on hydration; the enquiry form un-hides at the same time. */
-async function hydrated(page: Page) {
-  await expect(page.locator("#contact form")).not.toHaveAttribute("hidden");
 }
 
 /** Scroll so a section is at entry progress p (1 = its top at the viewport top). */
@@ -100,7 +96,11 @@ for (const width of [390, 1440]) {
       return;
     }
     await expect(stage).toHaveAttribute("data-state", "ready", { timeout: 30_000 });
-    await expect(stage).toHaveAttribute("data-quality", width < 700 ? "low" : /high|medium/);
+    // Adaptive tiers (lib/robot/quality.ts): phones get a mobile tier, desktops a desktop tier.
+    await expect(stage).toHaveAttribute(
+      "data-quality",
+      width < 700 ? /^mobile-(high|low)$/ : /^desktop(-high)?$/,
+    );
     await expect(page.locator("html")).toHaveAttribute("data-motion", "ready");
 
     // Hero shows the supplied reference; the 3D scene is idle.
