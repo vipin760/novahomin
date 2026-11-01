@@ -196,6 +196,8 @@ export function RobotStage() {
       data-eyewear="none"
     >
       <div className="stage-atmosphere" aria-hidden="true" />
+      {/* The rig is scaled/shifted per story beat on compact screens (--rig-s, --rig-y). */}
+      <div className="stage-rig">
       <div className="stage-orbit" aria-hidden="true">
         <i />
       </div>
@@ -231,6 +233,7 @@ export function RobotStage() {
         </div>
       </div>
       <div className="stage-floor" aria-hidden="true" />
+      </div>
     </div>
   );
 }

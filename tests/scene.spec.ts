@@ -32,6 +32,16 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+/** Compact screens: scroll to a position in the story, in beat units (lib/story.ts). */
+async function scrollToBeat(page: Page, units: number) {
+  await page.evaluate((units) => {
+    const story = document.querySelector<HTMLElement>(".story")!;
+    const viewport = story.querySelector<HTMLElement>(".story-viewport")!;
+    const unit = (story.offsetHeight - viewport.offsetHeight) / 12;
+    scrollTo({ top: story.getBoundingClientRect().top + scrollY + units * unit, behavior: "instant" });
+  }, units);
+}
+
 /** Interaction listeners attach on hydration; the enquiry form un-hides at the same time. */
 async function hydrated(page: Page) {
   await expect(page.locator("#contact form")).not.toHaveAttribute("hidden");
@@ -97,18 +107,31 @@ for (const width of [390, 1440]) {
     await expect(stage).toHaveAttribute("data-view", "poster");
     await expectIdle(page);
 
-    const checkpoints: [string, number, number, string, string][] = [
-      ["about", 1.08, 0, "3d", "spectacles"],
-      ["services", 1, 0.6, "3d", "spectacles"],
-      ["expertise", 1.12, 0, "3d", "vr"],
-      ["process", 1, 0.6, "3d", "vr"],
-      ["visibility", 1, 0, "3d", "vr"],
-      ["why", 1.22, 0, "3d", "none"],
-      ["contact", 1, 0, "poster", "none"],
-    ];
+    // Desktop: section positions. Compact: story beats (SEO & GEO precedes Expertise there).
+    const checkpoints: [string, number, number, string, string][] =
+      width >= 1024
+        ? [
+            ["about", 1.08, 0, "3d", "spectacles"],
+            ["services", 1, 0.6, "3d", "spectacles"],
+            ["expertise", 1.12, 0, "3d", "vr"],
+            ["process", 1, 0.6, "3d", "vr"],
+            ["visibility", 1, 0, "3d", "vr"],
+            ["why", 1.22, 0, "3d", "none"],
+            ["contact", 1, 0, "poster", "none"],
+          ]
+        : [
+            ["about", 1.5, 0, "3d", "spectacles"],
+            ["services", 3.4, 0, "3d", "spectacles"],
+            ["visibility", 7.4, 0, "3d", "spectacles"],
+            ["expertise", 8.5, 0, "3d", "vr"],
+            ["process", 9.4, 0, "3d", "vr"],
+            ["why", 10.5, 0, "3d", "none"],
+            ["contact", 11.5, 0, "poster", "none"],
+          ];
     const run = async (list: typeof checkpoints) => {
       for (const [id, p, q, view, eyewear] of list) {
-        await scrollToSection(page, id, p, q);
+        if (width >= 1024) await scrollToSection(page, id, p, q);
+        else await scrollToBeat(page, p);
         await expect(stage, `${id} view`).toHaveAttribute("data-view", view);
         if (view === "3d")
           await expect(stage, `${id} eyewear`).toHaveAttribute("data-eyewear", eyewear);
@@ -128,7 +151,8 @@ for (const width of [390, 1440]) {
     await expectIdle(page);
     // Reverse direction.
     await run([...checkpoints].reverse().slice(1));
-    await scrollToSection(page, "top", 1);
+    if (width >= 1024) await scrollToSection(page, "top", 1);
+    else await scrollToBeat(page, 0);
     await expect(stage).toHaveAttribute("data-view", "poster");
     await expectIdle(page);
     expect(errors).toEqual([]);

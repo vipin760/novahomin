@@ -1,6 +1,6 @@
 {
-  "buildID": "x_HO28Eu28UW_Hxcm-zLr",
-  "measuredAt": "2026-10-31T22:07:10.144Z",
+  "buildID": "1Efr_TDUUEqjmaYJF1kDr",
+  "measuredAt": "2026-11-01T05:04:05.537Z",
   "baseURL": "http://127.0.0.1:3200",
   "environment": {
     "platform": "darwin",
@@ -17,19 +17,19 @@
           "run": 1,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:07:13.596Z",
+          "fetchTime": "2026-11-01T05:04:08.083Z",
           "scores": {
-            "performance": 95,
+            "performance": 97,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 956.14195,
-          "lcp": 2403.2839,
+          "fcp": 903.4592,
+          "lcp": 2437.9184,
           "cls": 0,
-          "tbt": 197,
+          "tbt": 127,
           "inp": null,
-          "transferBytes": 190340,
+          "transferBytes": 199441,
           "settings": {
             "output": [
               "html",
@@ -93,13 +93,13 @@
             {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "250 ms",
-              "score": 0.5
+              "displayValue": "180 ms",
+              "score": 0.75
             },
             {
               "id": "unused-javascript",
               "title": "Reduce unused JavaScript",
-              "displayValue": "Est savings of 52 KiB",
+              "displayValue": "Est savings of 51 KiB",
               "score": 0
             },
             {
@@ -116,8 +116,8 @@
             {
               "id": "image-delivery-insight",
               "title": "Improve image delivery",
-              "displayValue": "Est savings of 19 KiB",
-              "score": 0.5
+              "displayValue": "Est savings of 21 KiB",
+              "score": 0
             },
             {
               "id": "legacy-javascript-insight",
@@ -131,19 +131,19 @@
           "run": 2,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:07:24.511Z",
+          "fetchTime": "2026-11-01T05:04:17.870Z",
           "scores": {
-            "performance": 96,
+            "performance": 97,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 955.6607,
-          "lcp": 2388.3214000000003,
+          "fcp": 904.8023,
+          "lcp": 2430.6045999999997,
           "cls": 0,
-          "tbt": 167,
+          "tbt": 123,
           "inp": null,
-          "transferBytes": 190340,
+          "transferBytes": 199441,
           "settings": {
             "output": [
               "html",
@@ -207,122 +207,13 @@
             {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "220 ms",
-              "score": 0.6
+              "displayValue": "170 ms",
+              "score": 0.76
             },
             {
               "id": "unused-javascript",
               "title": "Reduce unused JavaScript",
-              "displayValue": "Est savings of 52 KiB",
-              "score": 0
-            },
-            {
-              "id": "legacy-javascript",
-              "title": "Avoid serving legacy JavaScript to modern browsers",
-              "displayValue": "Est savings of 13 KiB",
-              "score": 0
-            },
-            {
-              "id": "image-delivery-insight",
-              "title": "Improve image delivery",
-              "displayValue": "Est savings of 19 KiB",
-              "score": 0.5
-            },
-            {
-              "id": "legacy-javascript-insight",
-              "title": "Legacy JavaScript",
-              "displayValue": "Est savings of 14 KiB",
-              "score": 0
-            }
-          ]
-        },
-        {
-          "run": 3,
-          "lighthouseVersion": "12.8.2",
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:07:34.903Z",
-          "scores": {
-            "performance": 95,
-            "accessibility": 100,
-            "best-practices": 100,
-            "seo": 100
-          },
-          "fcp": 937.05045,
-          "lcp": 2476.1009,
-          "cls": 0,
-          "tbt": 166,
-          "inp": null,
-          "transferBytes": 190340,
-          "settings": {
-            "output": [
-              "html",
-              "json"
-            ],
-            "maxWaitForFcp": 30000,
-            "maxWaitForLoad": 45000,
-            "pauseAfterFcpMs": 1000,
-            "pauseAfterLoadMs": 1000,
-            "networkQuietThresholdMs": 1000,
-            "cpuQuietThresholdMs": 1000,
-            "formFactor": "mobile",
-            "throttling": {
-              "rttMs": 150,
-              "throughputKbps": 1638.4,
-              "requestLatencyMs": 562.5,
-              "downloadThroughputKbps": 1474.5600000000002,
-              "uploadThroughputKbps": 675,
-              "cpuSlowdownMultiplier": 4
-            },
-            "throttlingMethod": "simulate",
-            "screenEmulation": {
-              "mobile": true,
-              "width": 412,
-              "height": 823,
-              "deviceScaleFactor": 1.75,
-              "disabled": false
-            },
-            "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
-            "auditMode": false,
-            "gatherMode": false,
-            "clearStorageTypes": [
-              "file_systems",
-              "shader_cache",
-              "service_workers",
-              "cache_storage"
-            ],
-            "disableStorageReset": false,
-            "debugNavigation": false,
-            "channel": "node",
-            "usePassiveGathering": false,
-            "disableFullPageScreenshot": false,
-            "skipAboutBlank": false,
-            "blankPage": "about:blank",
-            "ignoreStatusCode": false,
-            "locale": "en-US",
-            "blockedUrlPatterns": null,
-            "additionalTraceCategories": null,
-            "extraHeaders": null,
-            "precomputedLanternData": null,
-            "onlyAudits": null,
-            "onlyCategories": [
-              "performance",
-              "accessibility",
-              "best-practices",
-              "seo"
-            ],
-            "skipAudits": null
-          },
-          "failures": [
-            {
-              "id": "max-potential-fid",
-              "title": "Max Potential First Input Delay",
-              "displayValue": "220 ms",
-              "score": 0.61
-            },
-            {
-              "id": "unused-javascript",
-              "title": "Reduce unused JavaScript",
-              "displayValue": "Est savings of 52 KiB",
+              "displayValue": "Est savings of 51 KiB",
               "score": 0
             },
             {
@@ -339,7 +230,121 @@
             {
               "id": "image-delivery-insight",
               "title": "Improve image delivery",
-              "displayValue": "Est savings of 19 KiB",
+              "displayValue": "Est savings of 21 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript-insight",
+              "title": "Legacy JavaScript",
+              "displayValue": "Est savings of 14 KiB",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "lighthouseVersion": "12.8.2",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "fetchTime": "2026-11-01T05:04:27.271Z",
+          "scores": {
+            "performance": 97,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "fcp": 907.73775,
+          "lcp": 2437.4755,
+          "cls": 0,
+          "tbt": 128,
+          "inp": null,
+          "transferBytes": 199441,
+          "settings": {
+            "output": [
+              "html",
+              "json"
+            ],
+            "maxWaitForFcp": 30000,
+            "maxWaitForLoad": 45000,
+            "pauseAfterFcpMs": 1000,
+            "pauseAfterLoadMs": 1000,
+            "networkQuietThresholdMs": 1000,
+            "cpuQuietThresholdMs": 1000,
+            "formFactor": "mobile",
+            "throttling": {
+              "rttMs": 150,
+              "throughputKbps": 1638.4,
+              "requestLatencyMs": 562.5,
+              "downloadThroughputKbps": 1474.5600000000002,
+              "uploadThroughputKbps": 675,
+              "cpuSlowdownMultiplier": 4
+            },
+            "throttlingMethod": "simulate",
+            "screenEmulation": {
+              "mobile": true,
+              "width": 412,
+              "height": 823,
+              "deviceScaleFactor": 1.75,
+              "disabled": false
+            },
+            "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+            "auditMode": false,
+            "gatherMode": false,
+            "clearStorageTypes": [
+              "file_systems",
+              "shader_cache",
+              "service_workers",
+              "cache_storage"
+            ],
+            "disableStorageReset": false,
+            "debugNavigation": false,
+            "channel": "node",
+            "usePassiveGathering": false,
+            "disableFullPageScreenshot": false,
+            "skipAboutBlank": false,
+            "blankPage": "about:blank",
+            "ignoreStatusCode": false,
+            "locale": "en-US",
+            "blockedUrlPatterns": null,
+            "additionalTraceCategories": null,
+            "extraHeaders": null,
+            "precomputedLanternData": null,
+            "onlyAudits": null,
+            "onlyCategories": [
+              "performance",
+              "accessibility",
+              "best-practices",
+              "seo"
+            ],
+            "skipAudits": null
+          },
+          "failures": [
+            {
+              "id": "max-potential-fid",
+              "title": "Max Potential First Input Delay",
+              "displayValue": "180 ms",
+              "score": 0.74
+            },
+            {
+              "id": "unused-javascript",
+              "title": "Reduce unused JavaScript",
+              "displayValue": "Est savings of 51 KiB",
+              "score": 0
+            },
+            {
+              "id": "legacy-javascript",
+              "title": "Avoid serving legacy JavaScript to modern browsers",
+              "displayValue": "Est savings of 13 KiB",
+              "score": 0
+            },
+            {
+              "id": "forced-reflow-insight",
+              "title": "Forced reflow",
+              "score": 0
+            },
+            {
+              "id": "image-delivery-insight",
+              "title": "Improve image delivery",
+              "displayValue": "Est savings of 21 KiB",
               "score": 0
             },
             {
@@ -351,7 +356,7 @@
           ]
         }
       ],
-      "medianByLCP": 1
+      "medianByLCP": 3
     },
     "desktop": {
       "runs": [
@@ -359,19 +364,19 @@
           "run": 1,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:07:44.916Z",
+          "fetchTime": "2026-11-01T05:04:36.545Z",
           "scores": {
             "performance": 100,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 251.0639,
-          "lcp": 541.1278,
+          "fcp": 246.44155,
+          "lcp": 535.8831,
           "cls": 0,
           "tbt": 0,
           "inp": null,
-          "transferBytes": 185779,
+          "transferBytes": 194880,
           "settings": {
             "output": [
               "html",
@@ -461,19 +466,19 @@
           "run": 2,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:07:55.807Z",
+          "fetchTime": "2026-11-01T05:04:45.404Z",
           "scores": {
             "performance": 100,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 289.8209,
-          "lcp": 589.6418,
+          "fcp": 241.51225,
+          "lcp": 530.0245,
           "cls": 0,
-          "tbt": 6,
+          "tbt": 0,
           "inp": null,
-          "transferBytes": 185779,
+          "transferBytes": 194880,
           "settings": {
             "output": [
               "html",
@@ -544,13 +549,18 @@
               "id": "legacy-javascript",
               "title": "Avoid serving legacy JavaScript to modern browsers",
               "displayValue": "Est savings of 13 KiB",
-              "score": 0.5
+              "score": 0
+            },
+            {
+              "id": "forced-reflow-insight",
+              "title": "Forced reflow",
+              "score": 0
             },
             {
               "id": "legacy-javascript-insight",
               "title": "Legacy JavaScript",
               "displayValue": "Est savings of 14 KiB",
-              "score": 0.5
+              "score": 0
             }
           ]
         },
@@ -558,19 +568,19 @@
           "run": 3,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:08:07.296Z",
+          "fetchTime": "2026-11-01T05:04:54.294Z",
           "scores": {
             "performance": 100,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 261.5511,
-          "lcp": 526.1021999999999,
+          "fcp": 241.8092,
+          "lcp": 530.6184,
           "cls": 0,
-          "tbt": 8,
+          "tbt": 0,
           "inp": null,
-          "transferBytes": 185779,
+          "transferBytes": 194880,
           "settings": {
             "output": [
               "html",
@@ -657,7 +667,7 @@
           ]
         }
       ],
-      "medianByLCP": 1
+      "medianByLCP": 3
     },
     "mobile-applied": {
       "runs": [
@@ -665,19 +675,19 @@
           "run": 1,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:08:18.631Z",
+          "fetchTime": "2026-11-01T05:05:03.197Z",
           "scores": {
-            "performance": 90,
+            "performance": 96,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 824.005,
-          "lcp": 1795.898,
-          "cls": 0,
-          "tbt": 390.8009999999998,
+          "fcp": 702.622,
+          "lcp": 1781.145,
+          "cls": 0.0002027379788847074,
+          "tbt": 218.9690000000004,
           "inp": null,
-          "transferBytes": 190340,
+          "transferBytes": 199441,
           "settings": {
             "output": [
               "html",
@@ -741,14 +751,14 @@
             {
               "id": "total-blocking-time",
               "title": "Total Blocking Time",
-              "displayValue": "390 ms",
-              "score": 0.69
+              "displayValue": "220 ms",
+              "score": 0.88
             },
             {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "280 ms",
-              "score": 0.4
+              "displayValue": "170 ms",
+              "score": 0.77
             },
             {
               "id": "unused-javascript",
@@ -765,7 +775,7 @@
             {
               "id": "image-delivery-insight",
               "title": "Improve image delivery",
-              "displayValue": "Est savings of 19 KiB",
+              "displayValue": "Est savings of 21 KiB",
               "score": 0.5
             },
             {
@@ -780,19 +790,19 @@
           "run": 2,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:08:41.884Z",
+          "fetchTime": "2026-11-01T05:05:24.578Z",
           "scores": {
-            "performance": 94,
+            "performance": 95,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 751.603,
-          "lcp": 2368.426,
+          "fcp": 705.031,
+          "lcp": 1793.378,
           "cls": 0.0002027379788847074,
-          "tbt": 230.21500000000026,
+          "tbt": 234.76900000000012,
           "inp": null,
-          "transferBytes": 190340,
+          "transferBytes": 199441,
           "settings": {
             "output": [
               "html",
@@ -862,32 +872,32 @@
             {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "210 ms",
-              "score": 0.62
+              "displayValue": "180 ms",
+              "score": 0.74
             },
             {
               "id": "unused-javascript",
               "title": "Reduce unused JavaScript",
               "displayValue": "Est savings of 52 KiB",
-              "score": 0
+              "score": 0.5
             },
             {
               "id": "legacy-javascript",
               "title": "Avoid serving legacy JavaScript to modern browsers",
               "displayValue": "Est savings of 13 KiB",
-              "score": 0
+              "score": 0.5
             },
             {
               "id": "image-delivery-insight",
               "title": "Improve image delivery",
-              "displayValue": "Est savings of 19 KiB",
+              "displayValue": "Est savings of 21 KiB",
               "score": 0.5
             },
             {
               "id": "legacy-javascript-insight",
               "title": "Legacy JavaScript",
               "displayValue": "Est savings of 14 KiB",
-              "score": 0
+              "score": 0.5
             }
           ]
         },
@@ -895,19 +905,19 @@
           "run": 3,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-10-31T22:09:04.537Z",
+          "fetchTime": "2026-11-01T05:05:45.948Z",
           "scores": {
-            "performance": 88,
+            "performance": 96,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 715.092,
-          "lcp": 2391.508,
-          "cls": 0,
-          "tbt": 395.76699999999994,
+          "fcp": 724.454,
+          "lcp": 1802.719,
+          "cls": 0.0002027379788847074,
+          "tbt": 205.00699999999995,
           "inp": null,
-          "transferBytes": 190340,
+          "transferBytes": 199441,
           "settings": {
             "output": [
               "html",
@@ -971,38 +981,38 @@
             {
               "id": "total-blocking-time",
               "title": "Total Blocking Time",
-              "displayValue": "400 ms",
-              "score": 0.68
+              "displayValue": "210 ms",
+              "score": 0.89
             },
             {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "280 ms",
-              "score": 0.4
+              "displayValue": "160 ms",
+              "score": 0.81
             },
             {
               "id": "unused-javascript",
               "title": "Reduce unused JavaScript",
               "displayValue": "Est savings of 52 KiB",
-              "score": 0
+              "score": 0.5
             },
             {
               "id": "legacy-javascript",
               "title": "Avoid serving legacy JavaScript to modern browsers",
               "displayValue": "Est savings of 13 KiB",
-              "score": 0
+              "score": 0.5
             },
             {
               "id": "image-delivery-insight",
               "title": "Improve image delivery",
-              "displayValue": "Est savings of 19 KiB",
+              "displayValue": "Est savings of 21 KiB",
               "score": 0.5
             },
             {
               "id": "legacy-javascript-insight",
               "title": "Legacy JavaScript",
               "displayValue": "Est savings of 14 KiB",
-              "score": 0
+              "score": 0.5
             }
           ]
         }
@@ -1023,8 +1033,8 @@
         "mobile": true
       },
       "initial": {
-        "transferBytes": 210415,
-        "javascriptTransferBytes": 143551,
+        "transferBytes": 219516,
+        "javascriptTransferBytes": 144064,
         "largestImage": {
           "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
           "type": "Image",
@@ -1040,7 +1050,7 @@
             "Accept-Ranges": "bytes",
             "Content-Length": "46799",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
             "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
             "Content-Type": "image/avif",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1058,8 +1068,8 @@
               "Connection": "keep-alive",
               "Content-Encoding": "gzip",
               "Content-Type": "text/html; charset=utf-8",
-              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
-              "ETag": "\"jsmqwd7iuy20o8\"",
+              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
+              "ETag": "\"91vnrskskf2m14\"",
               "Keep-Alive": "timeout=5",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -1071,7 +1081,7 @@
               "x-nextjs-prerender": "1\n1",
               "x-nextjs-stale-time": "300"
             },
-            "encodedDataLength": 18833
+            "encodedDataLength": 27421
           },
           {
             "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
@@ -1088,7 +1098,7 @@
               "Accept-Ranges": "bytes",
               "Content-Length": "46799",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
               "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
               "Content-Type": "image/avif",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1104,44 +1114,20 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"272e-1a193fd4ef4\"",
+              "ETag": "W/\"272e-1a19573f9e0\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
             },
             "encodedDataLength": 4510
-          },
-          {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
-            "type": "Script",
-            "status": 200,
-            "mimeType": "application/javascript",
-            "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
-              "Content-Encoding": "gzip",
-              "ETag": "W/\"370a-1a193fd4efd\"",
-              "Connection": "keep-alive",
-              "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
-              "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
-              "Content-Type": "application/javascript; charset=UTF-8",
-              "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
-            },
-            "encodedDataLength": 4172
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/3cfn99dbrcvvp.js",
@@ -1152,15 +1138,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"4202-1a193fd4f07\"",
+              "ETag": "W/\"4202-1a19573f9ef\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1168,7 +1154,7 @@
             "encodedDataLength": 6513
           },
           {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/3wevy0l6z882e.js",
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
             "type": "Script",
             "status": 200,
             "mimeType": "application/javascript",
@@ -1176,20 +1162,44 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2eb3-1a193fd4ef5\"",
+              "ETag": "W/\"370a-1a19573f9f2\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:26 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
             },
-            "encodedDataLength": 5162
+            "encodedDataLength": 4172
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/0ceu4918hn53m.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"360b-1a19573f9e4\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 5675
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
@@ -1200,15 +1210,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2d907-1a193fd4efa\"",
+              "ETag": "W/\"2d907-1a19573f9e1\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1224,15 +1234,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"381da-1a193fd4f04\"",
+              "ETag": "W/\"381da-1a19573f9e2\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:25 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1253,7 +1263,7 @@
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Keep-Alive": "timeout=5",
               "x-nextjs-cache": "HIT",
-              "Date": "Sat, 31 Oct 2026 22:09:27 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:07 GMT",
               "content-type": "image/svg+xml",
               "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1264,11 +1274,11 @@
       },
       "scriptedSessionVitals": {
         "FCP": {
-          "value": 392,
+          "value": 516,
           "rating": "good"
         },
         "LCP": {
-          "value": 1268,
+          "value": 1240,
           "rating": "good"
         },
         "CLS": {
@@ -1276,7 +1286,7 @@
           "rating": "good"
         },
         "INP": {
-          "value": 160,
+          "value": 112,
           "rating": "good"
         }
       },
@@ -1286,10 +1296,10 @@
         "eyewear": "none",
         "quality": "low"
       },
-      "extra3DTransferBytes": 301220,
+      "extra3DTransferBytes": 302640,
       "extra3DRequests": [
         {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/3-7ydblec4fh2.js",
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2rsiak35olg4d.js",
           "type": "Script",
           "status": 200,
           "mimeType": "application/javascript",
@@ -1297,20 +1307,20 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"18a6-1a193fd4f03\"",
+            "ETag": "W/\"2918-1a19573f9e1\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
           },
-          "encodedDataLength": 2823
+          "encodedDataLength": 4243
         },
         {
           "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
@@ -1326,7 +1336,7 @@
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Keep-Alive": "timeout=5",
             "x-nextjs-cache": "HIT",
-            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
             "content-type": "image/svg+xml",
             "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1342,15 +1352,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"a96d-1a193fd4f0a\"",
+            "ETag": "W/\"a96d-1a19573f9ef\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1366,15 +1376,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"113a2-1a193fd4f09\"",
+            "ETag": "W/\"113a2-1a19573f9f3\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1390,15 +1400,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"e71c0-1a193fd4f09\"",
+            "ETag": "W/\"e71c0-1a19573f9e3\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:28 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1419,8 +1429,8 @@
         "mobile": true
       },
       "initial": {
-        "transferBytes": 210415,
-        "javascriptTransferBytes": 143551,
+        "transferBytes": 219516,
+        "javascriptTransferBytes": 144064,
         "largestImage": {
           "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
           "type": "Image",
@@ -1436,7 +1446,7 @@
             "Accept-Ranges": "bytes",
             "Content-Length": "46799",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
             "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
             "Content-Type": "image/avif",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1454,8 +1464,8 @@
               "Connection": "keep-alive",
               "Content-Encoding": "gzip",
               "Content-Type": "text/html; charset=utf-8",
-              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
-              "ETag": "\"jsmqwd7iuy20o8\"",
+              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
+              "ETag": "\"91vnrskskf2m14\"",
               "Keep-Alive": "timeout=5",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -1467,7 +1477,7 @@
               "x-nextjs-prerender": "1\n1",
               "x-nextjs-stale-time": "300"
             },
-            "encodedDataLength": 18833
+            "encodedDataLength": 27421
           },
           {
             "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
@@ -1484,7 +1494,7 @@
               "Accept-Ranges": "bytes",
               "Content-Length": "46799",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
               "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
               "Content-Type": "image/avif",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1500,15 +1510,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"4202-1a193fd4f07\"",
+              "ETag": "W/\"4202-1a19573f9ef\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1524,15 +1534,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"272e-1a193fd4ef4\"",
+              "ETag": "W/\"272e-1a19573f9e0\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1548,15 +1558,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"370a-1a193fd4efd\"",
+              "ETag": "W/\"370a-1a19573f9f2\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1564,7 +1574,7 @@
             "encodedDataLength": 4172
           },
           {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/3wevy0l6z882e.js",
+            "url": "http://127.0.0.1:3200/_next/static/chunks/0ceu4918hn53m.js",
             "type": "Script",
             "status": 200,
             "mimeType": "application/javascript",
@@ -1572,20 +1582,20 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2eb3-1a193fd4ef5\"",
+              "ETag": "W/\"360b-1a19573f9e4\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
             },
-            "encodedDataLength": 5162
+            "encodedDataLength": 5675
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
@@ -1596,15 +1606,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2d907-1a193fd4efa\"",
+              "ETag": "W/\"2d907-1a19573f9e1\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1620,15 +1630,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"381da-1a193fd4f04\"",
+              "ETag": "W/\"381da-1a19573f9e2\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:37 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1649,7 +1659,7 @@
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Keep-Alive": "timeout=5",
               "x-nextjs-cache": "HIT",
-              "Date": "Sat, 31 Oct 2026 22:09:38 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
               "content-type": "image/svg+xml",
               "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1660,11 +1670,11 @@
       },
       "scriptedSessionVitals": {
         "FCP": {
-          "value": 308,
+          "value": 452,
           "rating": "good"
         },
         "LCP": {
-          "value": 720,
+          "value": 452,
           "rating": "good"
         },
         "CLS": {
@@ -1672,7 +1682,7 @@
           "rating": "good"
         },
         "INP": {
-          "value": 120,
+          "value": 88,
           "rating": "good"
         }
       },
@@ -1682,10 +1692,10 @@
         "eyewear": "none",
         "quality": "low"
       },
-      "extra3DTransferBytes": 301220,
+      "extra3DTransferBytes": 302640,
       "extra3DRequests": [
         {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/3-7ydblec4fh2.js",
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2rsiak35olg4d.js",
           "type": "Script",
           "status": 200,
           "mimeType": "application/javascript",
@@ -1693,20 +1703,20 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"18a6-1a193fd4f03\"",
+            "ETag": "W/\"2918-1a19573f9e1\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
           },
-          "encodedDataLength": 2823
+          "encodedDataLength": 4243
         },
         {
           "url": "http://127.0.0.1:3200/_next/static/chunks/2p2jd75im6m_h.js",
@@ -1717,15 +1727,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"a96d-1a193fd4f0a\"",
+            "ETag": "W/\"a96d-1a19573f9ef\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1741,15 +1751,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"113a2-1a193fd4f09\"",
+            "ETag": "W/\"113a2-1a19573f9f3\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1770,7 +1780,7 @@
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Keep-Alive": "timeout=5",
             "x-nextjs-cache": "HIT",
-            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:19 GMT",
             "content-type": "image/svg+xml",
             "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1786,15 +1796,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"e71c0-1a193fd4f09\"",
+            "ETag": "W/\"e71c0-1a19573f9e3\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:39 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1815,8 +1825,8 @@
         "mobile": false
       },
       "initial": {
-        "transferBytes": 190340,
-        "javascriptTransferBytes": 143551,
+        "transferBytes": 199441,
+        "javascriptTransferBytes": 144064,
         "largestImage": {
           "url": "http://127.0.0.1:3200/robot/novahomin-robot-420.avif",
           "type": "Image",
@@ -1832,7 +1842,7 @@
             "Accept-Ranges": "bytes",
             "Content-Length": "26724",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
             "Last-Modified": "Sat, 31 Oct 2026 21:58:56 GMT",
             "Content-Type": "image/avif",
             "X-Frame-Options": "SAMEORIGIN"
@@ -1850,8 +1860,8 @@
               "Connection": "keep-alive",
               "Content-Encoding": "gzip",
               "Content-Type": "text/html; charset=utf-8",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
-              "ETag": "\"jsmqwd7iuy20o8\"",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
+              "ETag": "\"91vnrskskf2m14\"",
               "Keep-Alive": "timeout=5",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -1863,7 +1873,7 @@
               "x-nextjs-prerender": "1\n1",
               "x-nextjs-stale-time": "300"
             },
-            "encodedDataLength": 18833
+            "encodedDataLength": 27421
           },
           {
             "url": "http://127.0.0.1:3200/robot/novahomin-robot-420.avif",
@@ -1880,7 +1890,7 @@
               "Accept-Ranges": "bytes",
               "Content-Length": "26724",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
               "Last-Modified": "Sat, 31 Oct 2026 21:58:56 GMT",
               "Content-Type": "image/avif",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1896,44 +1906,20 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"4202-1a193fd4f07\"",
+              "ETag": "W/\"4202-1a19573f9ef\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
             },
             "encodedDataLength": 6513
-          },
-          {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
-            "type": "Script",
-            "status": 200,
-            "mimeType": "application/javascript",
-            "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
-              "Content-Encoding": "gzip",
-              "ETag": "W/\"370a-1a193fd4efd\"",
-              "Connection": "keep-alive",
-              "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
-              "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
-              "Content-Type": "application/javascript; charset=UTF-8",
-              "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
-            },
-            "encodedDataLength": 4172
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
@@ -1944,20 +1930,44 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"272e-1a193fd4ef4\"",
+              "ETag": "W/\"272e-1a19573f9e0\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
             },
             "encodedDataLength": 4510
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Transfer-Encoding": "chunked",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"370a-1a19573f9f2\"",
+              "Connection": "keep-alive",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN"
+            },
+            "encodedDataLength": 4172
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
@@ -1968,15 +1978,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2d907-1a193fd4efa\"",
+              "ETag": "W/\"2d907-1a19573f9e1\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -1984,7 +1994,7 @@
             "encodedDataLength": 50582
           },
           {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/3wevy0l6z882e.js",
+            "url": "http://127.0.0.1:3200/_next/static/chunks/0ceu4918hn53m.js",
             "type": "Script",
             "status": 200,
             "mimeType": "application/javascript",
@@ -1992,20 +2002,20 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2eb3-1a193fd4ef5\"",
+              "ETag": "W/\"360b-1a19573f9e4\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
             },
-            "encodedDataLength": 5162
+            "encodedDataLength": 5675
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/2ki52vdnbo2ft.js",
@@ -2016,15 +2026,15 @@
               "Transfer-Encoding": "chunked",
               "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"381da-1a193fd4f04\"",
+              "ETag": "W/\"381da-1a19573f9e2\"",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
               "X-Frame-Options": "SAMEORIGIN"
@@ -2045,7 +2055,7 @@
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Keep-Alive": "timeout=5",
               "x-nextjs-cache": "HIT",
-              "Date": "Sat, 31 Oct 2026 22:09:48 GMT",
+              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
               "content-type": "image/svg+xml",
               "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
               "X-Frame-Options": "SAMEORIGIN"
@@ -2056,11 +2066,11 @@
       },
       "scriptedSessionVitals": {
         "FCP": {
-          "value": 488,
+          "value": 332,
           "rating": "good"
         },
         "LCP": {
-          "value": 488,
+          "value": 332,
           "rating": "good"
         },
         "CLS": {
@@ -2068,7 +2078,7 @@
           "rating": "good"
         },
         "INP": {
-          "value": 40,
+          "value": 32,
           "rating": "good"
         }
       },
@@ -2078,10 +2088,10 @@
         "eyewear": "none",
         "quality": "high"
       },
-      "extra3DTransferBytes": 301220,
+      "extra3DTransferBytes": 302640,
       "extra3DRequests": [
         {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/3-7ydblec4fh2.js",
+          "url": "http://127.0.0.1:3200/_next/static/chunks/2rsiak35olg4d.js",
           "type": "Script",
           "status": 200,
           "mimeType": "application/javascript",
@@ -2089,20 +2099,20 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"18a6-1a193fd4f03\"",
+            "ETag": "W/\"2918-1a19573f9e1\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
           },
-          "encodedDataLength": 2823
+          "encodedDataLength": 4243
         },
         {
           "url": "http://127.0.0.1:3200/_next/static/chunks/2p2jd75im6m_h.js",
@@ -2113,15 +2123,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"a96d-1a193fd4f0a\"",
+            "ETag": "W/\"a96d-1a19573f9ef\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -2137,15 +2147,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"113a2-1a193fd4f09\"",
+            "ETag": "W/\"113a2-1a19573f9f3\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -2166,7 +2176,7 @@
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Keep-Alive": "timeout=5",
             "x-nextjs-cache": "HIT",
-            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
             "content-type": "image/svg+xml",
             "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
             "X-Frame-Options": "SAMEORIGIN"
@@ -2182,15 +2192,15 @@
             "Transfer-Encoding": "chunked",
             "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"e71c0-1a193fd4f09\"",
+            "ETag": "W/\"e71c0-1a19573f9e3\"",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sat, 31 Oct 2026 22:09:49 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 22:03:34 GMT",
+            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
             "X-Frame-Options": "SAMEORIGIN"
@@ -2202,6 +2212,12 @@
   ],
   "bundle": {
     "chunks": [
+      {
+        "file": ".next/static/chunks/0ceu4918hn53m.js",
+        "rawBytes": 13835,
+        "gzipBytes": 5104,
+        "brotliBytes": 4406
+      },
       {
         "file": ".next/static/chunks/0cz1d0mv5g_q7.js",
         "rawBytes": 112594,
@@ -2239,22 +2255,16 @@
         "brotliBytes": 15920
       },
       {
-        "file": ".next/static/chunks/3-7ydblec4fh2.js",
-        "rawBytes": 6310,
-        "gzipBytes": 2253,
-        "brotliBytes": 1993
+        "file": ".next/static/chunks/2rsiak35olg4d.js",
+        "rawBytes": 10520,
+        "gzipBytes": 3673,
+        "brotliBytes": 3287
       },
       {
         "file": ".next/static/chunks/3cfn99dbrcvvp.js",
         "rawBytes": 16898,
         "gzipBytes": 5942,
         "brotliBytes": 5213
-      },
-      {
-        "file": ".next/static/chunks/3wevy0l6z882e.js",
-        "rawBytes": 11955,
-        "gzipBytes": 4591,
-        "brotliBytes": 3957
       },
       {
         "file": ".next/static/chunks/3zgby_62dsu85.js",
@@ -2270,9 +2280,9 @@
       }
     ],
     "totals": {
-      "rawBytes": 1648917,
-      "gzipBytes": 477650,
-      "brotliBytes": 402219
+      "rawBytes": 1655007,
+      "gzipBytes": 479583,
+      "brotliBytes": 403962
     },
     "modelDownloadBytes": 0,
     "modelExplanation": "Procedural geometry; no GLB/GLTF, textures, KTX2 or Draco/Meshopt decoder requests. Optional Three.js/R3F code is included in extra3DTransferBytes.",

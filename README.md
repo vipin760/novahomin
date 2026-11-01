@@ -38,13 +38,35 @@ It is a stylised reconstruction, not a copy of the render: it lacks the referenc
 - `lib/robot/pose.ts`: every value the timeline can drive (joint angles, spectacles, visor, hologram, globe, poster/twin).
 - `lib/robot/choreography.ts`: keyframes anchored to sections, not pixels (`p` = how far a section has entered, `q` = travel through a taller sticky section), so the same choreography holds on every breakpoint. Values interpolate per property with a cubic ease, so scrolling backwards replays everything in reverse.
 - `lib/motion.ts`: GSAP ScrollTrigger samples the pose from scroll position and runs the DOM panel animations: scrubbed fade/slide/scale/rotation reveals, the desktop service-orbit scene (left wave, then right wave, matching the robot's gaze and gestures) and the process scene (one step at a time, in sync with the hologram panel in focus).
+- `lib/story.ts` + `storyKeys` in `lib/robot/choreography.ts`: the compact-screen story (below).
 - `components/robot-canvas.tsx`: the React Three Fiber scene. It damps the current pose towards the scroll target each frame and adds a small, deterministic idle (breathing, slow head drift). Nothing moves randomly.
 
 ## Responsive behaviour
 
 - **Desktop (≥ 1024 px).** Three columns with the centre kept clear for the robot (≈ 84 % of the viewport height). Services and Process are sticky scenes with panels on both sides. Tests assert that no panel intersects the robot.
-- **Tablet (700–1023 px).** Smaller, bottom-anchored robot. Content flows over it on soft dark bands. Services become a two-column grid instead of floating panels.
-- **Mobile (< 700 px).** The headline sits above the robot; the robot is sized from the viewport height so it never touches the hero copy (asserted at every tested width). Thumb-zone CTAs, vertical-only reveals, no particles, low-quality 3D at 30 fps. Narrow phones (< 380 px) show a single CTA.
+- **Phones and tablets (< 1024 px): a horizontal story, not a stacked page.** One sticky viewport with the robot fixed in the centre. Content is twelve beats, alternating sides:
+
+  | Beat | Content | Enters from |
+  |---:|---|---|
+  | 1 | Hero introduction | left |
+  | 2 | About Novahomin | right |
+  | 3 | Website Development + Web Applications | left |
+  | 4 | Android & iOS Apps | right |
+  | 5 | SaaS Development | left |
+  | 6 | AI & Automation | right |
+  | 7 | E-commerce | left |
+  | 8 | SEO & GEO (the full SEO & GEO section) | right |
+  | 9 | Technology expertise | left |
+  | 10 | Development process | right |
+  | 11 | Why Novahomin | left |
+  | 12 | Contact CTA (the form opens as a sheet from the right) | right |
+
+  Each element declares its beat, side and zone in the markup (`data-story`, `data-from`, `data-zone`). One scrubbed GSAP timeline gives every element an entrance (translateX ∓100 % → 0, opacity 0 → 1, scale 0.94 → 1), an active range and an exit towards its own side as the next beat arrives from the other. Exact ranges are in `lib/story.ts`. No element moves vertically, and there is no scroll locking.
+
+  **Zones.** Headings sit in the upper zone and panels in the lower zone, with the robot in the free band between them. On a portrait phone the space beside the robot is too narrow for panels, so the zones above and below it are used. For each beat the robot is re-fitted with a transform: unchanged when it fits, otherwise scaled (minimum 0.5) and centred in the band. Panels therefore never cover it. Landscape phones use left/right zones beside the robot. Short and narrow phones get compact variants (hidden secondary leads, inline technology lists).
+
+  **First paint.** An inline script sets `html[data-cinema]` before first paint when scripting works and reduced motion is not requested, so the first frame is already the story layout. GSAP still loads on first interaction. If it cannot start (offline, blocked), the page falls back to the static layout. In-page links scroll to the right beat.
+- **Static fallback** (reduced motion, no JavaScript): the previous stacked layout, fully visible, no motion.
 
 ## Loading and performance decisions
 
@@ -72,6 +94,12 @@ npm run test:e2e
 The suite runs in Chrome, Firefox, WebKit and Chrome with SwiftShader. It covers:
 
 - **Layout:** 320, 360, 375, 390, 414, 430, 768, 1024, 1280, 1440 and 1920 px, checking horizontal overflow, clipped or off-screen text, robot/hero-copy clearance, panels never covering the robot, mobile navigation and touch-target sizes.
+- **Mobile story** (`tests/mobile-story.spec.ts`), at 320×568, 360×740, 375×667, 390×844, 414×896 and 430×932:
+  - every beat is partly transparent mid-entrance and moving in from its required side;
+  - at rest it is fully opaque, settled, unclipped, on screen, clear of the robot and its face;
+  - other beats are hidden, there is no vertical motion and no horizontal page scroll;
+  - scrolling backwards works;
+  - the beat order and sides, menu links, the contact sheet (focus trap, Escape) and the static fallback when GSAP is blocked.
 - **3D behaviour:** the full choreography forwards and backwards (poster → spectacles → VR → none → poster), the desktop sticky scenes and render idling.
 - **Fallbacks:** no JavaScript, WebGL unavailable, software WebGL, blocked chunk downloads, context loss and reduced motion.
 - **Other:** the enquiry form, in-page links and WCAG 2.2 AA (axe).

@@ -28,7 +28,9 @@ export function ScrollDirector() {
           import("@/lib/motion"),
         ]);
       } catch {
-        return; // Offline or blocked: content is already visible and static.
+        // Offline or blocked: fall back to the static layout so nothing stays hidden.
+        document.documentElement.removeAttribute("data-cinema");
+        return;
       }
       const [{ gsap }, { ScrollTrigger }, { setupMotion }] = modules;
       if (cancelled) return;

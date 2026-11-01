@@ -22,6 +22,15 @@ for (const width of widths) {
     await page.setViewportSize({ width, height });
     await page.goto("/");
     await page.evaluate(() => document.fonts.ready);
+    // Let the hero's entrance (compact story) finish; looping ambience is ignored.
+    await page.evaluate(() =>
+      Promise.all(
+        document
+          .getAnimations()
+          .filter((animation) => animation.effect?.getTiming().iterations !== Infinity)
+          .map((animation) => animation.finished),
+      ),
+    );
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await expect(page.locator(".hero").getByRole("link", { name: "Start a project" })).toBeVisible();
     await expect(page.locator(".stage-poster img")).toBeVisible();
@@ -32,7 +41,12 @@ for (const width of widths) {
       const opacity = (element: Element | null): number =>
         element ? Number(getComputedStyle(element).opacity) * opacity(element.parentElement) : 1;
       const offenders = [...document.querySelectorAll<HTMLElement>(selectors)]
-        .filter((element) => element.getClientRects().length > 0 && opacity(element) > 0.02)
+        .filter(
+          (element) =>
+            element.getClientRects().length > 0 &&
+            getComputedStyle(element).visibility !== "hidden" &&
+            opacity(element) > 0.02,
+        )
         .map((element) => {
           const rect = element.getBoundingClientRect();
           return {
@@ -54,13 +68,15 @@ for (const width of widths) {
     const figure = await figureBox(page);
     const head = { ...figure, height: figure.height * 0.16 };
     const copy = (await page.locator(".hero-copy").boundingBox())!;
-    const lead = (await page.locator(".hero-aside .lead").boundingBox())!;
+    const aside = (await page.locator(".hero-aside").boundingBox())!;
     if (width >= 1024) {
       expect(copy.x + copy.width).toBeLessThanOrEqual(figure.x + 1);
-      expect(lead.x).toBeGreaterThanOrEqual(figure.x + figure.width - 1);
+      expect(aside.x).toBeGreaterThanOrEqual(figure.x + figure.width - 1);
     } else {
-      // Head starts ~1% into the poster box.
-      expect(lead.y + lead.height).toBeLessThanOrEqual(figure.y + figure.height * 0.012 + 4);
+      // Compact story: headline above the robot (its head starts ~1% into the
+      // poster box), lead and calls to action below its feet.
+      expect(copy.y + copy.height).toBeLessThanOrEqual(figure.y + figure.height * 0.012 + 4);
+      expect(aside.y).toBeGreaterThanOrEqual(figure.y + figure.height * 0.985);
     }
 
     // Desktop: service panels orbit the robot without covering it.

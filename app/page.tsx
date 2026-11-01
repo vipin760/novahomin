@@ -26,6 +26,21 @@ const orbit = {
     ["71%", "4px"],
   ],
 };
+/**
+ * Compact screens: each service is a story beat (lib/story.ts), alternating sides.
+ * Website and Web Applications share a beat; the SEO & GEO card is covered by the
+ * full SEO & GEO beat.
+ */
+const serviceStory: ([number, "left" | "right"] | null)[] = [
+  [2, "left"],
+  [2, "left"],
+  [3, "right"],
+  [4, "left"],
+  [5, "right"],
+  [6, "left"],
+  null,
+];
+
 const placements = services.map(
   (service, index) =>
     orbit[service.side][
@@ -53,9 +68,12 @@ export default function Home() {
       <RobotStage />
       <ScrollDirector />
       <main id="main">
+        {/* On compact screens the story is a sticky viewport; elsewhere these wrappers are display: contents. */}
+        <div className="story">
+        <div className="story-viewport">
         <section id="top" className="section hero" aria-labelledby="hero-heading">
           <div className="split shell">
-            <div className="col-left hero-copy">
+            <div className="col-left hero-copy" data-story="0" data-from="left" data-zone="upper">
               <p className="eyebrow">
                 <i className="status" aria-hidden="true" />
                 Software &amp; AI engineering
@@ -65,7 +83,7 @@ export default function Home() {
                 digital products.
               </h1>
             </div>
-            <div className="col-right hero-aside">
+            <div className="col-right hero-aside" data-story="0" data-from="left" data-zone="lower">
               <p className="lead">
                 Websites, apps, SaaS platforms and AI automation, designed and
                 engineered by one focused team.
@@ -88,13 +106,13 @@ export default function Home() {
 
         <section id="about" className="section" aria-labelledby="about-heading">
           <div className="split shell">
-            <div className="col-left" data-reveal="left">
+            <div className="col-left" data-reveal="left" data-story="1" data-from="right" data-zone="upper">
               <Eyebrow index="01">About</Eyebrow>
               <h2 id="about-heading">
                 A technology partner for ambitious teams.
               </h2>
             </div>
-            <div className="col-right" data-reveal="right">
+            <div className="col-right" data-reveal="right" data-story="1" data-from="right" data-zone="lower">
               <p className="lead">
                 Novahomin designs and engineers digital products for companies
                 that want to move faster. Strategy, design, engineering and AI
@@ -111,19 +129,31 @@ export default function Home() {
         >
           <div className="scene-sticky">
             <div className="shell services-layout">
-              <div className="section-head" data-reveal="left">
+              <div
+                className="section-head"
+                data-reveal="left"
+                data-story="2"
+                data-story-exit="6"
+                data-from="left"
+                data-zone="upper"
+              >
                 <Eyebrow index="02">Services</Eyebrow>
                 <h2 id="services-heading">What we build.</h2>
               </div>
               <ul className="service-list">
                 {services.map((service, index) => {
                   const [top, offset] = placements[index];
+                  const story = serviceStory[index];
                   return (
                     <li
                       key={service.title}
                       className="service-panel panel"
                       data-panel=""
                       data-side={service.side}
+                      data-service={index}
+                      {...(story
+                        ? { "data-story": story[0], "data-from": story[1], "data-zone": "lower" }
+                        : {})}
                       style={{ "--top": top, "--offset": offset } as CSSProperties}
                     >
                       <span className="service-icon">
@@ -147,7 +177,7 @@ export default function Home() {
           aria-labelledby="expertise-heading"
         >
           <div className="split shell">
-            <div className="col-left" data-reveal="left">
+            <div className="col-left" data-reveal="left" data-story="8" data-from="left" data-zone="upper">
               <Eyebrow index="03">Expertise</Eyebrow>
               <h2 id="expertise-heading">Engineering depth across the stack.</h2>
               <p className="lead">
@@ -155,7 +185,7 @@ export default function Home() {
               </p>
             </div>
             <div className="col-right">
-              <dl className="stack">
+              <dl className="stack" data-story="8" data-from="left" data-zone="lower">
                 {expertise.map((group) => (
                   <div className="stack-group panel" key={group.label} data-reveal="right">
                     <dt className="mono">{group.label}</dt>
@@ -182,11 +212,17 @@ export default function Home() {
           <div className="scene-sticky">
             <div className="split shell">
               <div className="col-left">
-                <div className="section-head" data-reveal="left">
+                <div
+                  className="section-head"
+                  data-reveal="left"
+                  data-story="9"
+                  data-from="right"
+                  data-zone="upper"
+                >
                   <Eyebrow index="04">Process</Eyebrow>
                   <h2 id="process-heading">How we work.</h2>
                 </div>
-                <ol className="steps">
+                <ol className="steps" data-story="9" data-from="right" data-zone="lower">
                   {processSteps.slice(0, 2).map((step, index) => (
                     <li key={step.title} className="step" data-step="" data-side="left" data-index={index}>
                       <span className="step-number mono">0{index + 1}</span>
@@ -199,7 +235,13 @@ export default function Home() {
                 </ol>
               </div>
               <div className="col-right">
-                <ol className="steps" start={3}>
+                <ol
+                  className="steps"
+                  start={3}
+                  data-story="9"
+                  data-from="right"
+                  data-zone="lower"
+                >
                   {processSteps.slice(2).map((step, index) => (
                     <li key={step.title} className="step" data-step="" data-side="right" data-index={index + 2}>
                       <span className="step-number mono">0{index + 3}</span>
@@ -221,7 +263,7 @@ export default function Home() {
           aria-labelledby="visibility-heading"
         >
           <div className="split shell">
-            <div className="col-right" data-reveal="right">
+            <div className="col-right" data-reveal="right" data-story="7" data-from="right" data-zone="upper">
               <Eyebrow index="05">SEO &amp; GEO</Eyebrow>
               <h2 id="visibility-heading">Visible in search. Cited by AI.</h2>
               <p className="lead">
@@ -229,7 +271,7 @@ export default function Home() {
                 as ChatGPT, Gemini and Perplexity.
               </p>
             </div>
-            <ul className="col-left feature-list">
+            <ul className="col-left feature-list" data-story="7" data-from="right" data-zone="lower">
               {visibility.map((item, index) => (
                 <li key={item.title} data-reveal="left">
                   <span className="mono">0{index + 1}</span>
@@ -245,11 +287,11 @@ export default function Home() {
 
         <section id="why" className="section" aria-labelledby="why-heading">
           <div className="split shell">
-            <div className="col-left" data-reveal="left">
+            <div className="col-left" data-reveal="left" data-story="10" data-from="left" data-zone="upper">
               <Eyebrow index="06">Why Novahomin</Eyebrow>
               <h2 id="why-heading">What sets us apart.</h2>
             </div>
-            <ul className="col-right why-grid">
+            <ul className="col-right why-grid" data-story="10" data-from="left" data-zone="lower">
               {differentiators.map((item) => (
                 <li key={item.title} className="panel" data-reveal="right">
                   <h3>{item.title}</h3>
@@ -262,7 +304,7 @@ export default function Home() {
 
         <section id="contact" className="section contact" aria-labelledby="contact-heading">
           <div className="split shell">
-            <div className="col-left" data-reveal="left">
+            <div className="col-left" data-reveal="left" data-story="11" data-from="right" data-zone="upper">
               <Eyebrow index="07">Contact</Eyebrow>
               <h2 id="contact-heading">Have a project in mind?</h2>
               <p className="lead">
@@ -275,6 +317,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </div>
+        </div>
       </main>
       <footer className="site-footer">
         <div className="shell footer-inner">

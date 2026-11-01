@@ -13,6 +13,11 @@
 # testing
 /coverage
 /reports/test-artifacts/
+# regenerable evidence (summaries in reports/*.md and *.json are kept)
+/reports/lighthouse/
+/reports/screenshots/
+/reports/playwright/
+/reports/playwright-results.json
 
 # next.js
 /.next/

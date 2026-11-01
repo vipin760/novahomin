@@ -1,6 +1,6 @@
 # Novahomin — measured performance
 
-Measured: 2026-10-31T22:07:10.144Z. URL: http://127.0.0.1:3200. Production build via next start.
+Measured: 2026-11-01T05:04:05.537Z. URL: http://127.0.0.1:3200. Production build via next start.
 
 ## Lighthouse
 
@@ -8,9 +8,9 @@ Measured: 2026-10-31T22:07:10.144Z. URL: http://127.0.0.1:3200. Production build
 
 | Profile | Run | Performance | Accessibility | Best practices | SEO | FCP | LCP | CLS | TBT | Transfer |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| mobile | 1 | 95 | 100 | 100 | 100 | 0.956 s | 2.403 s | 0.0000 | 197 ms | 185.88 KiB |
-| desktop | 1 | 100 | 100 | 100 | 100 | 0.251 s | 0.541 s | 0.0000 | 0 ms | 181.42 KiB |
-| mobile-applied | 2 | 94 | 100 | 100 | 100 | 0.752 s | 2.368 s | 0.0002 | 230 ms | 185.88 KiB |
+| mobile | 3 | 97 | 100 | 100 | 100 | 0.908 s | 2.437 s | 0.0000 | 128 ms | 194.77 KiB |
+| desktop | 3 | 100 | 100 | 100 | 100 | 0.242 s | 0.531 s | 0.0000 | 0 ms | 190.31 KiB |
+| mobile-applied | 2 | 95 | 100 | 100 | 100 | 0.705 s | 1.793 s | 0.0002 | 235 ms | 194.77 KiB |
 
 HTML and full JSON for all runs: [Lighthouse reports](./lighthouse/).
 
@@ -20,13 +20,13 @@ Cold-cache Chrome using actual CDP network and CPU throttling. Transferred bytes
 
 | Profile | Initial transfer | Initial JS transfer | FCP | LCP | Scripted INP | CLS | Optional 3D transfer |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Slow 4G / low-powered mobile emulation | 205.48 KiB | 140.19 KiB | 0.392 s | 1.268 s | 160 ms | 0 | 294.16 KiB |
-| Fast 4G / mobile emulation | 205.48 KiB | 140.19 KiB | 0.308 s | 0.720 s | 120 ms | 0 | 294.16 KiB |
-| Broadband / desktop | 185.88 KiB | 140.19 KiB | 0.488 s | 0.488 s | 40 ms | 0 | 294.16 KiB |
+| Slow 4G / low-powered mobile emulation | 214.37 KiB | 140.69 KiB | 0.516 s | 1.240 s | 112 ms | 0 | 295.55 KiB |
+| Fast 4G / mobile emulation | 214.37 KiB | 140.69 KiB | 0.452 s | 0.452 s | 88 ms | 0 | 295.55 KiB |
+| Broadband / desktop | 194.77 KiB | 140.69 KiB | 0.332 s | 0.332 s | 32 ms | 0 | 295.55 KiB |
 
 ## Assets and bundles
 
-- All build JS, including optional chunks: 1610.27 KiB raw / 466.46 KiB gzip / 392.79 KiB Brotli. Compression sizes are measured locally; network transfer above records the server's actual encoding.
+- All build JS, including optional chunks: 1616.22 KiB raw / 468.34 KiB gzip / 394.49 KiB Brotli. Compression sizes are measured locally; network transfer above records the server's actual encoding.
 - 3D model download: **0 bytes**. Procedurally constructed in the optional JS; no binary model or textures.
 - Robot poster files (pre-encoded AVIF/WebP, responsive): novahomin-robot-360.avif 21.64 KiB, novahomin-robot-360.webp 56.43 KiB, novahomin-robot-420.avif 26.10 KiB, novahomin-robot-420.webp 69.67 KiB, novahomin-robot-540.avif 45.70 KiB, novahomin-robot-540.webp 98.73 KiB, novahomin-robot-670.avif 61.41 KiB, novahomin-robot-670.webp 127.65 KiB. The largest image transfer per profile is recorded in performance-summary.json.
 - Full request ledger, per-chunk bundle sizes, browser version, CPU and configuration: [performance-summary.json](./performance-summary.json).

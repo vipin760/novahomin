@@ -236,6 +236,12 @@ try {
       await page.mouse.wheel(0, profile.height * 0.5);
       await page.waitForTimeout(120);
     }
+    // Compact story: the form opens as a sheet from the contact call to action.
+    const cta = page.locator(".enquiry-cta .button");
+    if (await cta.isVisible()) {
+      if (profile.mobile) await cta.tap();
+      else await cta.click();
+    }
     const form = page.locator("#contact form");
     await form.getByLabel("Name").fill("Performance Visitor");
     await form.getByLabel("Email").fill("perf@example.com");

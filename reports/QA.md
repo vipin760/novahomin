@@ -1,8 +1,8 @@
 # Novahomin — browser QA
 
-Build ID: x_HO28Eu28UW_Hxcm-zLr. Started: 2026-10-31T22:03:45.961Z. Duration: 192.0 s.
+Build ID: 1Efr_TDUUEqjmaYJF1kDr. Started: 2026-11-01T04:55:14.920Z. Duration: 319.8 s.
 
-Actual Playwright result: **73 passed, 0 failed, 10 skipped, 0 flaky**.
+Actual Playwright result: **103 passed, 0 failed, 10 skipped, 0 flaky**.
 
 [Interactive browser report](./playwright/index.html) · [Raw results](./playwright-results.json) · [Screenshots](./screenshots/)
 
@@ -30,6 +30,36 @@ Each width checks the whole page for horizontal overflow, heading/button/card cl
 
 ## Functional and accessibility coverage
 
+- chrome: the twelve beats follow the required order and alternate sides — Pass
+- chrome: horizontal story at 320×568 — Pass
+- chrome: horizontal story at 360×740 — Pass
+- chrome: horizontal story at 375×667 — Pass
+- chrome: horizontal story at 390×844 — Pass
+- chrome: horizontal story at 414×896 — Pass
+- chrome: horizontal story at 430×932 — Pass
+- chrome: menu links land on the right beat — Pass
+- chrome: the contact sheet slides in, traps focus and closes with Escape — Pass
+- chrome: if the scroll library cannot load, the static layout shows everything — Pass
+- firefox: the twelve beats follow the required order and alternate sides — Pass
+- firefox: horizontal story at 320×568 — Pass
+- firefox: horizontal story at 360×740 — Pass
+- firefox: horizontal story at 375×667 — Pass
+- firefox: horizontal story at 390×844 — Pass
+- firefox: horizontal story at 414×896 — Pass
+- firefox: horizontal story at 430×932 — Pass
+- firefox: menu links land on the right beat — Pass
+- firefox: the contact sheet slides in, traps focus and closes with Escape — Pass
+- firefox: if the scroll library cannot load, the static layout shows everything — Pass
+- webkit: the twelve beats follow the required order and alternate sides — Pass
+- webkit: horizontal story at 320×568 — Pass
+- webkit: horizontal story at 360×740 — Pass
+- webkit: horizontal story at 375×667 — Pass
+- webkit: horizontal story at 390×844 — Pass
+- webkit: horizontal story at 414×896 — Pass
+- webkit: horizontal story at 430×932 — Pass
+- webkit: menu links land on the right beat — Pass
+- webkit: the contact sheet slides in, traps focus and closes with Escape — Pass
+- webkit: if the scroll library cannot load, the static layout shows everything — Pass
 - chrome: layout at 320px — Pass
 - chrome: layout at 360px — Pass
 - chrome: layout at 375px — Pass
