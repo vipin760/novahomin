@@ -32,17 +32,6 @@ export default defineConfig({
     },
     { name: "firefox", use: { browserName: "firefox" } },
     { name: "webkit", use: { browserName: "webkit" } },
-    {
-      name: "chrome-software",
-      testMatch: "scene.spec.ts",
-      use: {
-        browserName: "chromium",
-        channel: "chrome",
-        launchOptions: {
-          args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader"],
-        },
-      },
-    },
   ],
   webServer: {
     command: `npm run start -- --hostname 127.0.0.1 --port ${port}`,

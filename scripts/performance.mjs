@@ -30,13 +30,23 @@ const summary = {
   bundle: {},
 };
 
+// A busy machine inflates TBT and INP: wait (up to 5 min) for the 1-minute load
+// average to settle before each audit, and record it alongside the result.
+const idleLoad = Number(process.env.IDLE_LOAD || os.cpus().length * 0.4);
+async function waitForIdle() {
+  for (let i = 0; i < 60 && os.loadavg()[0] > idleLoad; i++)
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+  return Number(os.loadavg()[0].toFixed(2));
+}
+
 // Run serially: concurrent audits would contaminate CPU/network measurements.
 // "mobile-applied" uses DevTools (applied) throttling: observed metrics under the same
 // mobile network/CPU limits, rather than Lantern's simulated estimate.
 for (const device of ["mobile", "desktop", "mobile-applied"]) {
   const runs = [];
   for (let index = 1; index <= runCount; index++) {
-    console.log(`Lighthouse ${device}: run ${index}/${runCount}`);
+    const loadAverage = await waitForIdle();
+    console.log(`Lighthouse ${device}: run ${index}/${runCount} (load ${loadAverage})`);
     const chrome = await chromeLauncher.launch({
       chromeFlags: ["--headless", "--no-sandbox", "--disable-dev-shm-usage"],
     });
@@ -72,6 +82,7 @@ for (const device of ["mobile", "desktop", "mobile-applied"]) {
       const lhr = result.lhr;
       runs.push({
         run: index,
+        loadAverage,
         lighthouseVersion: lhr.lighthouseVersion,
         userAgent: lhr.userAgent,
         fetchTime: lhr.fetchTime,

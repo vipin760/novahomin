@@ -1,337 +1,196 @@
-import type { CSSProperties } from "react";
-import { Header } from "@/components/header";
-import { ArrowIcon, BrandMark, ServiceGlyph } from "@/components/icons";
-import { ProjectEnquiry } from "@/components/project-enquiry";
-import { RobotStage } from "@/components/robot-stage";
-import { ScrollDirector } from "@/components/scroll-director";
+import Link from "next/link";
+import { CheckBadge, ServiceGlyph } from "@/components/icons";
+import { ConsoleMockup, PillarDemo } from "@/components/mockups";
+import { EngineeringArt } from "@/components/engineering-art";
+import { engineeringPrinciples } from "@/lib/engineering";
+import { IntroArt } from "@/components/intro-art";
+import { ServeSection } from "@/components/serve-section";
+import { StickyStack } from "@/components/sticky-stack";
+import { PortfolioSection } from "@/components/portfolio-section";
+import { InsightsSection } from "@/components/insights-section";
+import { WhySection } from "@/components/why-section";
 import {
-  differentiators,
-  expertise,
+  anim,
+  DarkHero,
+  Eyebrow,
+  SectionHead,
+} from "@/components/ui";
+import {
+  articles,
+  pillars,
   processSteps,
-  services,
-  visibility,
 } from "@/lib/content";
-
-/** Orbital placement around the robot on desktop: [top, outward offset]. */
-const orbit = {
-  left: [
-    ["42%", "0px"],
-    ["58%", "34px"],
-    ["74%", "6px"],
-  ],
-  right: [
-    ["17%", "4px"],
-    ["35%", "34px"],
-    ["53%", "34px"],
-    ["71%", "4px"],
-  ],
-};
-/**
- * Compact screens: each service is a story beat (lib/story.ts), alternating sides.
- * Website and Web Applications share a beat; the SEO & GEO card is covered by the
- * full SEO & GEO beat.
- */
-const serviceStory: ([number, "left" | "right"] | null)[] = [
-  [2, "left"],
-  [2, "left"],
-  [3, "right"],
-  [4, "left"],
-  [5, "right"],
-  [6, "left"],
-  null,
-];
-
-const placements = services.map(
-  (service, index) =>
-    orbit[service.side][
-      services.slice(0, index).filter((other) => other.side === service.side)
-        .length
-    ],
-);
-
-function Eyebrow({ index, children }: { index: string; children: string }) {
-  return (
-    <p className="eyebrow">
-      <span className="index">{index}</span>
-      {children}
-    </p>
-  );
-}
 
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-      <Header />
-      <RobotStage />
-      <ScrollDirector />
-      <main id="main">
-        {/* On compact screens the story is a sticky viewport; elsewhere these wrappers are display: contents. */}
-        <div className="story">
-        <div className="story-viewport">
-        <section id="top" className="section hero" aria-labelledby="hero-heading">
-          <div className="split shell">
-            <div className="col-left hero-copy" data-story="0" data-from="left" data-zone="upper">
-              <p className="eyebrow">
-                <i className="status" aria-hidden="true" />
-                Software &amp; AI engineering
-              </p>
-              <h1 id="hero-heading">
-                Engineering <span className="gradient-text">intelligent</span>{" "}
-                digital products.
-              </h1>
+      <DarkHero
+        id="hero-heading"
+        title={
+          <>
+            Build your digital products <br className="br-desktop" />
+            with confidence.
+          </>
+        }
+        text="Websites, apps, SaaS platforms and AI automation, designed and engineered by one focused team. Strategy to launch, under one roof."
+        actions={[
+          { href: "/contact", label: "Start a project" },
+          { href: "/contact#consultation", label: "Book consultation" },
+        ]}
+      />
+
+      <ServeSection />
+
+      <section
+        className="section section-tight"
+        aria-labelledby="intro-heading"
+      >
+        <div className="container">
+          <div className="intro-head">
+            <div className="intro-copy">
+            <Eyebrow plain>Why teams choose Novahomin</Eyebrow>
+            <h2
+              id="intro-heading"
+              className="statement-heading"
+             
+            >
+              Ship with confidence. Web, mobile and AI development for
+              ambitious teams.
+            </h2>
+            <p className="intro-lead">
+              Novahomin is a web and software development company. We bring
+              strategy, design, engineering and AI under one roof, so your
+              website, app or SaaS platform launches faster, ranks better and
+              keeps growing with your business.
+            </p>
+            <ul className="intro-points">
+              <li>Strategy to launch, one team</li>
+              <li>SEO &amp; Core Web Vitals built in</li>
+              <li>Clean code you own</li>
+            </ul>
             </div>
-            <div className="col-right hero-aside" data-story="0" data-from="left" data-zone="lower">
-              <p className="lead">
-                Websites, apps, SaaS platforms and AI automation, designed and
-                engineered by one focused team.
-              </p>
-              <div className="hero-actions">
-                <a className="button button-primary" href="#contact">
-                  Start a project <ArrowIcon />
-                </a>
-                <a className="button button-ghost" href="#services">
-                  Explore services
-                </a>
-              </div>
+            <div className="intro-visual">
+              <IntroArt />
             </div>
           </div>
-          <a className="scroll-cue" href="#about">
-            <span className="mono">Scroll</span>
-            <i aria-hidden="true" />
-          </a>
-        </section>
-
-        <section id="about" className="section" aria-labelledby="about-heading">
-          <div className="split shell">
-            <div className="col-left" data-reveal="left" data-story="1" data-from="right" data-zone="upper">
-              <Eyebrow index="01">About</Eyebrow>
-              <h2 id="about-heading">
-                A technology partner for ambitious teams.
-              </h2>
-            </div>
-            <div className="col-right" data-reveal="right" data-story="1" data-from="right" data-zone="lower">
-              <p className="lead">
-                Novahomin designs and engineers digital products for companies
-                that want to move faster. Strategy, design, engineering and AI
-                under one roof.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="services"
-          className="section services"
-          aria-labelledby="services-heading"
-        >
-          <div className="scene-sticky">
-            <div className="shell services-layout">
-              <div
-                className="section-head"
-                data-reveal="left"
-                data-story="2"
-                data-story-exit="6"
-                data-from="left"
-                data-zone="upper"
-              >
-                <Eyebrow index="02">Services</Eyebrow>
-                <h2 id="services-heading">What we build.</h2>
-              </div>
-              <ul className="service-list">
-                {services.map((service, index) => {
-                  const [top, offset] = placements[index];
-                  const story = serviceStory[index];
-                  return (
-                    <li
-                      key={service.title}
-                      className="service-panel panel"
-                      data-panel=""
-                      data-side={service.side}
-                      data-service={index}
-                      {...(story
-                        ? { "data-story": story[0], "data-from": story[1], "data-zone": "lower" }
-                        : {})}
-                      style={{ "--top": top, "--offset": offset } as CSSProperties}
-                    >
-                      <span className="service-icon">
-                        <ServiceGlyph name={service.icon} />
-                      </span>
-                      <span>
-                        <h3>{service.title}</h3>
-                        <p>{service.description}</p>
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="expertise"
-          className="section"
-          aria-labelledby="expertise-heading"
-        >
-          <div className="split shell">
-            <div className="col-left" data-reveal="left" data-story="8" data-from="left" data-zone="upper">
-              <Eyebrow index="03">Expertise</Eyebrow>
-              <h2 id="expertise-heading">Engineering depth across the stack.</h2>
-              <p className="lead">
-                Proven technology, chosen for each product rather than habit.
-              </p>
-            </div>
-            <div className="col-right">
-              <dl className="stack" data-story="8" data-from="left" data-zone="lower">
-                {expertise.map((group) => (
-                  <div className="stack-group panel" key={group.label} data-reveal="right">
-                    <dt className="mono">{group.label}</dt>
-                    <dd>
-                      <ul className="chips">
-                        {group.items.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="process"
-          className="section process"
-          aria-labelledby="process-heading"
-          data-active="0"
-        >
-          <div className="scene-sticky">
-            <div className="split shell">
-              <div className="col-left">
-                <div
-                  className="section-head"
-                  data-reveal="left"
-                  data-story="9"
-                  data-from="right"
-                  data-zone="upper"
-                >
-                  <Eyebrow index="04">Process</Eyebrow>
-                  <h2 id="process-heading">How we work.</h2>
-                </div>
-                <ol className="steps" data-story="9" data-from="right" data-zone="lower">
-                  {processSteps.slice(0, 2).map((step, index) => (
-                    <li key={step.title} className="step" data-step="" data-side="left" data-index={index}>
-                      <span className="step-number mono">0{index + 1}</span>
-                      <span>
-                        <h3>{step.title}</h3>
-                        <p>{step.text}</p>
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-              <div className="col-right">
-                <ol
-                  className="steps"
-                  start={3}
-                  data-story="9"
-                  data-from="right"
-                  data-zone="lower"
-                >
-                  {processSteps.slice(2).map((step, index) => (
-                    <li key={step.title} className="step" data-step="" data-side="right" data-index={index + 2}>
-                      <span className="step-number mono">0{index + 3}</span>
-                      <span>
-                        <h3>{step.title}</h3>
-                        <p>{step.text}</p>
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="visibility"
-          className="section visibility"
-          aria-labelledby="visibility-heading"
-        >
-          <div className="split shell">
-            <div className="col-right" data-reveal="right" data-story="7" data-from="right" data-zone="upper">
-              <Eyebrow index="05">SEO &amp; GEO</Eyebrow>
-              <h2 id="visibility-heading">Visible in search. Cited by AI.</h2>
-              <p className="lead">
-                We optimise for search rankings and for generative engines such
-                as ChatGPT, Gemini and Perplexity.
-              </p>
-            </div>
-            <ul className="col-left feature-list" data-story="7" data-from="right" data-zone="lower">
-              {visibility.map((item, index) => (
-                <li key={item.title} data-reveal="left">
-                  <span className="mono">0{index + 1}</span>
-                  <span>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
+          <ul className="pillar-grid">
+            {pillars.map((pillar) => (
+              <li className="pillar" key={pillar.title} {...anim("card")}>
+                <div className="pillar-desp">
+                  <span className="pillar-icon">
+                    <ServiceGlyph name={pillar.icon} />
                   </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+                  <div className="pillar-gap" aria-hidden="true">
+                    <div>
+                      <div className="pillar-space" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3>
+                      <Link className="pillar-link" href={pillar.href}>
+                        {pillar.title}
+                      </Link>
+                    </h3>
+                    <p>{pillar.text}</p>
+                    <span className="pillar-more" aria-hidden="true">
+                      Learn more →
+                    </span>
+                  </div>
+                </div>
+                <div className="pillar-demo" aria-hidden="true">
+                  <div>
+                    <PillarDemo kind={pillar.icon} />
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-        <section id="why" className="section" aria-labelledby="why-heading">
-          <div className="split shell">
-            <div className="col-left" data-reveal="left" data-story="10" data-from="left" data-zone="upper">
-              <Eyebrow index="06">Why Novahomin</Eyebrow>
-              <h2 id="why-heading">What sets us apart.</h2>
-            </div>
-            <ul className="col-right why-grid" data-story="10" data-from="left" data-zone="lower">
-              {differentiators.map((item) => (
-                <li key={item.title} className="panel" data-reveal="right">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </li>
-              ))}
-            </ul>
+      <section
+        className="section section-flush-top engineering"
+        aria-labelledby="engineering-heading"
+      >
+        <div className="container">
+          <div className="section-head">
+            <Eyebrow plain {...anim("text")}>
+              How we engineer
+            </Eyebrow>
+            <h2 id="engineering-heading" {...anim("text")}>
+              Built with purpose. <br className="br-desktop" />
+              Engineered for growth.
+            </h2>
+            <p className="lead" {...anim("text")}>
+              We combine thoughtful engineering, modern architecture, and
+              practical innovation to build reliable digital products that
+              solve real business challenges and evolve with your ambitions.
+            </p>
+            <Link className="engineering-cta" href="/services#process">
+              Explore Our Approach <span aria-hidden="true">→</span>
+            </Link>
           </div>
-        </section>
+          <StickyStack>
+            {engineeringPrinciples.map((principle) => (
+              <article className="feature-split" key={principle.number}>
+                <div className="feature-copy">
+                  <Eyebrow plain>
+                    {principle.number} · {principle.label}
+                  </Eyebrow>
+                  <h3>{principle.headline}</h3>
+                  <p>{principle.description}</p>
+                  <ul className="check-list">
+                    {principle.points.map((point) => (
+                      <li key={point}>
+                        <CheckBadge />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="feature-visual" data-tone="violet">
+                  <EngineeringArt focus={principle.focus} />
+                </div>
+              </article>
+            ))}
+          </StickyStack>
+        </div>
+      </section>
 
-        <section id="contact" className="section contact" aria-labelledby="contact-heading">
-          <div className="split shell">
-            <div className="col-left" data-reveal="left" data-story="11" data-from="right" data-zone="upper">
-              <Eyebrow index="07">Contact</Eyebrow>
-              <h2 id="contact-heading">Have a project in mind?</h2>
-              <p className="lead">
-                Tell us what you are building. A clear brief is the fastest way
-                to a clear plan.
-              </p>
-            </div>
-            <div className="col-right">
-              <ProjectEnquiry contactEmail={process.env.CONTACT_EMAIL} />
-            </div>
+      <section
+        className="section section-dark"
+        aria-labelledby="process-heading"
+      >
+        <div className="container">
+          <SectionHead
+            id="process-heading"
+            title={
+              <>
+                See how we take products <br className="br-desktop" />
+                from idea to launch.
+              </>
+            }
+          />
+          <div className="console-frame" {...anim("card")}>
+            <ConsoleMockup />
           </div>
-        </section>
+          <ol className="process-row">
+            {processSteps.map((step, index) => (
+              <li key={step.title} {...anim("text")}>
+                <span className="process-number">0{index + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
-        </div>
-      </main>
-      <footer className="site-footer">
-        <div className="shell footer-inner">
-          <a className="wordmark" href="#top" aria-label="Novahomin home">
-            <BrandMark />
-            <span>NOVAHOMIN</span>
-          </a>
-          <span className="copyright">© 2026 Novahomin</span>
-          <a className="back-top" href="#top">
-            Back to top <span aria-hidden="true">↑</span>
-          </a>
-        </div>
-      </footer>
+      </section>
+
+      <WhySection />
+
+      <PortfolioSection />
+
+      <InsightsSection />
     </>
   );
 }

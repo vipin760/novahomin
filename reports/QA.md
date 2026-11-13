@@ -1,8 +1,8 @@
 # Novahomin — browser QA
 
-Build ID: 1Efr_TDUUEqjmaYJF1kDr. Started: 2026-11-01T04:55:14.920Z. Duration: 319.8 s.
+Build ID: 7nylSPYTwZMLveKWljoVx. Started: 2026-11-01T06:22:34.671Z. Duration: 424.1 s.
 
-Actual Playwright result: **103 passed, 0 failed, 10 skipped, 0 flaky**.
+Actual Playwright result: **115 passed, 0 failed, 10 skipped, 0 flaky**.
 
 [Interactive browser report](./playwright/index.html) · [Raw results](./playwright-results.json) · [Screenshots](./screenshots/)
 
@@ -66,10 +66,14 @@ Each width checks the whole page for horizontal overflow, heading/button/card cl
 - chrome: layout at 390px — Pass
 - chrome: layout at 414px — Pass
 - chrome: layout at 430px — Pass
+- chrome: layout at 600px — Pass
 - chrome: layout at 768px — Pass
+- chrome: layout at 820px — Pass
 - chrome: layout at 1024px — Pass
 - chrome: layout at 1280px — Pass
+- chrome: layout at 1366px — Pass
 - chrome: layout at 1440px — Pass
+- chrome: layout at 1600px — Pass
 - chrome: layout at 1920px — Pass
 - chrome: mobile disclosure supports Escape, outside clicks and breakpoint changes — Pass
 - chrome: content, navigation and poster work without JavaScript — Pass
@@ -87,10 +91,14 @@ Each width checks the whole page for horizontal overflow, heading/button/card cl
 - firefox: layout at 390px — Pass
 - firefox: layout at 414px — Pass
 - firefox: layout at 430px — Pass
+- firefox: layout at 600px — Pass
 - firefox: layout at 768px — Pass
+- firefox: layout at 820px — Pass
 - firefox: layout at 1024px — Pass
 - firefox: layout at 1280px — Pass
+- firefox: layout at 1366px — Pass
 - firefox: layout at 1440px — Pass
+- firefox: layout at 1600px — Pass
 - firefox: layout at 1920px — Pass
 - firefox: mobile disclosure supports Escape, outside clicks and breakpoint changes — Pass
 - firefox: content, navigation and poster work without JavaScript — Pass
@@ -108,10 +116,14 @@ Each width checks the whole page for horizontal overflow, heading/button/card cl
 - webkit: layout at 390px — Pass
 - webkit: layout at 414px — Pass
 - webkit: layout at 430px — Pass
+- webkit: layout at 600px — Pass
 - webkit: layout at 768px — Pass
+- webkit: layout at 820px — Pass
 - webkit: layout at 1024px — Pass
 - webkit: layout at 1280px — Pass
+- webkit: layout at 1366px — Pass
 - webkit: layout at 1440px — Pass
+- webkit: layout at 1600px — Pass
 - webkit: layout at 1920px — Pass
 - webkit: mobile disclosure supports Escape, outside clicks and breakpoint changes — Pass
 - webkit: content, navigation and poster work without JavaScript — Pass

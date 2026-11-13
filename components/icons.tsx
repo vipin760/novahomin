@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ServiceIcon } from "@/lib/content";
 
 const paths: Record<ServiceIcon, React.ReactNode> = {
@@ -65,42 +66,65 @@ export function ServiceGlyph({ name }: { name: ServiceIcon }) {
   );
 }
 
-export function BrandMark() {
+/** Novahomin logo (cropped from assets/logos/logo_nova.png; the mark carries its own colour). */
+export function BrandMark({ size = 32 }: { size?: number }) {
+  return <Image src="/logo-nova.png" alt="" width={size} height={size} priority />;
+}
+
+const base = {
+  fill: "none",
+  stroke: "currentColor",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": true,
+} as const;
+
+export function ArrowIcon() {
   return (
-    <svg viewBox="0 0 28 28" width="26" height="26" aria-hidden="true">
-      <path
-        d="M14 2.5 24 8.25v11.5L14 25.5 4 19.75V8.25L14 2.5Z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M9.5 18.5v-9l9 9v-9"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="14" cy="5.6" r="1.4" fill="#49D9F5" />
+    <svg viewBox="0 0 16 16" width="14" height="14" strokeWidth="1.5" {...base}>
+      <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" />
     </svg>
   );
 }
 
-export function ArrowIcon() {
+export function ChevronDown() {
   return (
-    <svg
-      viewBox="0 0 16 16"
-      width="14"
-      height="14"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" />
+    <svg viewBox="0 0 16 16" width="14" height="14" strokeWidth="1.5" {...base}>
+      <path d="M8 3v10M4 9l4 4 4-4" />
+    </svg>
+  );
+}
+
+export function CheckBadge() {
+  return (
+    <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
+      <circle cx="10" cy="10" r="10" fill="currentColor" />
+      <path d="m6 10.2 2.6 2.6L14 7.4" fill="none" stroke="var(--check-ink, #fff)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function TargetIcon() {
+  return (
+    <svg viewBox="0 0 16 16" width="12" height="12" strokeWidth="1.5" {...base}>
+      <circle cx="8" cy="8" r="6" />
+      <circle cx="8" cy="8" r="2" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function PlusIcon() {
+  return (
+    <svg viewBox="0 0 20 20" width="20" height="20" strokeWidth="1.5" {...base}>
+      <path d="M10 3v14M3 10h14" />
+    </svg>
+  );
+}
+
+export function MenuIcon({ open }: { open: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" strokeWidth="1.75" {...base}>
+      {open ? <path d="M6 6l12 12M18 6 6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
     </svg>
   );
 }

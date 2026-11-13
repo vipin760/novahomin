@@ -1,6 +1,6 @@
 {
-  "buildID": "1Efr_TDUUEqjmaYJF1kDr",
-  "measuredAt": "2026-11-01T05:04:05.537Z",
+  "buildID": "7nylSPYTwZMLveKWljoVx",
+  "measuredAt": "2026-11-01T06:30:04.744Z",
   "baseURL": "http://127.0.0.1:3200",
   "environment": {
     "platform": "darwin",
@@ -17,19 +17,19 @@
           "run": 1,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:04:08.083Z",
+          "fetchTime": "2026-11-01T06:30:07.962Z",
           "scores": {
-            "performance": 97,
+            "performance": 91,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 903.4592,
-          "lcp": 2437.9184,
+          "fcp": 824.30205,
+          "lcp": 2426.6041,
           "cls": 0,
-          "tbt": 127,
+          "tbt": 304,
           "inp": null,
-          "transferBytes": 199441,
+          "transferBytes": 203034,
           "settings": {
             "output": [
               "html",
@@ -91,10 +91,16 @@
           },
           "failures": [
             {
+              "id": "total-blocking-time",
+              "title": "Total Blocking Time",
+              "displayValue": "300 ms",
+              "score": 0.78
+            },
+            {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "180 ms",
-              "score": 0.75
+              "displayValue": "240 ms",
+              "score": 0.53
             },
             {
               "id": "unused-javascript",
@@ -117,7 +123,7 @@
               "id": "image-delivery-insight",
               "title": "Improve image delivery",
               "displayValue": "Est savings of 21 KiB",
-              "score": 0
+              "score": 0.5
             },
             {
               "id": "legacy-javascript-insight",
@@ -131,19 +137,19 @@
           "run": 2,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:04:17.870Z",
+          "fetchTime": "2026-11-01T06:30:20.606Z",
           "scores": {
-            "performance": 97,
+            "performance": 89,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 904.8023,
-          "lcp": 2430.6045999999997,
+          "fcp": 1021.80235,
+          "lcp": 2540.6047,
           "cls": 0,
-          "tbt": 123,
+          "tbt": 340.0000000000001,
           "inp": null,
-          "transferBytes": 199441,
+          "transferBytes": 203034,
           "settings": {
             "output": [
               "html",
@@ -205,10 +211,28 @@
           },
           "failures": [
             {
+              "id": "largest-contentful-paint",
+              "title": "Largest Contentful Paint",
+              "displayValue": "2.5 s",
+              "score": 0.89
+            },
+            {
+              "id": "total-blocking-time",
+              "title": "Total Blocking Time",
+              "displayValue": "340 ms",
+              "score": 0.74
+            },
+            {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "170 ms",
-              "score": 0.76
+              "displayValue": "320 ms",
+              "score": 0.32
+            },
+            {
+              "id": "largest-contentful-paint-element",
+              "title": "Largest Contentful Paint element",
+              "displayValue": "2,540 ms",
+              "score": 0
             },
             {
               "id": "unused-javascript",
@@ -231,7 +255,7 @@
               "id": "image-delivery-insight",
               "title": "Improve image delivery",
               "displayValue": "Est savings of 21 KiB",
-              "score": 0
+              "score": 0.5
             },
             {
               "id": "legacy-javascript-insight",
@@ -245,19 +269,19 @@
           "run": 3,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:04:27.271Z",
+          "fetchTime": "2026-11-01T06:30:33.358Z",
           "scores": {
-            "performance": 97,
+            "performance": 80,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 907.73775,
-          "lcp": 2437.4755,
+          "fcp": 914.15725,
+          "lcp": 2604.3145,
           "cls": 0,
-          "tbt": 128,
+          "tbt": 658,
           "inp": null,
-          "transferBytes": 199441,
+          "transferBytes": 203034,
           "settings": {
             "output": [
               "html",
@@ -319,10 +343,34 @@
           },
           "failures": [
             {
+              "id": "largest-contentful-paint",
+              "title": "Largest Contentful Paint",
+              "displayValue": "2.6 s",
+              "score": 0.87
+            },
+            {
+              "id": "total-blocking-time",
+              "title": "Total Blocking Time",
+              "displayValue": "660 ms",
+              "score": 0.45
+            },
+            {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "180 ms",
-              "score": 0.74
+              "displayValue": "370 ms",
+              "score": 0.21
+            },
+            {
+              "id": "mainthread-work-breakdown",
+              "title": "Minimize main-thread work",
+              "displayValue": "2.0 s",
+              "score": 0
+            },
+            {
+              "id": "largest-contentful-paint-element",
+              "title": "Largest Contentful Paint element",
+              "displayValue": "2,600 ms",
+              "score": 0
             },
             {
               "id": "unused-javascript",
@@ -345,7 +393,7 @@
               "id": "image-delivery-insight",
               "title": "Improve image delivery",
               "displayValue": "Est savings of 21 KiB",
-              "score": 0
+              "score": 0.5
             },
             {
               "id": "legacy-javascript-insight",
@@ -356,7 +404,7 @@
           ]
         }
       ],
-      "medianByLCP": 3
+      "medianByLCP": 2
     },
     "desktop": {
       "runs": [
@@ -364,19 +412,19 @@
           "run": 1,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:04:36.545Z",
+          "fetchTime": "2026-11-01T06:30:48.687Z",
           "scores": {
-            "performance": 100,
+            "performance": 99,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 246.44155,
-          "lcp": 535.8831,
+          "fcp": 311.7362,
+          "lcp": 607.4724,
           "cls": 0,
-          "tbt": 0,
+          "tbt": 66,
           "inp": null,
-          "transferBytes": 194880,
+          "transferBytes": 198473,
           "settings": {
             "output": [
               "html",
@@ -466,19 +514,19 @@
           "run": 2,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:04:45.404Z",
+          "fetchTime": "2026-11-01T06:31:04.392Z",
           "scores": {
-            "performance": 100,
+            "performance": 90,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 241.51225,
-          "lcp": 530.0245,
+          "fcp": 245.0185,
+          "lcp": 602.0369999999999,
           "cls": 0,
-          "tbt": 0,
+          "tbt": 261.49999999999994,
           "inp": null,
-          "transferBytes": 194880,
+          "transferBytes": 198473,
           "settings": {
             "output": [
               "html",
@@ -540,6 +588,18 @@
           },
           "failures": [
             {
+              "id": "total-blocking-time",
+              "title": "Total Blocking Time",
+              "displayValue": "260 ms",
+              "score": 0.67
+            },
+            {
+              "id": "max-potential-fid",
+              "title": "Max Potential First Input Delay",
+              "displayValue": "220 ms",
+              "score": 0.59
+            },
+            {
               "id": "unused-javascript",
               "title": "Reduce unused JavaScript",
               "displayValue": "Est savings of 51 KiB",
@@ -549,11 +609,6 @@
               "id": "legacy-javascript",
               "title": "Avoid serving legacy JavaScript to modern browsers",
               "displayValue": "Est savings of 13 KiB",
-              "score": 0
-            },
-            {
-              "id": "forced-reflow-insight",
-              "title": "Forced reflow",
               "score": 0
             },
             {
@@ -568,19 +623,19 @@
           "run": 3,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:04:54.294Z",
+          "fetchTime": "2026-11-01T06:31:20.780Z",
           "scores": {
-            "performance": 100,
+            "performance": 99,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 241.8092,
-          "lcp": 530.6184,
+          "fcp": 348.253,
+          "lcp": 643.0059999999999,
           "cls": 0,
-          "tbt": 0,
+          "tbt": 66,
           "inp": null,
-          "transferBytes": 194880,
+          "transferBytes": 198473,
           "settings": {
             "output": [
               "html",
@@ -651,7 +706,7 @@
               "id": "legacy-javascript",
               "title": "Avoid serving legacy JavaScript to modern browsers",
               "displayValue": "Est savings of 13 KiB",
-              "score": 0
+              "score": 0.5
             },
             {
               "id": "forced-reflow-insight",
@@ -662,12 +717,12 @@
               "id": "legacy-javascript-insight",
               "title": "Legacy JavaScript",
               "displayValue": "Est savings of 14 KiB",
-              "score": 0
+              "score": 0.5
             }
           ]
         }
       ],
-      "medianByLCP": 3
+      "medianByLCP": 1
     },
     "mobile-applied": {
       "runs": [
@@ -675,19 +730,19 @@
           "run": 1,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:05:03.197Z",
+          "fetchTime": "2026-11-01T06:31:37.476Z",
           "scores": {
-            "performance": 96,
+            "performance": 79,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 702.622,
-          "lcp": 1781.145,
-          "cls": 0.0002027379788847074,
-          "tbt": 218.9690000000004,
+          "fcp": 1083.854,
+          "lcp": 1893.225,
+          "cls": 0,
+          "tbt": 884.01,
           "inp": null,
-          "transferBytes": 199441,
+          "transferBytes": 203034,
           "settings": {
             "output": [
               "html",
@@ -751,14 +806,20 @@
             {
               "id": "total-blocking-time",
               "title": "Total Blocking Time",
-              "displayValue": "220 ms",
-              "score": 0.88
+              "displayValue": "880 ms",
+              "score": 0.32
             },
             {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "170 ms",
-              "score": 0.77
+              "displayValue": "570 ms",
+              "score": 0.05
+            },
+            {
+              "id": "mainthread-work-breakdown",
+              "title": "Minimize main-thread work",
+              "displayValue": "2.5 s",
+              "score": 0
             },
             {
               "id": "unused-javascript",
@@ -771,6 +832,11 @@
               "title": "Avoid serving legacy JavaScript to modern browsers",
               "displayValue": "Est savings of 13 KiB",
               "score": 0.5
+            },
+            {
+              "id": "forced-reflow-insight",
+              "title": "Forced reflow",
+              "score": 0
             },
             {
               "id": "image-delivery-insight",
@@ -790,19 +856,19 @@
           "run": 2,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:05:24.578Z",
+          "fetchTime": "2026-11-01T06:32:02.658Z",
           "scores": {
-            "performance": 95,
+            "performance": 90,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 705.031,
-          "lcp": 1793.378,
+          "fcp": 832.748,
+          "lcp": 1790.246,
           "cls": 0.0002027379788847074,
-          "tbt": 234.76900000000012,
+          "tbt": 399.64800000000014,
           "inp": null,
-          "transferBytes": 199441,
+          "transferBytes": 203034,
           "settings": {
             "output": [
               "html",
@@ -866,14 +932,14 @@
             {
               "id": "total-blocking-time",
               "title": "Total Blocking Time",
-              "displayValue": "230 ms",
-              "score": 0.86
+              "displayValue": "400 ms",
+              "score": 0.68
             },
             {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "180 ms",
-              "score": 0.74
+              "displayValue": "280 ms",
+              "score": 0.42
             },
             {
               "id": "unused-javascript",
@@ -905,19 +971,19 @@
           "run": 3,
           "lighthouseVersion": "12.8.2",
           "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
-          "fetchTime": "2026-11-01T05:05:45.948Z",
+          "fetchTime": "2026-11-01T06:32:25.788Z",
           "scores": {
-            "performance": 96,
+            "performance": 93,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
-          "fcp": 724.454,
-          "lcp": 1802.719,
-          "cls": 0.0002027379788847074,
-          "tbt": 205.00699999999995,
+          "fcp": 839.644,
+          "lcp": 1790.814,
+          "cls": 0,
+          "tbt": 300.5960000000001,
           "inp": null,
-          "transferBytes": 199441,
+          "transferBytes": 203034,
           "settings": {
             "output": [
               "html",
@@ -981,14 +1047,14 @@
             {
               "id": "total-blocking-time",
               "title": "Total Blocking Time",
-              "displayValue": "210 ms",
-              "score": 0.89
+              "displayValue": "300 ms",
+              "score": 0.78
             },
             {
               "id": "max-potential-fid",
               "title": "Max Potential First Input Delay",
-              "displayValue": "160 ms",
-              "score": 0.81
+              "displayValue": "230 ms",
+              "score": 0.57
             },
             {
               "id": "unused-javascript",
@@ -1017,7 +1083,7 @@
           ]
         }
       ],
-      "medianByLCP": 2
+      "medianByLCP": 3
     }
   },
   "network": [
@@ -1033,29 +1099,32 @@
         "mobile": true
       },
       "initial": {
-        "transferBytes": 219516,
-        "javascriptTransferBytes": 144064,
+        "transferBytes": 223109,
+        "javascriptTransferBytes": 146622,
         "largestImage": {
           "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
           "type": "Image",
           "status": 200,
           "mimeType": "image/avif",
           "headers": {
-            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
             "ETag": "W/\"b6cf-1a193b07864\"",
-            "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sun, 01 Nov 2026 06:32:47 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
+            "Content-Type": "image/avif",
+            "X-Frame-Options": "SAMEORIGIN",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
-            "Content-Length": "46799",
-            "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
-            "Content-Type": "image/avif",
-            "X-Frame-Options": "SAMEORIGIN"
+            "Content-Length": "46799"
           },
-          "encodedDataLength": 47292
+          "encodedDataLength": 47637
         },
         "requests": [
           {
@@ -1067,12 +1136,15 @@
               "Cache-Control": "s-maxage=31536000",
               "Connection": "keep-alive",
               "Content-Encoding": "gzip",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
               "Content-Type": "text/html; charset=utf-8",
-              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
-              "ETag": "\"91vnrskskf2m14\"",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Date": "Sun, 01 Nov 2026 06:32:47 GMT",
+              "ETag": "\"10or7ey0lg82m14\"",
               "Keep-Alive": "timeout=5",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000",
               "Transfer-Encoding": "chunked",
               "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
               "X-Content-Type-Options": "nosniff",
@@ -1081,7 +1153,7 @@
               "x-nextjs-prerender": "1\n1",
               "x-nextjs-stale-time": "300"
             },
-            "encodedDataLength": 27421
+            "encodedDataLength": 27766
           },
           {
             "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
@@ -1089,45 +1161,24 @@
             "status": 200,
             "mimeType": "image/avif",
             "headers": {
-              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
               "ETag": "W/\"b6cf-1a193b07864\"",
-              "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
-              "Content-Length": "46799",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:47 GMT",
               "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
               "Content-Type": "image/avif",
-              "X-Frame-Options": "SAMEORIGIN"
-            },
-            "encodedDataLength": 47292
-          },
-          {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
-            "type": "Script",
-            "status": 200,
-            "mimeType": "application/javascript",
-            "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
-              "Content-Encoding": "gzip",
-              "ETag": "W/\"272e-1a19573f9e0\"",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+              "Cross-Origin-Opener-Policy": "same-origin",
               "Connection": "keep-alive",
-              "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
-              "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
-              "Content-Type": "application/javascript; charset=UTF-8",
-              "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "Content-Length": "46799"
             },
-            "encodedDataLength": 4510
+            "encodedDataLength": 47637
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/3cfn99dbrcvvp.js",
@@ -1135,23 +1186,53 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"4202-1a19573f9ef\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"4202-1a195c2a06d\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:47 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 6513
+            "encodedDataLength": 6858
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"272e-1a195c2a083\"",
+              "X-Content-Type-Options": "nosniff",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sun, 01 Nov 2026 06:32:47 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
+            },
+            "encodedDataLength": 4855
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
@@ -1159,47 +1240,53 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"370a-1a19573f9f2\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"370a-1a195c2a071\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:47 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 4172
+            "encodedDataLength": 4517
           },
           {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/0ceu4918hn53m.js",
+            "url": "http://127.0.0.1:3200/_next/static/chunks/0pdbd423ncsg3.js",
             "type": "Script",
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"360b-1a19573f9e4\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"3b15-1a195c2a06f\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:48 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 5675
+            "encodedDataLength": 6508
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
@@ -1207,23 +1294,26 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2d907-1a19573f9e1\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"2d907-1a195c2a082\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:47 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 50582
+            "encodedDataLength": 50927
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/2ki52vdnbo2ft.js",
@@ -1231,23 +1321,26 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"381da-1a19573f9e2\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"381da-1a195c2a07d\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:06 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:47 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 72612
+            "encodedDataLength": 72957
           },
           {
             "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
@@ -1256,29 +1349,32 @@
             "mimeType": "image/svg+xml",
             "headers": {
               "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
               "cache-control": "public, max-age=0, must-revalidate",
+              "Cross-Origin-Opener-Policy": "same-origin",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Keep-Alive": "timeout=5",
               "x-nextjs-cache": "HIT",
-              "Date": "Sun, 01 Nov 2026 05:06:07 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:49 GMT",
               "content-type": "image/svg+xml",
               "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
               "X-Frame-Options": "SAMEORIGIN"
             },
-            "encodedDataLength": 739
+            "encodedDataLength": 1084
           }
         ]
       },
       "scriptedSessionVitals": {
         "FCP": {
-          "value": 516,
+          "value": 416,
           "rating": "good"
         },
         "LCP": {
-          "value": 1240,
+          "value": 1300,
           "rating": "good"
         },
         "CLS": {
@@ -1286,7 +1382,7 @@
           "rating": "good"
         },
         "INP": {
-          "value": 112,
+          "value": 120,
           "rating": "good"
         }
       },
@@ -1294,33 +1390,36 @@
         "state": "ready",
         "view": "poster",
         "eyewear": "none",
-        "quality": "low"
+        "quality": "mobile-high"
       },
-      "extra3DTransferBytes": 302640,
+      "extra3DTransferBytes": 257137,
       "extra3DRequests": [
         {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/2rsiak35olg4d.js",
+          "url": "http://127.0.0.1:3200/_next/static/chunks/0qqd1xgajjlvl.js",
           "type": "Script",
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"2918-1a19573f9e1\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"27f0-1a195c2a06d\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:32:50 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 4243
+          "encodedDataLength": 4550
         },
         {
           "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
@@ -1329,19 +1428,22 @@
           "mimeType": "image/svg+xml",
           "headers": {
             "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
             "cache-control": "public, max-age=0, must-revalidate",
+            "Cross-Origin-Opener-Policy": "same-origin",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Keep-Alive": "timeout=5",
             "x-nextjs-cache": "HIT",
-            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
+            "Date": "Sun, 01 Nov 2026 06:32:50 GMT",
             "content-type": "image/svg+xml",
             "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
             "X-Frame-Options": "SAMEORIGIN"
           },
-          "encodedDataLength": 739
+          "encodedDataLength": 1084
         },
         {
           "url": "http://127.0.0.1:3200/_next/static/chunks/2p2jd75im6m_h.js",
@@ -1349,23 +1451,26 @@
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"a96d-1a19573f9ef\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"a96d-1a195c2a076\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:32:50 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 18066
+          "encodedDataLength": 18411
         },
         {
           "url": "http://127.0.0.1:3200/_next/static/chunks/2khblt934m9wm.js",
@@ -1373,47 +1478,53 @@
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"113a2-1a19573f9f3\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"113a2-1a195c2a075\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:32:50 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 27893
+          "encodedDataLength": 28238
         },
         {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/3zgby_62dsu85.js",
+          "url": "http://127.0.0.1:3200/_next/static/chunks/1my1_d40mipn5.js",
           "type": "Script",
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"e71c0-1a19573f9e3\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"bb28f-1a195c2a079\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:08 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:32:50 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 251699
+          "encodedDataLength": 204854
         }
       ]
     },
@@ -1429,29 +1540,32 @@
         "mobile": true
       },
       "initial": {
-        "transferBytes": 219516,
-        "javascriptTransferBytes": 144064,
+        "transferBytes": 223109,
+        "javascriptTransferBytes": 146622,
         "largestImage": {
           "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
           "type": "Image",
           "status": 200,
           "mimeType": "image/avif",
           "headers": {
-            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
             "ETag": "W/\"b6cf-1a193b07864\"",
-            "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
+            "Content-Type": "image/avif",
+            "X-Frame-Options": "SAMEORIGIN",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
-            "Content-Length": "46799",
-            "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
-            "Content-Type": "image/avif",
-            "X-Frame-Options": "SAMEORIGIN"
+            "Content-Length": "46799"
           },
-          "encodedDataLength": 47292
+          "encodedDataLength": 47637
         },
         "requests": [
           {
@@ -1463,12 +1577,15 @@
               "Cache-Control": "s-maxage=31536000",
               "Connection": "keep-alive",
               "Content-Encoding": "gzip",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
               "Content-Type": "text/html; charset=utf-8",
-              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-              "ETag": "\"91vnrskskf2m14\"",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+              "ETag": "\"10or7ey0lg82m14\"",
               "Keep-Alive": "timeout=5",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000",
               "Transfer-Encoding": "chunked",
               "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
               "X-Content-Type-Options": "nosniff",
@@ -1477,7 +1594,7 @@
               "x-nextjs-prerender": "1\n1",
               "x-nextjs-stale-time": "300"
             },
-            "encodedDataLength": 27421
+            "encodedDataLength": 27766
           },
           {
             "url": "http://127.0.0.1:3200/robot/novahomin-robot-540.avif",
@@ -1485,21 +1602,24 @@
             "status": 200,
             "mimeType": "image/avif",
             "headers": {
-              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
               "ETag": "W/\"b6cf-1a193b07864\"",
-              "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
+              "Content-Type": "image/avif",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
-              "Content-Length": "46799",
-              "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 20:39:38 GMT",
-              "Content-Type": "image/avif",
-              "X-Frame-Options": "SAMEORIGIN"
+              "Content-Length": "46799"
             },
-            "encodedDataLength": 47292
+            "encodedDataLength": 47637
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/3cfn99dbrcvvp.js",
@@ -1507,23 +1627,26 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"4202-1a19573f9ef\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"4202-1a195c2a06d\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 6513
+            "encodedDataLength": 6858
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
@@ -1531,23 +1654,26 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"272e-1a19573f9e0\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"272e-1a195c2a083\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 4510
+            "encodedDataLength": 4855
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
@@ -1555,47 +1681,53 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"370a-1a19573f9f2\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"370a-1a195c2a071\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 4172
+            "encodedDataLength": 4517
           },
           {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/0ceu4918hn53m.js",
+            "url": "http://127.0.0.1:3200/_next/static/chunks/0pdbd423ncsg3.js",
             "type": "Script",
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"360b-1a19573f9e4\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"3b15-1a195c2a06f\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 5675
+            "encodedDataLength": 6508
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
@@ -1603,23 +1735,26 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2d907-1a19573f9e1\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"2d907-1a195c2a082\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 50582
+            "encodedDataLength": 50927
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/2ki52vdnbo2ft.js",
@@ -1627,23 +1762,26 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"381da-1a19573f9e2\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"381da-1a195c2a07d\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:17 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:32:59 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 72612
+            "encodedDataLength": 72957
           },
           {
             "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
@@ -1652,29 +1790,32 @@
             "mimeType": "image/svg+xml",
             "headers": {
               "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
               "cache-control": "public, max-age=0, must-revalidate",
+              "Cross-Origin-Opener-Policy": "same-origin",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Keep-Alive": "timeout=5",
               "x-nextjs-cache": "HIT",
-              "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
+              "Date": "Sun, 01 Nov 2026 06:33:00 GMT",
               "content-type": "image/svg+xml",
               "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
               "X-Frame-Options": "SAMEORIGIN"
             },
-            "encodedDataLength": 739
+            "encodedDataLength": 1084
           }
         ]
       },
       "scriptedSessionVitals": {
         "FCP": {
-          "value": 452,
+          "value": 320,
           "rating": "good"
         },
         "LCP": {
-          "value": 452,
+          "value": 648,
           "rating": "good"
         },
         "CLS": {
@@ -1682,7 +1823,7 @@
           "rating": "good"
         },
         "INP": {
-          "value": 88,
+          "value": 104,
           "rating": "good"
         }
       },
@@ -1690,33 +1831,36 @@
         "state": "ready",
         "view": "poster",
         "eyewear": "none",
-        "quality": "low"
+        "quality": "mobile-high"
       },
-      "extra3DTransferBytes": 302640,
+      "extra3DTransferBytes": 257137,
       "extra3DRequests": [
         {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/2rsiak35olg4d.js",
+          "url": "http://127.0.0.1:3200/_next/static/chunks/0qqd1xgajjlvl.js",
           "type": "Script",
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"2918-1a19573f9e1\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"27f0-1a195c2a06d\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:01 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 4243
+          "encodedDataLength": 4550
         },
         {
           "url": "http://127.0.0.1:3200/_next/static/chunks/2p2jd75im6m_h.js",
@@ -1724,23 +1868,26 @@
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"a96d-1a19573f9ef\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"a96d-1a195c2a076\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:01 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 18066
+          "encodedDataLength": 18411
         },
         {
           "url": "http://127.0.0.1:3200/_next/static/chunks/2khblt934m9wm.js",
@@ -1748,23 +1895,26 @@
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"113a2-1a19573f9f3\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"113a2-1a195c2a075\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:01 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 27893
+          "encodedDataLength": 28238
         },
         {
           "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
@@ -1773,43 +1923,49 @@
           "mimeType": "image/svg+xml",
           "headers": {
             "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
             "cache-control": "public, max-age=0, must-revalidate",
+            "Cross-Origin-Opener-Policy": "same-origin",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Keep-Alive": "timeout=5",
             "x-nextjs-cache": "HIT",
-            "Date": "Sun, 01 Nov 2026 05:06:19 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:01 GMT",
             "content-type": "image/svg+xml",
             "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
             "X-Frame-Options": "SAMEORIGIN"
           },
-          "encodedDataLength": 739
+          "encodedDataLength": 1084
         },
         {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/3zgby_62dsu85.js",
+          "url": "http://127.0.0.1:3200/_next/static/chunks/1my1_d40mipn5.js",
           "type": "Script",
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"e71c0-1a19573f9e3\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"bb28f-1a195c2a079\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:18 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:01 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 251699
+          "encodedDataLength": 204854
         }
       ]
     },
@@ -1825,29 +1981,32 @@
         "mobile": false
       },
       "initial": {
-        "transferBytes": 199441,
-        "javascriptTransferBytes": 144064,
+        "transferBytes": 203034,
+        "javascriptTransferBytes": 146622,
         "largestImage": {
           "url": "http://127.0.0.1:3200/robot/novahomin-robot-420.avif",
           "type": "Image",
           "status": 200,
           "mimeType": "image/avif",
           "headers": {
-            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
             "ETag": "W/\"6864-1a193f9123f\"",
-            "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+            "Last-Modified": "Sat, 31 Oct 2026 21:58:56 GMT",
+            "Content-Type": "image/avif",
+            "X-Frame-Options": "SAMEORIGIN",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Accept-Ranges": "bytes",
-            "Content-Length": "26724",
-            "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-            "Last-Modified": "Sat, 31 Oct 2026 21:58:56 GMT",
-            "Content-Type": "image/avif",
-            "X-Frame-Options": "SAMEORIGIN"
+            "Content-Length": "26724"
           },
-          "encodedDataLength": 27217
+          "encodedDataLength": 27562
         },
         "requests": [
           {
@@ -1859,12 +2018,15 @@
               "Cache-Control": "s-maxage=31536000",
               "Connection": "keep-alive",
               "Content-Encoding": "gzip",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
               "Content-Type": "text/html; charset=utf-8",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-              "ETag": "\"91vnrskskf2m14\"",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+              "ETag": "\"10or7ey0lg82m14\"",
               "Keep-Alive": "timeout=5",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000",
               "Transfer-Encoding": "chunked",
               "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
               "X-Content-Type-Options": "nosniff",
@@ -1873,7 +2035,7 @@
               "x-nextjs-prerender": "1\n1",
               "x-nextjs-stale-time": "300"
             },
-            "encodedDataLength": 27421
+            "encodedDataLength": 27766
           },
           {
             "url": "http://127.0.0.1:3200/robot/novahomin-robot-420.avif",
@@ -1881,21 +2043,24 @@
             "status": 200,
             "mimeType": "image/avif",
             "headers": {
-              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
               "ETag": "W/\"6864-1a193f9123f\"",
-              "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+              "Last-Modified": "Sat, 31 Oct 2026 21:58:56 GMT",
+              "Content-Type": "image/avif",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=2592000, stale-while-revalidate=604800",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Accept-Ranges": "bytes",
-              "Content-Length": "26724",
-              "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-              "Last-Modified": "Sat, 31 Oct 2026 21:58:56 GMT",
-              "Content-Type": "image/avif",
-              "X-Frame-Options": "SAMEORIGIN"
+              "Content-Length": "26724"
             },
-            "encodedDataLength": 27217
+            "encodedDataLength": 27562
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/3cfn99dbrcvvp.js",
@@ -1903,71 +2068,26 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"4202-1a19573f9ef\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"4202-1a195c2a06d\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
-            },
-            "encodedDataLength": 6513
-          },
-          {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
-            "type": "Script",
-            "status": 200,
-            "mimeType": "application/javascript",
-            "headers": {
+              "X-Frame-Options": "SAMEORIGIN",
               "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
               "Cache-Control": "public, max-age=31536000, immutable",
-              "Content-Encoding": "gzip",
-              "ETag": "W/\"272e-1a19573f9e0\"",
+              "Cross-Origin-Opener-Policy": "same-origin",
               "Connection": "keep-alive",
-              "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
-              "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
-              "Content-Type": "application/javascript; charset=UTF-8",
-              "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 4510
-          },
-          {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
-            "type": "Script",
-            "status": 200,
-            "mimeType": "application/javascript",
-            "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
-              "Content-Encoding": "gzip",
-              "ETag": "W/\"370a-1a19573f9f2\"",
-              "Connection": "keep-alive",
-              "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
-              "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
-              "Content-Type": "application/javascript; charset=UTF-8",
-              "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
-            },
-            "encodedDataLength": 4172
+            "encodedDataLength": 6858
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/1j_b1xq_woyiy.js",
@@ -1975,47 +2095,107 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"2d907-1a19573f9e1\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"2d907-1a195c2a082\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 50582
+            "encodedDataLength": 50927
           },
           {
-            "url": "http://127.0.0.1:3200/_next/static/chunks/0ceu4918hn53m.js",
+            "url": "http://127.0.0.1:3200/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
             "type": "Script",
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"360b-1a19573f9e4\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"272e-1a195c2a083\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 5675
+            "encodedDataLength": 4855
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/1tq6ppe__m8m-.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"370a-1a195c2a071\"",
+              "X-Content-Type-Options": "nosniff",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
+            },
+            "encodedDataLength": 4517
+          },
+          {
+            "url": "http://127.0.0.1:3200/_next/static/chunks/0pdbd423ncsg3.js",
+            "type": "Script",
+            "status": 200,
+            "mimeType": "application/javascript",
+            "headers": {
+              "Content-Encoding": "gzip",
+              "ETag": "W/\"3b15-1a195c2a06f\"",
+              "X-Content-Type-Options": "nosniff",
+              "Keep-Alive": "timeout=5",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
+              "Content-Type": "application/javascript; charset=UTF-8",
+              "Vary": "Accept-Encoding",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
+            },
+            "encodedDataLength": 6508
           },
           {
             "url": "http://127.0.0.1:3200/_next/static/chunks/2ki52vdnbo2ft.js",
@@ -2023,23 +2203,26 @@
             "status": 200,
             "mimeType": "application/javascript",
             "headers": {
-              "Transfer-Encoding": "chunked",
-              "Cache-Control": "public, max-age=31536000, immutable",
               "Content-Encoding": "gzip",
-              "ETag": "W/\"381da-1a19573f9e2\"",
-              "Connection": "keep-alive",
+              "ETag": "W/\"381da-1a195c2a07d\"",
               "X-Content-Type-Options": "nosniff",
-              "Referrer-Policy": "strict-origin-when-cross-origin",
-              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-              "Accept-Ranges": "bytes",
               "Keep-Alive": "timeout=5",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
-              "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
+              "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
               "Content-Type": "application/javascript; charset=UTF-8",
               "Vary": "Accept-Encoding",
-              "X-Frame-Options": "SAMEORIGIN"
+              "X-Frame-Options": "SAMEORIGIN",
+              "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+              "Cache-Control": "public, max-age=31536000, immutable",
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Connection": "keep-alive",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+              "Accept-Ranges": "bytes"
             },
-            "encodedDataLength": 72612
+            "encodedDataLength": 72957
           },
           {
             "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
@@ -2048,29 +2231,32 @@
             "mimeType": "image/svg+xml",
             "headers": {
               "Transfer-Encoding": "chunked",
+              "Strict-Transport-Security": "max-age=31536000",
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
               "cache-control": "public, max-age=0, must-revalidate",
+              "Cross-Origin-Opener-Policy": "same-origin",
               "Connection": "keep-alive",
               "X-Content-Type-Options": "nosniff",
               "Referrer-Policy": "strict-origin-when-cross-origin",
               "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
               "Keep-Alive": "timeout=5",
               "x-nextjs-cache": "HIT",
-              "Date": "Sun, 01 Nov 2026 05:06:26 GMT",
+              "Date": "Sun, 01 Nov 2026 06:33:09 GMT",
               "content-type": "image/svg+xml",
               "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
               "X-Frame-Options": "SAMEORIGIN"
             },
-            "encodedDataLength": 739
+            "encodedDataLength": 1084
           }
         ]
       },
       "scriptedSessionVitals": {
         "FCP": {
-          "value": 332,
+          "value": 476,
           "rating": "good"
         },
         "LCP": {
-          "value": 332,
+          "value": 476,
           "rating": "good"
         },
         "CLS": {
@@ -2078,7 +2264,7 @@
           "rating": "good"
         },
         "INP": {
-          "value": 32,
+          "value": 24,
           "rating": "good"
         }
       },
@@ -2086,33 +2272,36 @@
         "state": "ready",
         "view": "poster",
         "eyewear": "none",
-        "quality": "high"
+        "quality": "desktop"
       },
-      "extra3DTransferBytes": 302640,
+      "extra3DTransferBytes": 257137,
       "extra3DRequests": [
         {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/2rsiak35olg4d.js",
+          "url": "http://127.0.0.1:3200/_next/static/chunks/0qqd1xgajjlvl.js",
           "type": "Script",
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"2918-1a19573f9e1\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"27f0-1a195c2a06d\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:10 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 4243
+          "encodedDataLength": 4550
         },
         {
           "url": "http://127.0.0.1:3200/_next/static/chunks/2p2jd75im6m_h.js",
@@ -2120,23 +2309,26 @@
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"a96d-1a19573f9ef\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"a96d-1a195c2a076\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:10 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 18066
+          "encodedDataLength": 18411
         },
         {
           "url": "http://127.0.0.1:3200/_next/static/chunks/2khblt934m9wm.js",
@@ -2144,23 +2336,53 @@
           "status": 200,
           "mimeType": "application/javascript",
           "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
             "Content-Encoding": "gzip",
-            "ETag": "W/\"113a2-1a19573f9f3\"",
-            "Connection": "keep-alive",
+            "ETag": "W/\"113a2-1a195c2a075\"",
             "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
             "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:10 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
             "Content-Type": "application/javascript; charset=UTF-8",
             "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
           },
-          "encodedDataLength": 27893
+          "encodedDataLength": 28238
+        },
+        {
+          "url": "http://127.0.0.1:3200/_next/static/chunks/1my1_d40mipn5.js",
+          "type": "Script",
+          "status": 200,
+          "mimeType": "application/javascript",
+          "headers": {
+            "Content-Encoding": "gzip",
+            "ETag": "W/\"bb28f-1a195c2a079\"",
+            "X-Content-Type-Options": "nosniff",
+            "Keep-Alive": "timeout=5",
+            "Date": "Sun, 01 Nov 2026 06:33:10 GMT",
+            "Last-Modified": "Sun, 01 Nov 2026 06:18:42 GMT",
+            "Content-Type": "application/javascript; charset=UTF-8",
+            "Vary": "Accept-Encoding",
+            "X-Frame-Options": "SAMEORIGIN",
+            "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "Cross-Origin-Opener-Policy": "same-origin",
+            "Connection": "keep-alive",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+            "Accept-Ranges": "bytes"
+          },
+          "encodedDataLength": 204854
         },
         {
           "url": "http://127.0.0.1:3200/icon.svg?icon.3tyo5hsec_4j0.svg",
@@ -2169,43 +2391,22 @@
           "mimeType": "image/svg+xml",
           "headers": {
             "Transfer-Encoding": "chunked",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
             "cache-control": "public, max-age=0, must-revalidate",
+            "Cross-Origin-Opener-Policy": "same-origin",
             "Connection": "keep-alive",
             "X-Content-Type-Options": "nosniff",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
             "Keep-Alive": "timeout=5",
             "x-nextjs-cache": "HIT",
-            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
+            "Date": "Sun, 01 Nov 2026 06:33:10 GMT",
             "content-type": "image/svg+xml",
             "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
             "X-Frame-Options": "SAMEORIGIN"
           },
-          "encodedDataLength": 739
-        },
-        {
-          "url": "http://127.0.0.1:3200/_next/static/chunks/3zgby_62dsu85.js",
-          "type": "Script",
-          "status": 200,
-          "mimeType": "application/javascript",
-          "headers": {
-            "Transfer-Encoding": "chunked",
-            "Cache-Control": "public, max-age=31536000, immutable",
-            "Content-Encoding": "gzip",
-            "ETag": "W/\"e71c0-1a19573f9e3\"",
-            "Connection": "keep-alive",
-            "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
-            "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-            "Accept-Ranges": "bytes",
-            "Keep-Alive": "timeout=5",
-            "Date": "Sun, 01 Nov 2026 05:06:27 GMT",
-            "Last-Modified": "Sun, 01 Nov 2026 04:52:48 GMT",
-            "Content-Type": "application/javascript; charset=UTF-8",
-            "Vary": "Accept-Encoding",
-            "X-Frame-Options": "SAMEORIGIN"
-          },
-          "encodedDataLength": 251699
+          "encodedDataLength": 1084
         }
       ]
     }
@@ -2213,22 +2414,34 @@
   "bundle": {
     "chunks": [
       {
-        "file": ".next/static/chunks/0ceu4918hn53m.js",
-        "rawBytes": 13835,
-        "gzipBytes": 5104,
-        "brotliBytes": 4406
-      },
-      {
         "file": ".next/static/chunks/0cz1d0mv5g_q7.js",
         "rawBytes": 112594,
         "gzipBytes": 39627,
         "brotliBytes": 35158
       },
       {
+        "file": ".next/static/chunks/0pdbd423ncsg3.js",
+        "rawBytes": 15125,
+        "gzipBytes": 5592,
+        "brotliBytes": 4848
+      },
+      {
+        "file": ".next/static/chunks/0qqd1xgajjlvl.js",
+        "rawBytes": 10224,
+        "gzipBytes": 3635,
+        "brotliBytes": 3225
+      },
+      {
         "file": ".next/static/chunks/1j_b1xq_woyiy.js",
         "rawBytes": 186631,
         "gzipBytes": 49972,
         "brotliBytes": 42000
+      },
+      {
+        "file": ".next/static/chunks/1my1_d40mipn5.js",
+        "rawBytes": 766607,
+        "gzipBytes": 203781,
+        "brotliBytes": 168702
       },
       {
         "file": ".next/static/chunks/1tq6ppe__m8m-.js",
@@ -2255,22 +2468,10 @@
         "brotliBytes": 15920
       },
       {
-        "file": ".next/static/chunks/2rsiak35olg4d.js",
-        "rawBytes": 10520,
-        "gzipBytes": 3673,
-        "brotliBytes": 3287
-      },
-      {
         "file": ".next/static/chunks/3cfn99dbrcvvp.js",
         "rawBytes": 16898,
         "gzipBytes": 5942,
         "brotliBytes": 5213
-      },
-      {
-        "file": ".next/static/chunks/3zgby_62dsu85.js",
-        "rawBytes": 946624,
-        "gzipBytes": 250934,
-        "brotliBytes": 205189
       },
       {
         "file": ".next/static/chunks/turbopack-3-ry682tkyiqk.js",
@@ -2280,9 +2481,9 @@
       }
     ],
     "totals": {
-      "rawBytes": 1655007,
-      "gzipBytes": 479583,
-      "brotliBytes": 403962
+      "rawBytes": 1475984,
+      "gzipBytes": 432880,
+      "brotliBytes": 367855
     },
     "modelDownloadBytes": 0,
     "modelExplanation": "Procedural geometry; no GLB/GLTF, textures, KTX2 or Draco/Meshopt decoder requests. Optional Three.js/R3F code is included in extra3DTransferBytes.",

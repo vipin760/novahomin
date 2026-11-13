@@ -23,7 +23,7 @@ Optional build-time configuration (`.env.local`, see `.env.example`):
 
 ## The robot
 
-**Reference.** `public/image.png` is the supplied reference render (graphite armour, navy panels, cyan lights, orange accents). It is the visual identity and is not replaced.
+**Reference.** `assets/reference/robot-reference.png` is the supplied reference render (graphite armour, navy panels, cyan lights, orange accents). It is the visual identity and is not replaced. It is kept out of `public/`, so the 2.1 MB source is not deployed.
 
 **Poster (`public/robot/`).** The reference was cut out with macOS Vision's on-device subject mask, cropped to the robot's bounds (670 × 1494, 16 px top and bottom padding) and encoded as responsive AVIF and WebP at 360, 420, 540 and 670 px wide (22–63 KB AVIF). The poster is the first thing visitors see, the LCP element, and the fallback whenever 3D is unavailable. It is also what the hero and contact sections show: the robot's original appearance.
 
@@ -74,8 +74,15 @@ It is a stylised reconstruction, not a copy of the render: it lacks the referenc
 - GSAP (≈ 45 KB gzip) and the 3D scene (three.js + R3F + robot, ≈ 294 KB transfer) load on the visitor's first interaction (scroll, touch, pointer or key), not on page load. If the page opens already scrolled, they load immediately. Every scroll animation starts below the hero, so nothing on arrival waits for them.
 - Text uses the system UI font stack (SF Pro, Segoe UI Variable, Roboto). Measured with Geist as a webfont, Lighthouse's simulated mobile LCP was 2.52–2.59 s. With the system stack it is 2.39–2.48 s, and the font-swap layout shift disappears. To restore Geist, re-add `next/font/google` in `app/layout.tsx` and accept that cost.
 - WebGL frames are rendered on demand. Rendering stops entirely while the poster is showing (hero, contact, failed or unsupported 3D) and when the tab is hidden.
-- Quality tiers: high (desktop: antialiasing, particles, 60 fps, DPR ≤ 1.5), medium (tablet), low (phones: no particles or antialiasing, simplified geometry, 30 fps, DPR ≤ 1.25).
-- No 3D for reduced motion, Save-Data, < 2 GB device memory, missing WebGL or software rasterisers (SwiftShader/llvmpipe). Those visitors keep the poster. Context loss, failed chunk downloads and render errors all fall back to the poster.
+- **3D start-up** (`mountRobotScene` in `components/robot-canvas.tsx`) uses R3F's `createRoot`, not `<Canvas>`. `<Canvas>` registers the whole three.js namespace and defeats tree-shaking. Start-up runs as separate tasks so input stays responsive: renderer on the probe's context, then the environment map, then the robot (built in slices), then the first render with parallel shader compilation. User Timing measures (`novahomin:3d-*`) record each step. The renderer uses the default GPU power preference: "high-performance" forces a discrete-GPU switch on dual-GPU laptops, measured as a ~700 ms stall.
+- **Quality tiers** (`lib/robot/quality.ts`): desktop-high, desktop, tablet, mobile-high and mobile-low. The tier is chosen from layout width, pointer type, CPU cores, device memory and the GPU renderer (older mobile and integrated GPUs drop a tier). Tiers set pixel ratio, antialiasing, particles, geometry detail, wear shader, light count, environment-map size and frame-rate cap. No tier uses shadows or post-processing. If frames stay well over budget for about 2 s, the scene lowers its pixel ratio, then its frame-rate cap.
+- One WebGL context per visit: the capability probe creates it with the final attributes and the renderer reuses it.
+- No 3D for reduced motion, Save-Data, < 2 GB device memory, missing WebGL 2 or software rasterisers (SwiftShader/llvmpipe). Those visitors keep the poster. Context loss, failed chunk downloads and render errors all fall back to the poster.
+- **Headers** (`next.config.ts`):
+  - production CSP without nonces (keeps the page static; inline scripts are Next's RSC payload and the pre-paint flag);
+  - HSTS (`max-age=31536000`; add `includeSubDomains`/`preload` only once every subdomain is HTTPS);
+  - COOP, nosniff, Referrer-Policy, X-Frame-Options and Permissions-Policy;
+  - 30-day caching for the poster files.
 - Reduced motion also skips GSAP: content is static and fully visible.
 - ScrollTrigger runs an empty `requestAnimationFrame` keep-alive loop by design (a repaint workaround in the library). It does no rendering. The tests therefore measure idle by counting WebGL draw calls, not rAF callbacks.
 

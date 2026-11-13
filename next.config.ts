@@ -2,14 +2,14 @@ import type { NextConfig } from "next";
 
 /**
  * Static-compatible CSP (no nonces: nonces would force dynamic rendering). Inline
- * scripts are Next's RSC payload and the pre-paint story flag. Production only:
+ * scripts are Next's RSC payload. Production only:
  * development needs 'unsafe-eval' for fast refresh.
  */
 const contentSecurityPolicy = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://res.cloudinary.com",
   "font-src 'self'",
   "connect-src 'self'",
   "object-src 'none'",
@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   compress: true,
   cacheComponents: true,
   partialPrefetching: true,
-  // Single page, ~6 KB of CSS: inline it to remove the render-blocking request.
+  // One small stylesheet (~5 KB gzip): inline it to remove the render-blocking request.
   experimental: { inlineCss: true },
   async headers() {
     return [
