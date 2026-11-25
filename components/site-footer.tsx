@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { BackToTop } from "./back-to-top";
 import { BrandMark } from "./icons";
-import { NewsletterForm } from "./newsletter-form";
 
 const columns = [
   {
@@ -41,6 +40,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container">
+        {/* Newsletter section hidden for now. To restore, uncomment and re-add the NewsletterForm import.
         <section className="footer-news" aria-labelledby="newsletter-heading">
           <div>
             <h2 id="newsletter-heading">Stay Ahead of What&rsquo;s Next.</h2>
@@ -50,6 +50,7 @@ export function SiteFooter() {
           </div>
           <NewsletterForm />
         </section>
+        */}
 
         <div className="footer-main">
           <div className="footer-brand">
