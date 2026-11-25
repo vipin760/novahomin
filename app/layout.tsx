@@ -6,7 +6,8 @@ import "./globals.css";
 import { Motion } from "@/components/motion";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { WhatsAppButton } from "@/components/whatsapp-button";
+import { ChatWidget } from "@/components/chat-widget";
+// import { WhatsAppButton } from "@/components/whatsapp-button";
 import { motionScript } from "@/lib/motion-script";
 import { siteOrigin } from "@/lib/site";
 
@@ -68,7 +69,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Suspense>
         <main id="main">{children}</main>
         <SiteFooter />
-        <WhatsAppButton />
+        <Suspense fallback={null}>
+          <ChatWidget />
+        </Suspense>
+        {/* WhatsApp button hidden for now; re-enable by uncommenting:
+        <Suspense fallback={null}>
+          <WhatsAppButton />
+        </Suspense>
+        */}
         <Suspense fallback={null}>
           <Motion />
         </Suspense>
