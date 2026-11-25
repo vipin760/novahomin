@@ -7,3 +7,11 @@ export function siteOrigin() {
     throw new Error("SITE_URL must be an HTTP(S) origin.");
   return url.origin;
 }
+
+/** WhatsApp business number in international format, digits only (no "+"). */
+export const WHATSAPP_NUMBER = "918139886630";
+export const WHATSAPP_MESSAGE = "Hi Novahomin, I'd like to talk about a project.";
+
+export function whatsappLink(message: string = WHATSAPP_MESSAGE) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}

@@ -56,6 +56,9 @@ const states = {
   card: { from: { opacity: 0, scale: 0.75 }, to: { opacity: 1, scale: 1, duration: 0.8, delay: 0.2, ease: "power2.out" } },
 } as const;
 
+// Tracked off-DOM: writing attributes onto React-rendered nodes causes hydration mismatches.
+const animated = new WeakSet<HTMLElement>();
+
 export function Motion() {
   const pathname = usePathname();
 
@@ -99,11 +102,12 @@ export function Motion() {
           );
         };
 
-        const elements = document.querySelectorAll<HTMLElement>("[data-anim]:not([data-animated])");
+        const elements = document.querySelectorAll<HTMLElement>("[data-anim]");
         for (const element of elements) {
+          if (animated.has(element)) continue;
           const kind = element.dataset.anim as keyof typeof states;
           if (!(kind in states)) continue;
-          element.dataset.animated = "";
+          animated.add(element);
           const { from, to } = states[kind];
 
           if (kind !== "hero") {
