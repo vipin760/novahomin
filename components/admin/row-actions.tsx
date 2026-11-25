@@ -28,15 +28,15 @@ export function CopyButton({ text, label }: { text: string; label: string }) {
 }
 
 /** Delete button that asks for confirmation before submitting its form. */
-export function ConfirmDelete({ name }: { name: string }) {
+export function ConfirmDelete({ name, noun = "enquiry from" }: { name: string; noun?: string }) {
   return (
     <button
       type="submit"
       className="enq-act enq-act-danger"
-      aria-label={`Delete enquiry from ${name}`}
+      aria-label={`Delete ${noun} ${name}`}
       title="Delete"
       onClick={(event) => {
-        if (!window.confirm(`Delete the enquiry from ${name}? This cannot be undone.`)) event.preventDefault();
+        if (!window.confirm(`Delete ${noun} ${name}? This cannot be undone.`)) event.preventDefault();
       }}
     >
       <Icon name="trash" size={16} />
