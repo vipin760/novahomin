@@ -26,13 +26,16 @@ export async function login(_: LoginState, formData: FormData): Promise<LoginSta
     httpOnly: true,
     sameSite: "strict",
     secure: process.env.NODE_ENV === "production",
-    path: "/admin",
+    // "/" (not "/admin") so the admin APIs under /api/admin (media library uploads) receive it too.
+    path: "/",
     maxAge: SESSION_SECONDS,
   });
   redirect("/admin");
 }
 
 export async function logout() {
-  (await cookies()).delete({ name: SESSION_COOKIE, path: "/admin" });
+  const jar = await cookies();
+  jar.delete({ name: SESSION_COOKIE, path: "/" });
+  jar.delete({ name: SESSION_COOKIE, path: "/admin" }); // sessions issued before the path change
   redirect("/admin/login");
 }

@@ -1,67 +1,74 @@
 import "server-only";
-import { createCipheriv, createDecipheriv, createHash, randomBytes } from "node:crypto";
-import nodemailer from "nodemailer";
 import { getDb } from "./db";
-import type { Enquiry } from "./store";
+import { decrypt, encrypt } from "./secret";
 
+/** Notification preferences (provider-independent) plus the optional SMTP fallback connection. */
 export type SmtpSettings = {
+  /** Email the configured recipients when an enquiry arrives. */
   enabled: boolean;
+  /** Send the visitor an acknowledgement email. */
+  ackEnabled: boolean;
+  recipients: string[];
   host: string;
   port: number;
   secure: boolean;
   user: string;
   hasPassword: boolean;
   from: string;
-  notifyTo: string;
 };
 
-type Stored = Omit<SmtpSettings, "hasPassword"> & { passEnc?: string };
+export type SmtpConnection = Pick<SmtpSettings, "host" | "port" | "secure" | "user" | "from">;
 
-/** The SMTP password is stored encrypted (AES-256-GCM) with a key derived from SESSION_SECRET. */
-const key = () => createHash("sha256").update(`smtp:${process.env.SESSION_SECRET ?? ""}`).digest();
+type Stored = Partial<Omit<SmtpSettings, "hasPassword" | "recipients">> & { passEnc?: string; notifyTo?: string };
 
-function encrypt(value: string) {
-  const iv = randomBytes(12);
-  const cipher = createCipheriv("aes-256-gcm", key(), iv);
-  const data = Buffer.concat([cipher.update(value, "utf8"), cipher.final()]);
-  return [iv, cipher.getAuthTag(), data].map((part) => part.toString("base64")).join(".");
-}
+export const MAX_RECIPIENTS = 20;
 
-function decrypt(value: string) {
-  const [iv, tag, data] = value.split(".").map((part) => Buffer.from(part, "base64"));
-  const decipher = createDecipheriv("aes-256-gcm", key(), iv);
-  decipher.setAuthTag(tag);
-  return Buffer.concat([decipher.update(data), decipher.final()]).toString("utf8");
-}
+export const parseRecipients = (value: string | undefined) =>
+  (value ?? "")
+    .split(/[,;\n]/)
+    .map((address) => address.trim())
+    .filter(Boolean);
 
-const settings = async () => (await getDb()).collection<{ _id: string } & Partial<Stored>>("settings");
+export const settings = async () => (await getDb()).collection<{ _id: string } & Stored>("settings");
 
 export async function getSmtp(): Promise<SmtpSettings> {
   const row = await (await settings()).findOne({ _id: "smtp" });
   return {
     enabled: Boolean(row?.enabled),
+    // On by default: visitors get a confirmation as soon as a mail provider works. Admin
+    // notifications stay off until at least one recipient is saved.
+    ackEnabled: row?.ackEnabled ?? true,
+    recipients: parseRecipients(row?.notifyTo),
     host: row?.host ?? "",
     port: row?.port ?? 587,
     secure: Boolean(row?.secure),
     user: row?.user ?? "",
     hasPassword: Boolean(row?.passEnc),
     from: row?.from ?? "",
-    notifyTo: row?.notifyTo ?? "",
   };
 }
 
-export async function saveSmtp(input: Omit<SmtpSettings, "hasPassword">, password: string) {
-  const update: Partial<Stored> = { ...input };
+export async function saveSmtp(input: SmtpConnection, password: string) {
+  const update: Stored = { ...input };
   if (password) update.passEnc = encrypt(password);
   await (await settings()).updateOne({ _id: "smtp" }, { $set: update }, { upsert: true });
 }
 
-async function transport() {
+export async function saveNotify(input: { enabled: boolean; ackEnabled: boolean; recipients: string[] }) {
+  await (await settings()).updateOne(
+    { _id: "smtp" },
+    { $set: { enabled: input.enabled, ackEnabled: input.ackEnabled, notifyTo: input.recipients.join(", ") } },
+    { upsert: true },
+  );
+}
+
+/** Connection options for the SMTP fallback, or null when it is not configured. */
+export async function smtpTransportOptions() {
   const row = await (await settings()).findOne({ _id: "smtp" });
-  if (!row?.host || !row.from) throw new Error("SMTP host and From address are required.");
+  if (!row?.host || !row.from) return null;
   return {
-    row,
-    mailer: nodemailer.createTransport({
+    from: row.from,
+    options: {
       host: row.host,
       port: row.port ?? 587,
       secure: Boolean(row.secure),
@@ -69,44 +76,6 @@ async function transport() {
       connectionTimeout: 8000,
       greetingTimeout: 8000,
       socketTimeout: 10000,
-    }),
+    },
   };
-}
-
-const clean = (value: string) => value.replace(/[\r\n]+/g, " ").trim();
-
-/** Sends a test message to `to` and reports the real outcome. */
-export async function sendTest(to: string) {
-  const { row, mailer } = await transport();
-  await mailer.sendMail({
-    from: row.from,
-    to,
-    subject: "Novahomin SMTP test",
-    text: "This is a test message from the Novahomin admin. Your SMTP settings work.",
-  });
-}
-
-/** Notifies the configured recipients of a new enquiry. Never throws: storage must not depend on email. */
-export async function notifyEnquiry(enquiry: Enquiry) {
-  try {
-    const row = await (await settings()).findOne({ _id: "smtp" });
-    if (!row?.enabled || !row.notifyTo) return;
-    const { mailer } = await transport();
-    await mailer.sendMail({
-      from: row.from,
-      to: row.notifyTo,
-      replyTo: enquiry.email,
-      subject: clean(`New enquiry from ${enquiry.name}`),
-      text: [
-        `Name: ${enquiry.name}`,
-        `Email: ${enquiry.email}`,
-        `Phone: ${enquiry.phone || "-"}`,
-        `Service: ${enquiry.service || "-"}`,
-        "",
-        enquiry.message,
-      ].join("\n"),
-    });
-  } catch (error) {
-    console.error("Enquiry notification email failed:", error instanceof Error ? error.message : error);
-  }
 }

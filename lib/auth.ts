@@ -1,6 +1,7 @@
 import "server-only";
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
+import { connection } from "next/server";
 
 export const SESSION_COOKIE = "nh_admin";
 export const SESSION_SECONDS = 60 * 60 * 8;
@@ -41,5 +42,8 @@ function verify(token: string | undefined) {
 }
 
 export async function isAdmin() {
+  // Expiry compares against the current time, which Cache Components forbids during
+  // prerender/prefetch. Opting into request time first keeps this check dynamic-only.
+  await connection();
   return verify((await cookies()).get(SESSION_COOKIE)?.value);
 }

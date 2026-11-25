@@ -8,7 +8,7 @@ import { ButtonLink } from "./button";
 import { BrandMark, ChevronDown } from "./icons";
 
 /** Routes whose hero is a dark full-bleed image: the header sits on it in white. */
-const darkHeroRoutes = new Set(["/", "/about"]);
+const darkHeroRoutes = new Set(["/", "/about", "/portfolio"]);
 
 /**
  * Behaviour copied from the reference's header script: once scrolled, a backdrop fades

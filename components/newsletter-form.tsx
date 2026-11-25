@@ -26,7 +26,7 @@ export function NewsletterForm() {
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, company: data.get("company") }),
+        body: JSON.stringify({ email, nh_extra_note: data.get("nh_extra_note") }),
       });
       const result = (await response.json().catch(() => ({}))) as { error?: string; message?: string };
       if (response.ok) {
@@ -57,17 +57,16 @@ export function NewsletterForm() {
           placeholder="Email address"
           required
           maxLength={254}
-          aria-describedby="newsletter-consent newsletter-status"
+          aria-describedby="newsletter-status"
           aria-invalid={status.kind === "error" || undefined}
         />
-        <input name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp-field" />
+        <input name="nh_extra_note" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp-field" />
         <button type="submit" className="newsletter-submit" disabled={sending}>
           {sending ? "Subscribing…" : "Subscribe"} <span aria-hidden="true">→</span>
         </button>
       </div>
-      <p className="newsletter-consent" id="newsletter-consent">
-        By subscribing you agree to receive occasional emails from Novahomin. Unsubscribe at any time.
-      </p>
+      {/* Consent line hidden for now:
+          By subscribing you agree to receive occasional emails from Novahomin. Unsubscribe at any time. */}
       <p className="newsletter-status" id="newsletter-status" data-kind={status.kind} role="status">
         {status.text}
       </p>

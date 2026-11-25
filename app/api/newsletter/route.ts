@@ -7,8 +7,8 @@ export async function POST(request: Request) {
   if (limited(`newsletter:${clientIp(request.headers)}`, 5, 10 * 60_000))
     return Response.json({ error: "Too many attempts. Please try again later." }, { status: 429 });
 
-  const body = (await request.json().catch(() => null)) as { email?: unknown; company?: unknown } | null;
-  if (body?.company) return Response.json({ ok: true }); // honeypot: bots only
+  const body = (await request.json().catch(() => null)) as { email?: unknown; nh_extra_note?: unknown } | null;
+  if (body?.nh_extra_note) return Response.json({ ok: true }); // honeypot: bots only
   const email = typeof body?.email === "string" ? body.email.trim() : "";
   if (email.length > 254 || !emailPattern.test(email))
     return Response.json({ error: "Please enter a valid email address." }, { status: 400 });

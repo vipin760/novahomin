@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { services } from "@/lib/content";
 import { useHydrated } from "@/lib/use-hydrated";
@@ -11,6 +12,7 @@ import { ButtonLayers } from "./button";
  * otherwise it is saved as a text brief on the visitor's device.
  */
 export function ContactForm({ contactEmail }: { contactEmail?: string }) {
+  const router = useRouter();
   const form = useRef<HTMLFormElement>(null);
   const hydrated = useHydrated();
   const [status, setStatus] = useState<{ kind: "idle" | "ok" | "error"; text: string }>({ kind: "idle", text: "" });
@@ -31,6 +33,7 @@ export function ContactForm({ contactEmail }: { contactEmail?: string }) {
       if (response.ok) {
         form.current!.reset();
         setStatus({ kind: "ok", text: "Thank you. Your message has been sent and our team will be in touch." });
+        router.push("/thank-you");
       } else {
         setStatus({ kind: "error", text: result.error ?? "Something went wrong. Please try again." });
       }
@@ -95,7 +98,9 @@ export function ContactForm({ contactEmail }: { contactEmail?: string }) {
             placeholder="Tell us about your project..."
           />
         </label>
-        <input name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp-field" />
+        {/* Honeypot: humans never see it. The name is deliberately not a real field name (like "company"
+            or "website"), so browser autofill cannot fill it and make a real visitor look like a bot. */}
+        <input name="nh_extra_note" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp-field" />
         <button type="submit" className="button button-block" data-variant="dark" disabled={sending}>
           <ButtonLayers>{sending ? "Sending…" : "Send message"}</ButtonLayers>
         </button>

@@ -12,7 +12,12 @@ export type Project = {
   description: string;
   link: string;
   cover: Img | null;
+  /** Large showcase image for the featured spot (falls back to the cover). */
+  hero: Img | null;
   gallery: Img[];
+  features: string[];
+  platforms: string[];
+  featured: boolean;
   status: "draft" | "published";
   sortOrder: number;
   createdAt: string;
@@ -40,7 +45,11 @@ const plain = (row: Record<string, unknown> & { _id: { toString(): string } }): 
   description: String(row.description ?? ""),
   link: String(row.link ?? ""),
   cover: (row.cover as Img | null) ?? null,
+  hero: (row.hero as Img | null) ?? null,
   gallery: Array.isArray(row.gallery) ? (row.gallery as Img[]) : [],
+  features: Array.isArray(row.features) ? row.features.map(String) : [],
+  platforms: Array.isArray(row.platforms) ? row.platforms.map(String) : [],
+  featured: Boolean(row.featured),
   status: row.status === "published" ? "published" : "draft",
   sortOrder: Number(row.sortOrder ?? 0),
   createdAt: iso(row.createdAt),

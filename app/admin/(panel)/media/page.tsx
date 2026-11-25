@@ -9,3 +9,6 @@ export default function MediaPage() {
     </>
   );
 }
+
+// Auth-gated and per-request: the guard redirects signed-out visitors, so skip dev-time instant validation.
+export const instant = false;

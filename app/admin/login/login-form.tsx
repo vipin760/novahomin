@@ -1,16 +1,31 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useId, useState } from "react";
 import { login, type LoginState } from "../actions";
 
 export function LoginForm() {
   const [state, action, pending] = useActionState<LoginState, FormData>(login, {});
   const [visible, setVisible] = useState(false);
+  const [capsLock, setCapsLock] = useState(false);
+  const errorId = useId();
+  const hasError = Boolean(state.error);
+
   return (
-    <form action={action} className="admin-form">
+    <form action={action} className="admin-form" aria-busy={pending}>
       <label>
         <span>Username</span>
-        <input name="username" autoComplete="username" required maxLength={200} />
+        <input
+          name="username"
+          autoComplete="username"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          autoFocus
+          required
+          maxLength={200}
+          aria-invalid={hasError || undefined}
+          aria-describedby={hasError ? errorId : undefined}
+        />
       </label>
       <label>
         <span>Password</span>
@@ -21,6 +36,10 @@ export function LoginForm() {
             autoComplete="current-password"
             required
             maxLength={200}
+            aria-invalid={hasError || undefined}
+            aria-describedby={hasError ? errorId : undefined}
+            onKeyUp={(e) => setCapsLock(e.getModifierState("CapsLock"))}
+            onBlur={() => setCapsLock(false)}
           />
           <button
             type="button"
@@ -36,11 +55,17 @@ export function LoginForm() {
             </svg>
           </button>
         </span>
+        {capsLock ? (
+          <small className="admin-login-hint" role="status">
+            Caps Lock is on
+          </small>
+        ) : null}
       </label>
-      <button type="submit" className="admin-btn" disabled={pending}>
-        {pending ? "Signing in…" : "Sign in"}
+      <button type="submit" className="admin-btn admin-login-submit" disabled={pending}>
+        {pending ? <span className="admin-spinner" aria-hidden="true" /> : null}
+        <span>{pending ? "Signing in…" : "Sign in"}</span>
       </button>
-      <p className="admin-error" role="alert">
+      <p id={errorId} className="admin-error" role="alert">
         {state.error}
       </p>
     </form>

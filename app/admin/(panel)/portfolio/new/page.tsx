@@ -8,3 +8,6 @@ export default function NewProject() {
     </>
   );
 }
+
+// Auth-gated and per-request: the guard redirects signed-out visitors, so skip dev-time instant validation.
+export const instant = false;

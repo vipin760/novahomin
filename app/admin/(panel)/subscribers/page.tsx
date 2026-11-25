@@ -1,8 +1,19 @@
+import { Suspense } from "react";
+import { connection } from "next/server";
 import { dbConfigured } from "@/lib/db";
 import { listSubscribers } from "@/lib/store";
 import { removeSubscriber } from "../actions";
 
-export default async function SubscribersPage() {
+export default function SubscribersPage() {
+  return (
+    <Suspense fallback={<div className="adm-skeleton" aria-busy="true" aria-label="Loading" />}>
+      <PageBody />
+    </Suspense>
+  );
+}
+
+async function PageBody() {
+  await connection(); // DB-backed and auth-gated: never prerender at build time
   if (!dbConfigured()) return <p className="admin-error">MongoDB is not configured.</p>;
   const items = await listSubscribers();
   return (
@@ -26,3 +37,6 @@ export default async function SubscribersPage() {
     </>
   );
 }
+
+// Auth-gated and per-request: the guard redirects signed-out visitors, so skip dev-time instant validation.
+export const instant = false;

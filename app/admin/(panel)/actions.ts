@@ -7,8 +7,11 @@ import { articles } from "@/lib/content";
 import { dbConfigured } from "@/lib/db";
 import type { Img } from "@/lib/image";
 import { deleteProject, projectSlugTaken, saveProject } from "@/lib/projects";
-import { getSmtp, saveSmtp, sendTest } from "@/lib/smtp";
-import { deleteEnquiry, deleteSubscriber } from "@/lib/store";
+import { clearGoogleToken, sendTest } from "@/lib/mail";
+import { MAX_RECIPIENTS, saveNotify, saveSmtp } from "@/lib/smtp";
+import { isStatus } from "@/lib/enquiry-status";
+import { deleteEnquiry, deleteSubscriber, setEnquiryStatus } from "@/lib/store";
+import { PROJECT_PLATFORMS } from "@/lib/project-meta";
 import { slugify } from "@/lib/slug";
 import { postCategories } from "@/lib/post-categories";
 import { deletePost, savePost, slugTaken } from "@/lib/posts";
@@ -45,7 +48,15 @@ const parseImgs = (value: string) => {
 export async function removeEnquiry(formData: FormData) {
   await guard();
   await deleteEnquiry(String(formData.get("id") ?? ""));
-  revalidatePath("/admin/enquiries");
+  revalidatePath("/admin", "layout"); // refreshes the sidebar badge and bell too
+}
+
+export async function setEnquiryStatusAction(formData: FormData) {
+  await guard();
+  const status = formData.get("status");
+  if (!isStatus(status)) return;
+  await setEnquiryStatus(String(formData.get("id") ?? ""), status);
+  revalidatePath("/admin", "layout");
 }
 
 export async function removeSubscriber(formData: FormData) {
@@ -95,6 +106,12 @@ export async function saveProjectAction(_: FormState, data: FormData): Promise<F
   if (await projectSlugTaken(slug, id)) return { error: "That URL slug is already used. Change the slug." };
   const cover = parseImg(str(data, "cover", 2000));
   if (status === "published" && !cover) return { error: "Choose a cover image before publishing." };
+  const features = String(data.get("features") ?? "")
+    .split("\n")
+    .map((line) => line.trim().slice(0, 120))
+    .filter(Boolean)
+    .slice(0, 8);
+  const platforms = PROJECT_PLATFORMS.filter((platform) => data.getAll("platforms").includes(platform));
 
   await saveProject(
     {
@@ -106,6 +123,10 @@ export async function saveProjectAction(_: FormState, data: FormData): Promise<F
       description: String(data.get("description") ?? "").trim().slice(0, 20000),
       link,
       cover,
+      hero: parseImg(str(data, "hero", 2000)),
+      features,
+      platforms,
+      featured: data.get("featured") === "on",
       gallery: parseImgs(String(data.get("gallery") ?? "[]")).slice(0, 24),
       status,
       sortOrder: Number.parseInt(String(data.get("sortOrder") ?? "0"), 10) || 0,
@@ -125,24 +146,33 @@ export async function deleteProjectAction(formData: FormData) {
 
 const emailOk = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
 
+export async function saveNotifyAction(_: FormState, data: FormData): Promise<FormState> {
+  await guard();
+  const enabled = data.get("enabled") === "on";
+  const ackEnabled = data.get("ackEnabled") === "on";
+  const entered = data.getAll("recipient").map((value) => String(value).trim().slice(0, 254)).filter(Boolean);
+  const recipients = [...new Map(entered.map((address) => [address.toLowerCase(), address])).values()];
+  const bad = recipients.find((address) => !emailOk(address));
+  if (bad) return { error: `“${bad}” is not a valid email address.` };
+  if (recipients.length > MAX_RECIPIENTS) return { error: `You can add up to ${MAX_RECIPIENTS} recipients.` };
+  if (enabled && recipients.length === 0) return { error: "Add at least one recipient to turn on admin notifications." };
+
+  await saveNotify({ enabled, ackEnabled, recipients });
+  revalidatePath("/admin/settings");
+  return { ok: "Notification settings saved." };
+}
+
 export async function saveSmtpAction(_: FormState, data: FormData): Promise<FormState> {
   await guard();
   const host = str(data, "host", 200);
   const port = Number.parseInt(str(data, "port", 6), 10);
   const from = str(data, "from", 200);
-  const notifyTo = str(data, "notifyTo", 500);
-  const enabled = data.get("enabled") === "on";
-  if (enabled && (!host || !from || !notifyTo)) return { error: "Host, From and Notify-to are required to enable email." };
   if (!Number.isInteger(port) || port < 1 || port > 65535) return { error: "Enter a valid port (for example 587 or 465)." };
-  if (notifyTo && !notifyTo.split(",").every((address) => emailOk(address.trim())))
-    return { error: "Notify-to must be one or more valid email addresses, separated by commas." };
+  if (host && !from) return { error: "A From address is required with an SMTP host." };
 
-  await saveSmtp(
-    { enabled, host, port, secure: data.get("secure") === "on", user: str(data, "user", 200), from, notifyTo },
-    String(data.get("password") ?? ""),
-  );
+  await saveSmtp({ host, port, secure: data.get("secure") === "on", user: str(data, "user", 200), from }, String(data.get("password") ?? ""));
   revalidatePath("/admin/settings");
-  return { ok: "Settings saved." };
+  return { ok: "SMTP settings saved." };
 }
 
 export async function testSmtpAction(_: FormState, data: FormData): Promise<FormState> {
@@ -150,11 +180,15 @@ export async function testSmtpAction(_: FormState, data: FormData): Promise<Form
   const to = str(data, "to", 200);
   if (!emailOk(to)) return { error: "Enter a valid address to send the test to." };
   try {
-    const current = await getSmtp();
-    if (!current.host) return { error: "Save your SMTP settings first." };
-    await sendTest(to);
-    return { ok: `Test email sent to ${to}.` };
+    const provider = await sendTest(to);
+    return { ok: `Test email sent to ${to} via ${provider === "gmail" ? "Gmail" : "SMTP"}.` };
   } catch (error) {
     return { error: `Sending failed: ${error instanceof Error ? error.message : "unknown error"}` };
   }
+}
+
+export async function disconnectGoogleAction() {
+  await guard();
+  await clearGoogleToken();
+  revalidatePath("/admin/settings");
 }

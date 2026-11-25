@@ -27,3 +27,11 @@ export function limited(key: string, max: number, windowMs: number) {
 }
 
 export const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+/** Public origin of this request (honours reverse-proxy headers). */
+export function originFromHeaders(headers: Headers) {
+  const host = headers.get("x-forwarded-host") ?? headers.get("host") ?? "localhost:3000";
+  const local = /^(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/.test(host);
+  const proto = headers.get("x-forwarded-proto")?.split(",")[0]?.trim() ?? (local ? "http" : "https");
+  return `${proto}://${host}`;
+}

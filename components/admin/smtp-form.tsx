@@ -10,10 +10,6 @@ export function SmtpForm({ settings }: { settings: SmtpSettings }) {
   return (
     <>
       <form action={save} className="admin-form admin-wide">
-        <label className="admin-check">
-          <input type="checkbox" name="enabled" defaultChecked={settings.enabled} />
-          <span>Email me when a new enquiry arrives</span>
-        </label>
         <label>
           <span>SMTP host</span>
           <input name="host" defaultValue={settings.host} placeholder="smtp.example.com" maxLength={200} />
@@ -40,15 +36,11 @@ export function SmtpForm({ settings }: { settings: SmtpSettings }) {
           <span>From address</span>
           <input name="from" defaultValue={settings.from} placeholder='Novahomin <hello@example.com>' maxLength={200} />
         </label>
-        <label>
-          <span>Send enquiry notifications to (comma-separated)</span>
-          <input name="notifyTo" defaultValue={settings.notifyTo} placeholder="you@example.com" maxLength={500} />
-        </label>
         <p className={saved.error ? "admin-error" : "admin-ok"} role="status">
           {saved.error ?? saved.ok}
         </p>
         <button type="submit" className="admin-btn" disabled={saving}>
-          {saving ? "Saving…" : "Save settings"}
+          {saving ? "Saving…" : "Save SMTP settings"}
         </button>
       </form>
 

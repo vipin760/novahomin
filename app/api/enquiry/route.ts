@@ -1,7 +1,9 @@
+import { after } from "next/server";
 import { dbConfigured } from "@/lib/db";
-import { notifyEnquiry } from "@/lib/smtp";
+import { sendEnquiryEmails } from "@/lib/mail";
 import { addEnquiry } from "@/lib/store";
-import { clientIp, emailPattern, limited, sameOrigin } from "@/lib/request";
+import { clientIp, emailPattern, limited, originFromHeaders, sameOrigin } from "@/lib/request";
+import { siteOrigin } from "@/lib/site";
 
 const text = (value: unknown, max: number) => (typeof value === "string" ? value.trim().slice(0, max) : "");
 
@@ -12,7 +14,11 @@ export async function POST(request: Request) {
 
   const body = (await request.json().catch(() => null)) as Record<string, unknown> | null;
   if (!body) return Response.json({ error: "Invalid request." }, { status: 400 });
-  if (body.company) return Response.json({ ok: true }); // honeypot: bots only
+  if (body.nh_extra_note) {
+    // Honeypot: only bots fill this. Answer "ok" so they do not retry, but leave a trace.
+    console.warn("Enquiry ignored: honeypot field was filled.");
+    return Response.json({ ok: true });
+  }
 
   const name = text(body.name, 100);
   const email = text(body.email, 254);
@@ -24,7 +30,15 @@ export async function POST(request: Request) {
 
   try {
     const saved = await addEnquiry({ name, email, phone: text(body.phone, 40), service: text(body.service, 80), message });
-    await notifyEnquiry(saved);
+    // Emails go out after the response, so a slow or failing mail server never affects the visitor.
+    const origin = (() => {
+      try {
+        return siteOrigin() ?? originFromHeaders(request.headers);
+      } catch {
+        return originFromHeaders(request.headers);
+      }
+    })();
+    after(() => sendEnquiryEmails(saved, origin));
     return Response.json({ ok: true });
   } catch {
     return Response.json({ error: "Could not send your message. Please try again." }, { status: 500 });
